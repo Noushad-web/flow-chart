@@ -1,0 +1,995 @@
+$primary-blue : #152744;
+$primary-green : #35E5A8;
+$light-blue : #D9E6FE;
+$blue-border:#4580F7;
+$danger : #FD282B;
+$danger-border : #707070;
+$light-border : #CCCCCC;
+
+.grey-bg{
+	font-size: 16px;
+}
+
+.main-sidebar{
+
+	position: relative;
+	min-height: 100vh;
+
+	.aside-automation{
+		background-color: white;
+		position: absolute;
+		top: 66px;
+		left: 255px;
+		padding: 2rem 1.2rem;
+		width: 408px;
+		transform: translateX(0);
+		transition:width .2s linear , opacity .1s ease;
+		min-height: calc( 100% - 66px);
+		box-shadow: 2px 0 2px rgba(0,0,0,0.1);
+	
+
+		.closed-btn-wrapper{
+			
+			.close-automation-aside{
+				position: absolute;
+				right: 5px;
+				top: 50%;
+				height: 72px;
+				border: 1px solid #E3E3E3;
+				border-radius: 10px;
+			}
+		}
+
+
+		form{
+	
+			word-break: keep-all;
+			white-space: nowrap; 
+
+			.input-wrapper{
+				display: inline-block;
+				border-radius: 6px;
+				padding: .3rem 16px;
+				border: 1px solid #EBEBEB;
+				height: inherit;
+
+			}
+			#search{
+				border:0;
+				padding: .3rem;
+				
+				&::placeholder{
+					color: $primary-blue;
+					opacity: 1;
+				}
+
+				&:focus{
+					border: 0;
+					outline: 0;
+				}
+			}
+
+			img{
+				padding-bottom: 3px;
+			}
+
+		
+		}
+
+
+// UL ELEMENTS FOR MY AUTOMATIONS STARTS HERE 
+		
+		ul{
+
+			h5{
+				white-space:nowrap;
+				color: $primary-blue;
+				font-size: 1rem;
+				font-weight: 500;
+			}
+			
+			li{
+				border-top: 1px solid #EBEBEB;
+				padding: 12px 12px;
+				display: flex;
+				justify-content: space-between;
+				cursor: pointer;
+				white-space: nowrap;
+
+				.automation-text{
+
+					.draft{
+						background-color: #4681F8;
+						color: white;
+						border-radius: 23px;
+						padding: 3px 16px;
+						font-size: 12px;
+					}
+
+					span{
+						margin-left: .3rem;
+						color: $primary-blue;
+						white-space: nowrap;
+						font-size: 16px;
+					}
+				}
+
+				.trash{
+					background-color: transparent;	
+
+					img{
+						pointer-events: none;
+					}
+				}
+			}
+		}
+
+
+	}
+
+}
+
+
+.aside-hidden{
+
+	width: 0 !important;
+	overflow: hidden;
+	z-index: -2;
+	opacity: 0;
+	transition:width .2s  linear , opacity .1s linear;
+
+}
+
+
+// centering 
+.center{
+	display: grid;
+	place-items: center;
+}
+
+// btn 
+.btn-create-me{
+	background-color: $primary-green;
+	border-radius: 23px;
+	border: 0;
+	padding:0.65rem 1rem;
+	margin-left: .5rem;
+
+	&:hover,&:focus{
+		background-color: $primary-blue;
+		color: white;
+	}
+}
+
+.main-content{
+
+	background-image: url('/assets/images/worn-dots.png');
+
+
+	.section{
+
+		
+		.setting-tabs{
+			z-index: 99999;
+		}
+	}
+
+
+	.automation-section{
+		min-height: calc(100% - 136px);
+	}
+
+	.navbar{
+		height: 75px;
+		background-color: #FFFFFF;
+
+		nav{
+			.title{
+				font-size: 20px;
+				color: $primary-blue;
+				padding-left: 1rem;
+			}
+
+			.border-left{
+				border-right: 1px solid $light-border;
+			}
+
+			.wrapper-nav-items{
+
+				input{
+					border-radius: 5px;
+					border: 1px solid $light-border;
+					padding: 9px 11px;
+				}
+
+			}
+		}
+
+	}
+
+}
+
+
+
+// Width auto
+.w-auto{
+	width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------
+COMPONENT 
+------------------------------*/
+
+.automation-section{
+	margin-left: 0;
+
+	.component{
+
+		$shadow : 2px 2px 5px rgba(0,0,0,0.2);
+
+		display: grid;
+		grid-template-columns: repeat(30, 70px);
+		grid-template-rows : repeat(50, 30px);
+		height: 800px;
+		overflow: hidden;
+    width: 100%;
+
+		cursor: grab;
+
+		&:focus{
+			cursor: grabbing;
+		}
+
+
+		.action{
+			// grid-column: 1/6;
+			// grid-row: 12/14;
+			background-color: $light-blue;
+			border: 1px solid $blue-border;
+			padding: 10px 1rem;
+			font-weight: 600;
+			box-shadow: $shadow;
+
+
+			.heading{
+				align-self: center;
+			}
+
+			select{
+				background-color: white;
+				border: 1px solid #CCCCCC;
+				border-radius: 5px;
+				font-weight: 500;
+				padding: 0px 6px;
+			}
+
+		}
+
+		// ALL SMALL ACTIONS ARE HERE 
+		.action-1{
+			grid-column: 13/19;
+			grid-row: 14/16;
+		}
+
+
+
+		// ALL BIG ACTIONS ARE HERE
+		.action-big{
+			
+		
+
+			header{
+				
+				.heading{
+					align-self: center;
+				}
+
+				select{
+					background-color: white;
+					border: 1px solid #CCCCCC;
+					border-radius: 5px;
+					font-weight: 500;
+					padding: 10px 6px;
+				}
+			}
+
+			&--form{
+				.btns{
+
+					button{
+						border: 0;
+						background-color: transparent;
+
+					}
+
+					.sucess{
+						color: #0053A4;
+						border-right: 1px solid rgba(0,0,0,0.2);
+						padding-right: 1rem;
+					}
+
+					.danger{
+						color: #FF1F23;
+						padding-left: .5rem;
+					}
+				}
+
+				.input-group{
+					margin-top: .5rem;
+					display: flex;
+					justify-content: space-between;
+					position: relative;
+
+					input, select{
+						border:1px solid $light-border;
+						border-radius: 5px;
+						background-color: white;
+						padding: 5px;
+						font-size: 15px;
+						font-weight: 500;
+					}
+
+					input{
+						width: 50%;
+
+					}
+					select{
+						width: 35%;
+					}
+
+					button{
+						border:0;
+						background-color: transparent;
+					}
+
+
+					ul{
+						position: absolute;
+
+					}
+
+
+				}
+
+
+
+
+
+				.sms{
+
+					margin-top: 1rem;
+
+					label{
+						display: block;
+						font-size: 1rem;
+						font-weight: 500;
+					}
+
+					textarea{
+						border-radius: 5px;
+						border: 1px solid $light-border;
+						padding: 10px;
+					}
+
+					.save{
+						border: 0;
+						background-color: transparent;
+						color: #4580F7;
+						text-decoration: underline;
+					}
+
+					button{
+						background-color: transparent;
+						border: 0;
+						color: #4580F7;
+					}
+
+				}
+
+
+			}
+		}
+
+
+		.action-bg-1{
+			grid-column: 20/25;
+			grid-row: 14/27;
+		}
+
+		.action-bg-2{
+			grid-column:22/27;
+			grid-row: 36/50;
+		}
+
+		.action-2{
+			grid-column: 16/21;
+			grid-row: 36/38;
+		}
+
+		.action-3{
+			grid-column: 4/9;
+			grid-row: 25/27;
+		}
+
+		.action-bg-3{
+			grid-column: 10/15;
+			grid-row: 25/40;
+		}
+
+
+		/*------------------
+				CONDITION
+		-------------------*/
+
+		.condition{
+			background-color: white;
+			border: 1px solid $blue-border;
+			box-shadow: $shadow;
+			padding: 10px 1rem;
+			font-weight: 600;
+			// overflow: auto;
+
+			&--heading{
+				
+				font-size: 1rem;
+				span{
+					font-weight: 500;
+				}
+			}
+
+			&--form{
+				.btns{
+
+					button{
+						border: 0;
+						background-color: transparent;
+
+					}
+
+					.sucess{
+						color: #0053A4;
+						border-right: 1px solid rgba(0,0,0,0.2);
+						padding-right: 1rem;
+					}
+
+					.danger{
+						color: #FF1F23;
+						padding-left: .5rem;
+					}
+				}
+
+				.input-group{
+					margin-top: .5rem;
+					display: flex;
+					justify-content: space-between;
+					position: relative;
+
+					input, select{
+						border:1px solid $light-border;
+						border-radius: 5px;
+						background-color: transparent;
+						width: 30%;
+						padding: 5px;
+						font-size: 15px;
+						font-weight: 500;
+					}
+					button{
+						border:0;
+						background-color: transparent;
+					}					
+
+					.delete-its-parent{
+						img{
+							pointer-events: none;
+						}
+					}
+
+// li elements after focusing on input
+
+					.input-ul{
+						z-index: 10;
+						position: absolute;
+						top: 40px;
+						left: 12px;
+						background: white;						
+						border: 1px solid $light-border;
+						border-radius: 5px;
+						font-size: .9rem;
+						font-weight: 400;
+						cursor: pointer;
+
+							li{
+								position: relative;
+
+								.inner-content-li{
+									display: flex;
+									justify-content: space-between;
+									width: 220px;
+									padding: 10px ;
+									color: #5b5b5b;
+
+									&:hover, &:focus{
+										background-color: $light-blue;
+									}
+								}
+
+								&:hover ul  ,&:focus ul{
+									display: block;
+								}
+
+
+								ul{
+									display: none;
+									background-color: white;
+									position: absolute;
+									top: 0;
+									left: 100%;
+									border-radius: 5px;
+									border: 1px solid $light-border;
+
+									li{
+										@extend .inner-content-li;
+									}
+								}
+							}
+					}
+
+
+
+
+				}
+			}
+
+		}
+
+
+
+
+		.condtion-3{
+			grid-column: 4/8;
+			grid-row: 6/9;
+		}
+
+
+		.condition-1{
+			grid-column: 16/22;
+			grid-row: 2/10;
+		}
+
+		.condition-2{
+			grid-column: 18/23;
+			grid-row: 29/33; 
+
+			.input-group{
+				input, select{
+					width:44% ;
+					
+				}
+			}
+
+		}
+
+		.condition-left-3{
+			grid-column: 6/11;
+			grid-row: 18/22;
+
+			.input-group{
+				input, select{
+					width:44% ;
+					
+				}
+			}
+		}
+
+
+
+		// HORIZONTAL LINES 
+		.horizontal{
+			height: 1px;
+			width: 100%;
+			background-color: $blue-border;
+			margin: auto;
+		}
+
+		.horizontal-no-2{
+			grid-column: 4/6;
+			grid-row:10/11 ;
+		}
+		
+		.horizontal-1{
+			grid-column: 16/19;
+			grid-row: 12/13;
+		}
+
+		.horizontal-1--yes{
+			grid-column: 19/22;
+			grid-row: 12/13;
+		}
+
+		.horizontal-action-big-condition-2{
+			grid-column: 21/23;
+			grid-row: 27/29;
+		}
+
+		.horizontal-condition-small-no{
+			grid-column: 19/21;
+			grid-row: 34/35;
+		}
+
+
+		.horizontal-condition-small-yes{
+			grid-column: 21/23;
+			grid-row: 34/35;
+		}
+
+
+		.horizontal-no-condition-left{
+			grid-column: 8/15;
+			grid-row: 16/18;
+		}
+
+
+		.horizontal-condition-left-no{
+			grid-column: 7/8;
+			grid-row: 23/24;
+		}
+
+		.horizontal-no-left-yes-left{
+			grid-column: 8/12;
+			grid-row: 23/24;
+		}
+
+
+
+		// VERTICAL LINEs
+		.vertical{
+			width: 1px;
+			background-color: $blue-border;
+			height: 100%;
+			margin: auto;
+		}
+
+		.action-v-no{
+			grid-column: 3/4;
+			grid-row: 11/12;
+		}
+
+		
+		.vertical-3{
+			grid-column: 6/7;
+			margin: 0;
+			grid-row: 9/11;
+			height: 75%;
+		}
+
+		.vertical-1{
+			grid-column: 18/19;
+			grid-row: 10/13;
+			margin-right: 0;
+			margin-top: -15px;
+			z-index: -1;
+		}
+
+		.vertical-no-action-1{
+			grid-column: 15/16;
+			grid-row: 13/14;
+		}
+
+		.vertical-yes-action-big-1{
+			grid-column: 22/23;
+			grid-row: 13/14;
+		}
+
+
+		.vertical-action-big-condition-2{
+			grid-column: 22/23;
+			grid-row: 27/28;
+			margin-right: 0;
+		}
+
+		.vertical-action-big-condition-3{
+			grid-row: 28/29;
+			grid-column: 20/21;
+			margin-right: 0;
+		}
+
+
+		.vertical-condition-small-no{
+			grid-column: 20/21;
+			grid-row: 33/34;
+			margin-right: 0;
+			z-index: -1;
+			height: 150%;
+		}
+
+		.vertical-no-action-2{
+			grid-column: 18/19;
+			grid-row: 35/36;
+		}
+
+		.vertical-yes-action-2{
+			grid-column: 23/24;
+			grid-row: 35/36;
+		}
+
+		.vertical-no-condition-left{
+			grid-column: 15/16;
+			grid-row: 16/17;
+			margin-left: 0;
+		}
+
+		.vertical-action-condition-left{
+			grid-column: 7/8;
+			grid-row: 17/18;
+			margin-right: 0;
+		}
+
+	.vertical-condition-left-no{
+		grid-column: 8/9;
+		grid-row: 22/23;
+		margin-left: 0;
+		z-index: -1;
+		height: 153%;
+	}
+
+	.vertical-no-left-action-left{
+		grid-column: 6/7;
+		grid-row: 24/25;
+	}
+
+
+	.vertical-yes-left-action-left{
+		grid-column: 12/13;
+		grid-row: 24/25;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// All NO btn are here 
+		.no-1{
+			grid-column: 15/16;
+			grid-row: 12/13;
+		}
+
+		.no-2{
+			grid-column: 3/4;
+			grid-row: 10/11;
+		}
+
+		.no-3{
+			grid-column: 18/19;
+			grid-row: 34/35;
+		}
+
+		.no-4{
+			grid-column: 6/7;
+			grid-row: 23/24;
+		}
+		
+
+
+
+		// ALL YES BUTTONS ARE HERE 
+		.yes-1{
+			grid-column: 22/23;
+			grid-row: 12/13;
+		}
+
+		.yes-2{
+			grid-column: 23/24;
+			grid-row: 34/35;
+		}
+
+		.yes-3{
+			grid-column: 12/13; 
+			grid-row: 23/24;
+		}
+
+
+
+		// NO DANGER BUTTON
+		.no{
+			width: 100%;
+			height: 100%;
+			background-color: $danger;
+			display: grid;
+			place-items: center;
+			font-size: 1rem;
+			text-transform: uppercase;
+			border: 1px solid $danger-border;
+		}
+
+		// YES SUCCESS BUTTON
+		.yes{
+			width: 100%;
+			height: 100%;
+			background-color: $primary-green;
+			display: grid;
+			place-items: center;
+			font-size: 1rem;
+			text-transform: uppercase;
+			border: 1px solid $danger-border;
+		}
+
+
+	}
+
+	
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TOGGLE SWITCH
+.active{
+
+	background-color: transparent;
+	border: 0;
+	padding: 0 .5rem;
+	.line{
+		position: relative;
+		width: 50px;
+		border: 1px solid $light-border;
+		display: inline-block;
+		height: 10px;
+		border-radius: 10px;
+		background-color: #4681F8;
+		transition: background-color .3s ease;
+
+		.circle{
+			position: absolute;
+			background-color: #BDD2FC;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			// right: -1px;
+			top: -8px;
+			left: 28px;
+			transition: left .3s ease;
+		}
+	}
+
+	.text{
+		display: inline-block;
+		width: 7ch;
+	}
+
+}
+
+	.line2{
+		background-color: white !important;
+
+		.circle2{
+			left: -1px !important;
+		}
+	}
+
+
+
+// ---------------------------------------------------------------
+
+	// SMS TEMPLATE 	
+	.sms-template-wrapper{
+		background-color: rgba(0,0,0,0.5);
+		z-index: 999;
+		width: 100vw;
+		height: 100vh;
+		display: grid;
+		place-items: center;
+		top: 0;
+		left: 0;
+
+		.sms-template{
+
+			height: 450px;
+			width: 700px;
+			background-color: white;
+			border-radius: 20px;
+			padding: 2rem;
+
+
+			.row{
+				margin-top: 2rem;
+
+				.col-md-6{
+
+
+					width: 400px;
+					height: 200px;
+					overflow: auto;
+
+					ul{
+
+						border: 1px solid $light-border;
+						
+						padding-left: 1rem;
+						padding-right: 1rem;
+
+						li{
+							font-size: large;
+							line-height: 3;
+							font-weight: 500;
+							color: $primary-blue;
+						}
+					}
+				}
+
+				.col-md-6{
+					p{
+						border: 1px solid $light-border;
+						min-height: 100%;
+						font-weight: 500;
+						padding: 1rem;
+						font-size: large;
+					}
+				}
+			}
+
+
+			&-btns{
+				button{
+					
+					min-height: 50px;
+					min-width: 160px;
+					border: 0;
+				}
+
+				.create-new{
+					background-color: $primary-blue;
+					color: white;
+
+				
+				}
+
+				.choose-template{
+					background-color: $primary-green;
+					color: $primary-blue;
+					border-radius:0 ;
+					margin-left: .8rem;
+				}
+
+			}
+
+		}
+	}
+
+
+
+
+
+
