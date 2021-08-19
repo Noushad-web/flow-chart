@@ -1,3 +1,7 @@
+.delete-its-parent img {
+  pointer-events: none;
+}
+
 .grey-bg {
   font-size: 16px;
 }
@@ -446,10 +450,6 @@ COMPONENT
 .automation-section .component .condition--form .input-group button {
   border: 0;
   background-color: transparent;
-}
-
-.automation-section .component .condition--form .input-group .delete-its-parent img {
-  pointer-events: none;
 }
 
 .automation-section .component .condition--form .input-group .input-ul {

@@ -21,76 +21,17 @@ const form_ul_automation = document.getElementById('wrapper-automation-form-ul')
 // input variable and input group variables
 const nestedInput = document.querySelectorAll('.nested-input');
 const inputUl = document.querySelectorAll('.input-ul');
-const inputGroupWrapper = document.getElementById('input-group-wrapper');
 const delParentBtns = document.querySelectorAll('.delete-its-parent');
 
 
 // functions to be used again and again
 
 // add criteria function 
-const addCriteria = (wrapperElement) => {
-	console.log('addCriteria');
-	wrapperElement.innerHTML +=
-		`
-	<div class="input-group">
-	<input type="text" name="" class="nested-input" value="Registration" class="">
+const addCriteria = (wrapperElement, innerHTMLToAdded) => {
 
-	<!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
-	<ul class="input-ul d-none" id="input-ul">
-		 <li>
-				<div class="inner-content-li">
-					 <span>Contact information</span> <span> &#10095; </span>
-				</div>
-					 <ul>
-							<li>firstname</li>
-							<li>last name</li>
-							<li>Address</li>
-							<li>City</li>
-							<li>Country</li>
-							<li>Age</li>
-							<li>Gender</li>
-							<li>Email</li>
-							<li>Mobile Phone</li>
-							<li>GDPR consent</li>
-					 </ul>
-		 </li>
-
-		 <li>
-				<div class="inner-content-li">
-					 <span>Product</span>
-					 <span> &#10095; </span>
-				</div>
-		 </li>
-		 <li>
-				<div class="inner-content-li">
-					 <span>Purchase</span>
-					 <span> &#10095; </span>
-				</div>
-		 </li>
-		 <li>
-				<div class="inner-content-li">
-					 <span>Member Level</span>
-					 <span> &#10095; </span>
-				</div>
-		 </li>
-		 <li>
-				<div class="inner-content-li">
-					 <span>Segments</span>
-					 <span> &#10095; </span>
-				</div>
-		 </li>
-
-	</ul>
-
-
-
-	<select name="" id="">
-		 <option value="Is">Is</option>
-	</select>
-	<input type="text" name="" id="" value="POS, webshop">
-	<button><img src="./assets/images/cross.svg" alt=""></button>
-</div>
-	`
+	// console.log('addCriteria');
+	wrapperElement.innerHTML += innerHTMLToAdded;
+	
 }
 
 // deleteAll
@@ -99,6 +40,10 @@ const deleteAll = (wrapperElement) => {
 	wrapperElement.innerHTML = "";
 }
 
+// cross icon to delete only its parent element 
+const deleteSelectedItem = (selectedItem) => {
+
+}	
 
 
 //  add criteria button 
@@ -107,7 +52,16 @@ document.querySelectorAll('.add-criteria').forEach(addBtn => {
 	addBtn.addEventListener('click', (e) => {
 
 		e.preventDefault();
-		addCriteria(inputGroupWrapper);
+		if (e.target.parentElement.nextElementSibling.className.search('input-group-wrapper') !== -1) {
+
+			const targetElement = e.target.parentElement.nextElementSibling;
+			const innerHTMLToAdded = targetElement.firstElementChild.outerHTML;
+
+			addCriteria(targetElement, innerHTMLToAdded);
+
+		} else{
+			console.error('please let the input-group-wrapper div only after the btns div to make it work right.');
+		}
 
 	});
 
@@ -120,9 +74,26 @@ document.querySelectorAll('.delete-all').forEach(deleteBtn => {
 	deleteBtn.addEventListener('click', (e) => {
 
 		e.preventDefault();
-		deleteAll(inputGroupWrapper);
+		if (e.target.parentElement.nextElementSibling.className.search('input-group-wrapper') !== -1) {
+			
+			const targetElement = e.target.parentElement.nextElementSibling;
+			
+			deleteAll(targetElement);
+
+		}else{
+			console.error('please let the input-group-wrapper div only after the btns div to make it work right.');
+		}		
 
 	})
+})
+
+// Selection of cross items selected the item
+delParentBtns.forEach((delParentBtn) => {
+
+	delParentBtn.addEventListener('click', (e) => {
+		e.target.parentElement.remove();
+	});
+
 })
 
 
@@ -140,14 +111,7 @@ nestedInput.onblur = () => {
 	inputUl.classList.add('d-none');
 }
 
-// cross icon to delete the selected the item
-delParentBtns.forEach((delParentBtn) => {
 
-	delParentBtn.addEventListener('click', (e) => {
-		e.target.parentElement.remove();
-	})
-
-})
 
 
 

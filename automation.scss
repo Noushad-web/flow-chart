@@ -6,6 +6,24 @@ $danger : #FD282B;
 $danger-border : #707070;
 $light-border : #CCCCCC;
 
+
+
+
+// GLOBALS SASS TO USED MOST PLACES MADE TO AVOID REPETITION IN SASS
+.delete-its-parent{
+	img{
+		pointer-events: none;
+	}
+}
+
+
+
+
+
+
+
+
+
 .grey-bg{
 	font-size: 16px;
 }
@@ -489,11 +507,7 @@ COMPONENT
 						background-color: transparent;
 					}					
 
-					.delete-its-parent{
-						img{
-							pointer-events: none;
-						}
-					}
+				
 
 // li elements after focusing on input
 
