@@ -44,7 +44,7 @@ const formCondition = () => {
 			// elements to show when user focus on input 
 			nestedInput.onfocus = e => {		
 				inputUl.classList.remove('d-none');
-				inputUl.style.top = e.target.getClientRects()[0].top + 'px';
+				inputUl.style.top = e.target.getClientRects()[0].top + 30 +'px';
 				inputUl.style.left = e.target.getClientRects()[0].left + 'px';
 			}
 	
@@ -453,3 +453,53 @@ asideAutomationFun();
 
 
 
+
+
+
+/* --------------------------------------------
+	FLOW CHART SHOW AND HIDE STARTS HERE
+-------------------------------------------------*/
+
+const allLeftElem = document.querySelectorAll('.left-grid');
+const allRightElem = document.querySelectorAll('.right-grid');
+const noActionLeft = document.getElementById('no-action-left');
+const sendSmsLeft = document.getElementById('sms-left');
+const noActionRight = document.getElementById('no-action-right');
+const sendSmsRight = document.getElementById('sms-right');
+
+
+sendSmsLeft.addEventListener('click', () => {
+	
+	allLeftElem.forEach((element) => {
+		element.style.visibility = 'visible';
+	})
+
+})
+
+noActionLeft.addEventListener('click', () => {
+	allLeftElem.forEach((element) => {
+		element.style.visibility = 'hidden';
+	})
+})
+
+
+sendSmsRight.addEventListener('click', () => {
+	allRightElem.forEach((element) => {
+		element.style.visibility = 'visible';
+	})
+});
+
+noActionRight.addEventListener('click', () => {
+	allRightElem.forEach((element) => {
+		element.style.visibility = 'hidden';
+	})
+})
+
+
+
+
+
+
+/* --------------------------------------------
+	FLOW CHART SHOW AND HIDE ENDS HERE
+-------------------------------------------------*/

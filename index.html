@@ -148,7 +148,7 @@
 
           <ul id="created-ul">
             <h5 class="mt-5">My automations</h5>
-            <li class="created-li-element" data-id='Example automation'>
+            <li class="created-li-element" class='Example automation'>
               <div class="automation-text">
                 <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
                 <span>Example automation</span> <span class="draft">Draft</span>
@@ -158,7 +158,7 @@
               </button>
             </li>
 
-            <li class="created-li-element" data-id='Gold message'>
+            <li class="created-li-element" class='Gold message'>
               <div class="automation-text">
                 <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
                 <span>Gold message</span>
@@ -168,7 +168,7 @@
               </button>
             </li>
 
-            <li class="created-li-element" data-id='SMS 14 days after purchase'>
+            <li class="created-li-element" class='SMS 14 days after purchase'>
               <div class="automation-text">
                 <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
                 <span>SMS 14 days after purchase</span>
@@ -178,7 +178,7 @@
               </button>
             </li>
 
-            <li class="created-li-element" data-id='Birthday message'>
+            <li class="created-li-element" class='Birthday message'>
               <div class="automation-text">
                 <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
                 <span>Birthday message</span>
@@ -435,55 +435,52 @@
         <div class="component" id="grab-component">
 
 
-
-          <!-- CONDITION Big -->
-          <div class="condition condition-1">
-            <div class="condition--heading">
-              <img src="./assets/images/auomation-black.svg" alt="">
-              <span class="title-component ml-3">Condition</span>
-            </div>
-
-            <hr class="mt-2">
-
-            <form class="condition--form">
-              <div class="btns">
-
-                <button class="sucess add-criteria" id="delete-all">Add Criteria</button>
-
-                <button class="danger delete-all" id="delete-all">Delete all</button>
-
+          
+            <!-- CONDITION Big -->
+            <div class="condition condition-1">
+              <div class="condition--heading">
+                <img src="./assets/images/auomation-black.svg" alt="">
+                <span class="title-component ml-3">Condition</span>
               </div>
 
-              <div class="input-wrapper-condition">
+              <hr class="mt-2">
 
+              <form class="condition--form">
+                <div class="btns">
 
-                <div class="input-group">
-                  <input type="text" name="" class="nested-input" value="Registration">
+                  <button class="sucess add-criteria" id="delete-all">Add Criteria</button>
 
-                  <select name="" id="">
-                    <option value="Is">Is</option>
-                  </select>
-
-                  <input type="text" name="" id="" value="POS, webshop">
-
-                  <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-
+                  <button class="danger delete-all" id="delete-all">Delete all</button>
 
                 </div>
 
+                <div class="input-wrapper-condition">
 
 
-              </div>
-            </form>
+                  <div class="input-group">
+                    <input type="text" name="" class="nested-input" value="Registration">
 
-          </div>
+                    <select name="" id="">
+                      <option value="Is">Is</option>
+                    </select>
+
+                    <input type="text" name="" id="" value="POS, webshop">
+
+                    <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+
+
+                  </div>
 
 
 
+                </div>
+              </form>
+
+            </div>
 
 
           <!-- CONDITION SMALL 1 -->
-          <div class="condition condition-2">
+          <div class="condition condition-2 right-grid">
             <div class="condition--heading">
               <img src="./assets/images/auomation-black.svg" alt="">
               <span class="title-component ml-3">Condition</span>
@@ -508,7 +505,8 @@
           </div>
 
 
-          <div class="condition condition-left-3">
+          <!-- left  -->
+          <div class="condition condition-left-3 left-grid">
             <div class="condition--heading">
               <img src="./assets/images/auomation-black.svg" alt="">
               <span class="title-component ml-3">Condition</span>
@@ -536,40 +534,61 @@
 
           <!-- YES  -->
           <span class="yes yes-1">Yes</span>
-          <span class="yes yes-2">Yes</span>
-          <span class="yes yes-3">Yes</span>
+          <!-- right  -->
+          <span class="yes yes-2 right-grid">Yes</span>          
+          <!-- left  -->
+          <span class="yes yes-3 left-grid">Yes</span>
+          
+
+
 
           <!-- NO -->
           <span class="no no-1">No</span>
-          <span class="no no-3">No</span>
-          <span class="no no-4">No</span>
+          <!-- right  -->
+          <span class="no no-3 right-grid">No</span>
+          <!-- left  -->
+          <span class="no no-4 left-grid" >No</span>
+
+
+
+
 
           <!-- HORIZONTAL LINE -->
           <span class="horizontal horizontal-1"></span>
           <span class="horizontal horizontal-1--yes"></span>
-          <span class="horizontal horizontal-action-big-condition-2"></span>
-          <span class="horizontal horizontal-condition-small-no"></span>
-          <span class="horizontal horizontal-condition-small-yes"></span>
-          <span class="horizontal horizontal-no-condition-left"></span>
-          <span class="horizontal horizontal-condition-left-no"></span>
-          <span class="horizontal horizontal-no-left-yes-left"></span>
+          <!-- right  -->
+          <span class="horizontal horizontal-action-big-condition-2 right-grid"></span>
+          <span class="horizontal horizontal-condition-small-no right-grid"></span>
+          <span class="horizontal horizontal-condition-small-yes right-grid"></span>
+          <!-- left  -->
+          <span class="horizontal horizontal-no-condition-left left-grid" ></span>
+          <span class="horizontal horizontal-condition-left-no left-grid" ></span>
+          <span class="horizontal horizontal-no-left-yes-left left-grid" ></span>
 
+          <!-- HORIZONTAL LINE ENDS HERE -->
+
+
+
+          
+          
           <!-- VERTICAL LINE -->
           <span class="vertical vertical-1"></span>
           <span class="vertical vertical-no-action-1"></span>
           <span class="vertical vertical-yes-action-big-1"></span>
-          <span class="vertical vertical-action-big-condition-2"></span>
-          <span class="vertical vertical-action-big-condition-3"></span>
-          <span class="vertical vertical-condition-small-no"></span>
-          <span class="vertical vertical-no-action-2"></span>
-          <span class="vertical vertical-yes-action-2"></span>
-          <span class="vertical vertical-no-condition-left"></span>
-          <span class="vertical vertical-action-condition-left"></span>
-          <span class="vertical vertical-condition-left-no"></span>
-          <span class="vertical vertical-no-left-action-left"></span>
-          <span class="vertical vertical-yes-left-action-left"></span>
-
-
+          <!-- right  -->
+          <span class="vertical vertical-action-big-condition-2 right-grid"></span>
+          <span class="vertical vertical-action-big-condition-3 right-grid"></span>
+          <span class="vertical vertical-condition-small-no right-grid"></span>
+          <span class="vertical vertical-no-action-2 right-grid"></span>
+          <span class="vertical vertical-yes-action-2 right-grid"></span>
+          <!-- left  -->
+          <span class="vertical vertical-no-condition-left left-grid" ></span>
+          <span class="vertical vertical-action-condition-left left-grid" ></span>
+          <span class="vertical vertical-condition-left-no left-grid" ></span>
+          <span class="vertical vertical-no-left-action-left left-grid" ></span>
+          <span class="vertical vertical-yes-left-action-left left-grid" ></span>
+          
+          <!-- VERTICAL LINE  ENDS HERE-->
 
 
           <!-- ACTION  -->
@@ -581,12 +600,13 @@
             </div>
 
             <select name="action" id="action">
-              <option value="No action">No Action</option>
+              <option value="No action" id="sms-left" >Send SMS</option>
+              <option value="No action" id="no-action-left">No Action</option>
             </select>
           </div>
 
 
-          <div class="action action-2 d-flex justify-content-between">
+          <div class="action action-2 d-flex justify-content-between right-grid">
             <div class="heading">
               <img src="./assets/images/action.svg" alt="">
 
@@ -598,7 +618,8 @@
             </select>
           </div>
 
-          <div class="action action-3 d-flex justify-content-between">
+          <!-- left  -->
+          <div class="left-grid action action-3 d-flex justify-content-between">
             <div class="heading">
               <img src="./assets/images/action.svg" alt="">
 
@@ -628,7 +649,8 @@
               </div>
 
               <select name="action" id="action">
-                <option value="No action">No Action</option>
+                <option value="No action" id='sms-right'>Send SMS</option>
+                <option value="No action" selected id="no-action-right">No Action</option>
               </select>
             </header>
 
@@ -692,7 +714,7 @@
           </div>
 
 
-          <div class="action action-big action-bg-2 ">
+          <div class="action action-big action-bg-2 right-grid">
 
             <header class="d-flex justify-content-between">
 
@@ -760,8 +782,8 @@
             </div>
           </div>
 
-
-          <div class="action action-big action-bg-3 ">
+          <!-- left -->
+          <div  class="action action-big action-bg-3 left-grid">
 
             <header class="d-flex justify-content-between">
 
@@ -829,6 +851,8 @@
             </div>
 
           </div>
+
+
 
 
 
@@ -836,7 +860,7 @@
           <!-- --------------------------
                TEMPLATE TO BE RENDERED BY USER
           ------------------------------------>
-          
+
           <!-- action template  -->
           <template id="action-template">
             <div class="input-group">
@@ -859,7 +883,7 @@
             <div class="input-group">
               <input type="text" name="" class="nested-input" value="Registration">
 
-            
+
               <select name="" id="">
                 <option value="Is">Is</option>
               </select>
@@ -871,7 +895,7 @@
           <!-- TEMPLATE TO BE RENDERED BY USER -->
 
 
-          
+
 
 
           <!-- CONDITIONS -->
@@ -935,9 +959,9 @@
 
   </ul>
 
-  
-<!-- CUSTOM JS -->
-<script src="./assets/js/automation.js"></script>
+
+  <!-- CUSTOM JS -->
+  <script src="./assets/js/automation.js"></script>
 
 </body>
 

@@ -263,11 +263,10 @@ COMPONENT
 		overflow: hidden;
     width: 100%;
 
-		// cursor: grab;
 
-		// &:focus{
-		// 	cursor: grabbing;
-		// }
+
+	
+
 
 
 		.action{
@@ -566,6 +565,10 @@ COMPONENT
 		}
 
 		
+		.condition-1{
+			grid-column: 16/22;
+			grid-row: 2/10;
+		}
 			
 
 
@@ -575,10 +578,7 @@ COMPONENT
 		}
 
 
-		.condition-1{
-			grid-column: 16/22;
-			grid-row: 2/10;
-		}
+		
 
 		.condition-2{
 			grid-column: 18/23;
@@ -850,6 +850,17 @@ COMPONENT
 		}
 
 
+
+
+
+
+
+
+		
+
+
+
+
 	}
 
 	
@@ -1055,3 +1066,16 @@ COMPONENT
 
 
 
+
+
+
+
+
+
+
+
+
+
+.left-grid, .right-grid{
+	visibility: hidden;
+}

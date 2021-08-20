@@ -497,15 +497,6 @@ COMPONENT
   border: 1px solid #CCCCCC;
 }
 
-.automation-section .component .condtion-3 {
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 4;
-  grid-column: 4/8;
-  -ms-grid-row: 6;
-  -ms-grid-row-span: 3;
-  grid-row: 6/9;
-}
-
 .automation-section .component .condition-1 {
   -ms-grid-column: 16;
   -ms-grid-column-span: 6;
@@ -513,6 +504,15 @@ COMPONENT
   -ms-grid-row: 2;
   -ms-grid-row-span: 8;
   grid-row: 2/10;
+}
+
+.automation-section .component .condtion-3 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 4;
+  grid-column: 4/8;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 3;
+  grid-row: 6/9;
 }
 
 .automation-section .component .condition-2 {
@@ -1028,4 +1028,8 @@ COMPONENT
   left: 100%;
   border-radius: 5px;
   border: 1px solid #CCCCCC;
+}
+
+.left-grid, .right-grid {
+  visibility: hidden;
 }
