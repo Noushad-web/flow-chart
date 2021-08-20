@@ -2,36 +2,65 @@
 const automation = document.getElementById('automation');
 const editStoreFormId = document.getElementById('EditStoreFormId');
 
-const myAutomation = document.getElementById('myAutomation');
 const ourDetails = document.getElementById('ourDetails');
 
+
+const myAutomation = document.getElementById('myAutomation');
 const sideBarWrapper = document.getElementById('sidebar-wrapper');
 const settingTabs = document.getElementsByClassName('setting-tabs');
 const asideAutomation = document.getElementById('aside-automation');
 const createNewBtn = document.getElementById('create-new');
 const automationUlElement = document.getElementById('created-ul');
 const closeBtnAutomation__aside = document.querySelector('.close-automation-aside');
-
 const form_ul_automation = document.getElementById('wrapper-automation-form-ul');
 
 
+
+// TEMPLATES START HERE
+const createNewTemplate = document.getElementById('create-new-li');
+const actionTemplates = document.getElementById('action-template');
+const conditionTemplates = document.getElementById('condition-template');
+// TEMPLATES START HERE
+
+
+
+
+
 /*-----------------------------------------
- AUTOMATION FORMS ALL CONDITIONS
+AUTOMATION FORMS ALL CONDITIONS
 --------------------------------------------*/
-// input variable and input group variables
-const nestedInput = document.querySelectorAll('.nested-input');
-const inputUl = document.querySelectorAll('.input-ul');
-const delParentBtns = document.querySelectorAll('.delete-its-parent');
+const formCondition = () => {
+	
+	// input variable and input group variables
+	const nestedInput = document.querySelectorAll('.nested-input');
+	const inputUl = document.querySelectorAll('.input-ul');
+	const delParentBtns = document.querySelectorAll('.delete-its-parent');
+	
+	
+	// functions to be used again and again
 
 
-// functions to be used again and again
+	// cross icon to delete only its parent element 
+const deleteSelectedItem = (selectedItem) => {
+	selectedItem.remove();
+}	
+
+
 
 // add criteria function 
-const addCriteria = (wrapperElement, outerHTMLToAdded) => {
+const addCriteria = (wrapperElement, template) => {
 
-	// console.log('addCriteria');
-	wrapperElement.innerHTML += outerHTMLToAdded;
+	wrapperElement.appendChild(template);
 	
+	// const addedElement = ;.	
+	document.querySelectorAll('.delete-its-parent').forEach((eachBtn) => {
+
+		eachBtn.addEventListener('click', (e) => {
+
+			deleteSelectedItem(e.target.parentElement);
+
+		})
+	})
 }
 
 // deleteAll
@@ -39,11 +68,6 @@ const deleteAll = (wrapperElement) => {
 	console.log('delete all');
 	wrapperElement.innerHTML = "";
 }
-
-// cross icon to delete only its parent element 
-const deleteSelectedItem = (selectedItem) => {
-
-}	
 
 
 //  add criteria button 
@@ -57,90 +81,14 @@ document.querySelectorAll('.add-criteria').forEach(addBtn => {
 		e.preventDefault();
 		if (domDrilling.search('input-group-wrapper') !== -1) {
 
+			addCriteria(targetElement, actionTemplates.content.cloneNode(true));
 
-			const outerHTML =
-			`
-			<div class="input-group">
+		}
 
-			<select name="" id="">
-				 <option value="Is">Wait</option>
-			</select>
 
-			<input type="text" name="" id="" value="1 hour">
-
-			<button class="delete-its-parent">
-				 <img src="./assets/images/cross.svg" alt="">
-			</button>
-	 </div>
-			`;
-
-			addCriteria(targetElement, outerHTML);
-
-		} else if (domDrilling.search('input-wrapper-condition') !== -1 ) {
+		else if (domDrilling.search('input-wrapper-condition') !== -1) {
 			
-
-			const outerHTML =
-			`
-			<div class="input-group">
-			<input type="text" name="" class="nested-input" value="Registration">
-
-			<!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
-			<ul class="input-ul d-none" id="input-ul">
-				 <li>
-						<div class="inner-content-li">
-							 <span>Contact information</span> <span> &#10095; </span>
-						</div>
-							 <ul>
-									<li>firstname</li>
-									<li>last name</li>
-									<li>Address</li>
-									<li>City</li>
-									<li>Country</li>
-									<li>Age</li>
-									<li>Gender</li>
-									<li>Email</li>
-									<li>Mobile Phone</li>
-									<li>GDPR consent</li>
-							 </ul>
-				 </li>
-
-				 <li>
-						<div class="inner-content-li">
-							 <span>Product</span>
-							 <span> &#10095; </span>
-						</div>
-				 </li>
-				 <li>
-						<div class="inner-content-li">
-							 <span>Purchase</span>
-							 <span> &#10095; </span>
-						</div>
-				 </li>
-				 <li>
-						<div class="inner-content-li">
-							 <span>Member Level</span>
-							 <span> &#10095; </span>
-						</div>
-				 </li>
-				 <li>
-						<div class="inner-content-li">
-							 <span>Segments</span>
-							 <span> &#10095; </span>
-						</div>
-				 </li>
-
-			</ul>
-
-
-
-			<select name="" id="">
-				 <option value="Is">Is</option>
-			</select>
-			<input type="text" name="" id="" value="POS, webshop">
-			<button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-	 </div>
-			`
-			addCriteria(targetElement, outerHTML);
+			addCriteria(targetElement, conditionTemplates.content.cloneNode(true));
 
 		}
 		
@@ -151,12 +99,6 @@ document.querySelectorAll('.add-criteria').forEach(addBtn => {
 	});
 
 });
-
-
-
-
-
-
 
 
 // delete all button 
@@ -187,7 +129,7 @@ document.querySelectorAll('.delete-all').forEach(deleteBtn => {
 delParentBtns.forEach((delParentBtn) => {
 
 	delParentBtn.addEventListener('click', (e) => {
-		e.target.parentElement.remove();
+		deleteSelectedItem(e.target.parentElement);
 	});
 
 })
@@ -196,7 +138,6 @@ delParentBtns.forEach((delParentBtn) => {
 
 // form condition
 const formCondition = document.getElementById('form-condition');
-
 
 // elements to show when user focus on input 
 nestedInput.onfocus = () => {
@@ -207,10 +148,13 @@ nestedInput.onblur = () => {
 	inputUl.classList.add('d-none');
 }
 
+}
 
+formCondition();
 
-
-
+/*-----------------------------------------
+ AUTOMATION FORMS ALL CONDITIONS ENDS HERE
+--------------------------------------------*/
 
 
 
@@ -286,10 +230,10 @@ const dragFun = () => {
 	};
 
 	const mouseUpHandler = function () {
-		// console.log('mouseup');
+
 		grabbedDiv.style.cursor = 'grab';
 		grabbedDiv.style.removeProperty('user-select');
-		grabbedDiv.removeEventListener('mousemove', mouseMoveHandler);
+		grabbedDiv.removeEventListener('mousemove', mouseMoveHandler);		
 
 	};
 
@@ -297,7 +241,8 @@ const dragFun = () => {
 	let pos = { top: 0, left: 0, x: 0, y: 0 };
 
 	const mouseDownHandler = function (e) {
-		// console.log('mousedown');
+
+
 		pos = {
 			// The current scroll 
 			left: grabbedDiv.scrollLeft,
@@ -306,13 +251,35 @@ const dragFun = () => {
 			x: e.clientX,
 			y: e.clientY,
 		};
+		
 
+		// check whether the space is pressed along with it or not 
+		// document.body.onkeydown = (e) => {
+		// 	if (e.code === 'Space') {
+
+		// 		console.log('keydown');
+				
+				
+				
+
+		// 	}
+		// }
+		
 		// Change the cursor and prevent user from selecting the text
 		grabbedDiv.style.cursor = 'grabbing';
 		grabbedDiv.style.userSelect = 'none';
-
-
+		
+		
 		grabbedDiv.addEventListener('mousemove', mouseMoveHandler);
+		
+		// document.body.onkeyup = (e) => {
+		// 	if (e.code === 'Space') {
+		// 		console.log('keyup');
+		// 		// grabbedDiv.style.cursor = 'normal';
+		
+		// 	}
+		// }
+
 		grabbedDiv.addEventListener('mouseup', mouseUpHandler);
 
 	};
@@ -364,6 +331,7 @@ TOGGLING SWITCH ENDS HERE
 -------------------------------------------------*/
 
 const asideAutomationFun = () => {
+
 	// ADDING THE EVENT LISTENERS TO ALL CREATED LI ELEMENTS IN AUTOMATION ASIDE BAR
 	const attachingEvent = () => {
 		const liElements = document.querySelectorAll('.created-li-element');
@@ -386,18 +354,8 @@ const asideAutomationFun = () => {
 	// RENDERING LI ELEMENTS BY CLICKING ON CREATE NEW
 	const renderingElement = (searchedValue) => {
 
-		let li = `
-	<li class="created-li-element" data-id='${searchedValue}'>
-    	<div class="automation-text">
-        <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
-      <span>${searchedValue}</span>
-    </div>	
-    <button  class="trash border-0 " id="trashBtn">
-        <img src="./assets/images/trash.svg" alt="trash" class="trash">
-    </button>
-  </li>
-							 `;
-		automationUlElement.innerHTML += li;
+		const li = createNewTemplate.content.cloneNode(true);
+		automationUlElement.appendChild(li)
 
 		// calling the attach event funciton
 		// attachingEvent();

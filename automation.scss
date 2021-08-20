@@ -263,11 +263,11 @@ COMPONENT
 		overflow: hidden;
     width: 100%;
 
-		cursor: grab;
+		// cursor: grab;
 
-		&:focus{
-			cursor: grabbing;
-		}
+		// &:focus{
+		// 	cursor: grabbing;
+		// }
 
 
 		.action{
@@ -304,7 +304,7 @@ COMPONENT
 
 		// ALL BIG ACTIONS ARE HERE
 		.action-big{
-			
+			overflow: auto;
 		
 
 			header{
@@ -456,7 +456,7 @@ COMPONENT
 			box-shadow: $shadow;
 			padding: 10px 1rem;
 			font-weight: 600;
-			// overflow: auto;
+			overflow: auto;
 
 			&--heading{
 				

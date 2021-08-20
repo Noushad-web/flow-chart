@@ -2,913 +2,1001 @@
 <html>
 
 <head>
-   <title>Diller</title>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width" />
-   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-   <link rel="stylesheet" type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <title>Diller</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-   <link href="https://prerelease.dillerapp.no/assets/css/blue.css" rel="stylesheet" type="text/css">
+  <link href="https://prerelease.dillerapp.no/assets/css/blue.css" rel="stylesheet" type="text/css">
 
-   <link rel="Stylesheet" type="text/css" href="https://prerelease.dillerapp.no/assets/css/demo.css" />
+  <link rel="Stylesheet" type="text/css" href="https://prerelease.dillerapp.no/assets/css/demo.css" />
 
-   <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/bootstrap-datetimepicker.css">
+  <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/bootstrap-datetimepicker.css">
 
-   <!-- time picker  -->
-   <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/bootstrap-timepicker.min.css">
-   <!-- time picker  -->
+  <!-- time picker  -->
+  <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/bootstrap-timepicker.min.css">
+  <!-- time picker  -->
 
-   <!-- time picker  -->
-   <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/bootstrap-select.css">
-   <!-- time picker  -->
-   <link rel="icon" href="https://prerelease.dillerapp.no/assets/images/favicon.png" type="image/x-icon">
+  <!-- time picker  -->
+  <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/bootstrap-select.css">
+  <!-- time picker  -->
+  <link rel="icon" href="https://prerelease.dillerapp.no/assets/images/favicon.png" type="image/x-icon">
 
-   <!-- color code -->
-   <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/spectrum.css">
-   <!-- color code -->
+  <!-- color code -->
+  <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/spectrum.css">
+  <!-- color code -->
 
-   <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-   <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/tagsinput.css">
-
-
-   <!-- Automation css file -->
-   <link rel="stylesheet" href="./assets/styles/css/automation.css">
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://prerelease.dillerapp.no/assets/css/tagsinput.css">
 
 
-   <!-- BOOTSTRAP AS NEEDED FOR FLOW CHART  -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <!-- Automation css file -->
+  <link rel="stylesheet" href="./assets/styles/css/automation.css">
+
+
+  <!-- BOOTSTRAP AS NEEDED FOR FLOW CHART  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 
 </head>
 
 <body class="grey-bg">
 
-   <div id="loader-show" style="display: none;">
-      <div id="loader"></div>
-   </div>
+  <div id="loader-show" style="display: none;">
+    <div id="loader"></div>
+  </div>
 
-   <nav class="navbar shadow navbar-light bg-white navbar-dashboard">
-      <div>
+  <nav class="navbar shadow navbar-light bg-white navbar-dashboard">
+    <div>
 
-         <a href="#"><span class="navbar-brand logo-css"></span></a>
-         <a href="#" class="menu-icon"><img src="https://prerelease.dillerapp.no/assets/images/menu-icon.svg"
-               alt="menu-icon"></a>
-      </div>
-      <ul class="navbar-right">
+      <a href="#"><span class="navbar-brand logo-css"></span></a>
+      <a href="#" class="menu-icon"><img src="https://prerelease.dillerapp.no/assets/images/menu-icon.svg"
+          alt="menu-icon"></a>
+    </div>
+    <ul class="navbar-right">
 
-         <li class="d-inline-block store-list d-store-none">
-            <div class="form-group d-flex align-items-center store-group mb-0">
-               <label class="mr-3 font-weight-bold">Store ID</label>
-               <input type="text" readonly="" value="" name="" class="form-control w-50 store-control store-control-bg"
-                  data-toggle="tooltip" data-placement="bottom"
-                  title="The Store ID is used to identify your store to your plugins and POS.">
-            </div>
-         </li>
+      <li class="d-inline-block store-list d-store-none">
+        <div class="form-group d-flex align-items-center store-group mb-0">
+          <label class="mr-3 font-weight-bold">Store ID</label>
+          <input type="text" readonly="" value="" name="" class="form-control w-50 store-control store-control-bg"
+            data-toggle="tooltip" data-placement="bottom"
+            title="The Store ID is used to identify your store to your plugins and POS.">
+        </div>
+      </li>
 
 
-         <li class="dropdown d-inline-block">
-            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user"
-               aria-expanded="false">
-               <img alt="image" src="https://prerelease.dillerapp.no/assets/images/avatar-1.png"
-                  class="rounded-circle" />
-               <div class="d-sm-none d-lg-inline-block"> Pre Release</div>
+      <li class="dropdown d-inline-block">
+        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user"
+          aria-expanded="false">
+          <img alt="image" src="https://prerelease.dillerapp.no/assets/images/avatar-1.png" class="rounded-circle" />
+          <div class="d-sm-none d-lg-inline-block"> Pre Release</div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <!-- <div class="dropdown-divider"></div> -->
+          <a href="#" class="dropdown-item text-danger">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <div class="main-section">
+    <div class="main-sidebar" tabindex="1">
+      <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+          <img src="https://prerelease.dillerapp.no/assets/images/store.svg" alt="store">
+          <span>PreRrelease</span>
+        </div>
+        <pre>
+
+        </pre>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#" class="nav-link ">
+              <i><img src="https://prerelease.dillerapp.no/assets/images/dashboard-icon.svg" alt="dashboard-icon"></i>
+              <span>Dashboard</span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right">
-               <!-- <div class="dropdown-divider"></div> -->
-               <a href="#" class="dropdown-item text-danger">Logout</a>
+          </li>
+          <li class="menu-header">CAMPAIGN</li>
+
+
+          <li>
+            <a class="nav-link " href="#">
+              <i><img src="https://prerelease.dillerapp.no/assets/images/createcampaign.svg" alt="add-coupon-icon"></i>
+              <span>Campaign</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link " href="#">
+              <i><img src="https://prerelease.dillerapp.no/assets/images/ourcampaigns.svg" alt="add-coupon-icon"></i>
+              <span>Our campaigns</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a class="nav-link " href="#" id="automation">
+              <i><img src="./assets/images/automation.svg" alt="add-coupon-icon"></i>
+              <span>Automation</span>
+            </a>
+          </li>
+
+        </ul>
+
+      </aside>
+
+      <!-- SECOND ASIDE OPEN WHEN CLICK ON AUTOMATION  -->
+      <aside class="aside-automation aside-hidden" id="aside-automation">
+
+        <div class="wrapper-content" id="wrapper-automation-form-ul">
+
+          <form action="">
+            <div class="input-wrapper">
+              <input type="search" name="search" id="search" placeholder="Search">
+              <img src="./assets/images/search.svg" alt="" class="img-fluid">
             </div>
-         </li>
-      </ul>
-   </nav>
+
+            <button type="submit" id="create-new" class="btn-create-me">Create new</button>
+          </form>
+
+
+          <ul id="created-ul">
+            <h5 class="mt-5">My automations</h5>
+            <li class="created-li-element" data-id='Example automation'>
+              <div class="automation-text">
+                <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
+                <span>Example automation</span> <span class="draft">Draft</span>
+              </div>
+              <button class="trash border-0 " id="trashBtn">
+                <img src="./assets/images/trash.svg" alt="trash" class="trash">
+              </button>
+            </li>
+
+            <li class="created-li-element" data-id='Gold message'>
+              <div class="automation-text">
+                <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
+                <span>Gold message</span>
+              </div>
+              <button class="trash border-0 " id="trashBtn">
+                <img src="./assets/images/trash.svg" alt="trash" class="trash">
+              </button>
+            </li>
+
+            <li class="created-li-element" data-id='SMS 14 days after purchase'>
+              <div class="automation-text">
+                <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
+                <span>SMS 14 days after purchase</span>
+              </div>
+              <button class="trash border-0 " id="trashBtn">
+                <img src="./assets/images/trash.svg" alt="trash" class="trash">
+              </button>
+            </li>
+
+            <li class="created-li-element" data-id='Birthday message'>
+              <div class="automation-text">
+                <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
+                <span>Birthday message</span>
+              </div>
+              <button class="trash border-0 " id="trashBtn">
+                <img src="./assets/images/trash.svg" alt="trash" class="trash">
+              </button>
+            </li>
+          </ul>
+        </div>
 
 
 
-   <div class="main-section">
-      <div class="main-sidebar" tabindex="1">
-         <aside id="sidebar-wrapper">
-            <div class="sidebar-brand">
-               <img src="https://prerelease.dillerapp.no/assets/images/store.svg" alt="store">
-               <span>PreRrelease</span>
-            </div>
-            <pre>
+        <div class="closed-btn-wrapper">
+          <button class="close-automation-aside"></button>
+        </div>
+      </aside>
 
-            </pre>
-            <ul class="sidebar-menu">
-               <li>
-                  <a href="#" class="nav-link ">
-                     <i><img src="https://prerelease.dillerapp.no/assets/images/dashboard-icon.svg"
-                           alt="dashboard-icon"></i>
-                     <span>Dashboard</span>
-                  </a>
-               </li>
-               <li class="menu-header">CAMPAIGN</li>
+    </div>
 
 
-               <li>
-                  <a class="nav-link " href="#">
-                     <i><img src="https://prerelease.dillerapp.no/assets/images/createcampaign.svg"
-                           alt="add-coupon-icon"></i>
-                     <span>Campaign</span>
-                  </a>
-               </li>
-               <li>
-                  <a class="nav-link " href="#">
-                     <i><img src="https://prerelease.dillerapp.no/assets/images/ourcampaigns.svg"
-                           alt="add-coupon-icon"></i>
-                     <span>Our campaigns</span>
-                  </a>
-               </li>
+    <div class="main-content position-relative">
+      <section class="section">
+        <div class="row setting-tabs mb-0">
+          <div class="col-lg-8 col-md-8">
+            <ul class="nav setting-tabs mb-0 pl-3">
+              <li class="nav-item">
+                <a class="nav-link" id="myAutomation" href="#">My Automations</a>
+              </li>
 
-
-               <li>
-                  <a class="nav-link " href="#" id="automation">
-                     <i><img src="./assets/images/automation.svg" alt="add-coupon-icon"></i>
-                     <span>Automation</span>
-                  </a>
-               </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#" id="ourDetails">Our details</a>
+              </li>
 
             </ul>
 
-         </aside>
-
-         <!-- SECOND ASIDE OPEN WHEN CLICK ON AUTOMATION  -->
-         <aside class="aside-automation aside-hidden" id="aside-automation">
-
-            <div class="wrapper-content" id="wrapper-automation-form-ul">
-
-               <form action="">
-                  <div class="input-wrapper">
-                     <input type="search" name="search" id="search" placeholder="Search">
-                     <img src="./assets/images/search.svg" alt="" class="img-fluid">
-                  </div>
-
-                  <button type="submit" id="create-new" class="btn-create-me">Create new</button>
-               </form>
+          </div>
+          <div class="col-lg-4 col-md-4 pr-2 big-col-4">
+          </div>
+        </div>
+        <form class="" action="https://prerelease.dillerapp.no/retailer/StoreDetails/updateDetails" id="EditStoreFormId"
+          method="post" enctype="multipart/form-data">
 
 
-               <ul id="created-ul">
-                  <h5 class="mt-5">My automations</h5>
-                  <li class="created-li-element" data-id='Example automation'>
-                     <div class="automation-text">
-                        <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
-                        <span>Example automation</span> <span class="draft">Draft</span>
-                     </div>
-                     <button class="trash border-0 " id="trashBtn">
-                        <img src="./assets/images/trash.svg" alt="trash" class="trash">
-                     </button>
-                  </li>
+          <div class="tab-content setting-tabs-content">
+            <div class="tab-pane fade show active" id="our_details">
+              <div class="row">
+                <div class="col-lg-6 big-col-6">
+                  <div class="card card-2">
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label>Store Name</label>
+                        <input type="text" placeholder="Store Name" name="store_name" class="form-control"
+                          value="PreRrelease">
+                      </div>
 
-                  <li class="created-li-element" data-id='Gold message'>
-                     <div class="automation-text">
-                        <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
-                        <span>Gold message</span>
-                     </div>
-                     <button class="trash border-0 " id="trashBtn">
-                        <img src="./assets/images/trash.svg" alt="trash" class="trash">
-                     </button>
-                  </li>
+                      <div class="form-group">
+                        <label>Phone number</label>
+                        <input type="text" placeholder="Phone number" name="phone" class="form-control"
+                          value="8319243183">
+                      </div>
+                      <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="E-mail" name="email" class="form-control"
+                          value="prerelease@diller.no">
+                      </div>
+                      <div class="form-group">
+                        <label>Address</label>
+                        <textarea rows="5" cols="100" placeholder="Address" class="form-control"
+                          onchange="getAddress(this.value)" name="address" id="address">Indore</textarea>
+                      </div>
 
-                  <li class="created-li-element" data-id='SMS 14 days after purchase'>
-                     <div class="automation-text">
-                        <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
-                        <span>SMS 14 days after purchase</span>
-                     </div>
-                     <button class="trash border-0 " id="trashBtn">
-                        <img src="./assets/images/trash.svg" alt="trash" class="trash">
-                     </button>
-                  </li>
+                      <input type="hidden" name="store_id" value="771">
 
-                  <li class="created-li-element" data-id='Birthday message'>
-                     <div class="automation-text">
-                        <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
-                        <span>Birthday message</span>
-                     </div>
-                     <button class="trash border-0 " id="trashBtn">
-                        <img src="./assets/images/trash.svg" alt="trash" class="trash">
-                     </button>
-                  </li>
-               </ul>
-            </div>
+                      <input type="hidden" id="latitude" value="22.7195687" name="latitude" readonly />
+                      <input type="hidden" id="longitude" value="75.8577258" name="longitude" readonly />
 
 
-
-            <div class="closed-btn-wrapper">
-               <button class="close-automation-aside"></button>
-            </div>
-         </aside>
-
-      </div>
-
-
-      <div class="main-content position-relative">
-         <section class="section">
-            <div class="row setting-tabs mb-0">
-               <div class="col-lg-8 col-md-8">
-                  <ul class="nav setting-tabs mb-0 pl-3">
-                     <li class="nav-item">
-                        <a class="nav-link" id="myAutomation" href="#">My Automations</a>
-                     </li>
-
-                     <li class="nav-item">
-                        <a class="nav-link active" href="#" id="ourDetails">Our details</a>
-                     </li>
-
-                  </ul>
-
-               </div>
-               <div class="col-lg-4 col-md-4 pr-2 big-col-4">
-               </div>
-            </div>
-            <form class="" action="https://prerelease.dillerapp.no/retailer/StoreDetails/updateDetails"
-               id="EditStoreFormId" method="post" enctype="multipart/form-data">
-
-
-               <div class="tab-content setting-tabs-content">
-                  <div class="tab-pane fade show active" id="our_details">
-                     <div class="row">
-                        <div class="col-lg-6 big-col-6">
-                           <div class="card card-2">
-                              <div class="card-body">
-                                 <div class="form-group">
-                                    <label>Store Name</label>
-                                    <input type="text" placeholder="Store Name" name="store_name" class="form-control"
-                                       value="PreRrelease">
-                                 </div>
-
-                                 <div class="form-group">
-                                    <label>Phone number</label>
-                                    <input type="text" placeholder="Phone number" name="phone" class="form-control"
-                                       value="8319243183">
-                                 </div>
-                                 <div class="form-group">
-                                    <label>E-mail</label>
-                                    <input type="email" placeholder="E-mail" name="email" class="form-control"
-                                       value="prerelease@diller.no">
-                                 </div>
-                                 <div class="form-group">
-                                    <label>Address</label>
-                                    <textarea rows="5" cols="100" placeholder="Address" class="form-control"
-                                       onchange="getAddress(this.value)" name="address" id="address">Indore</textarea>
-                                 </div>
-
-                                 <input type="hidden" name="store_id" value="771">
-
-                                 <input type="hidden" id="latitude" value="22.7195687" name="latitude" readonly />
-                                 <input type="hidden" id="longitude" value="75.8577258" name="longitude" readonly />
-
-
-                                 <div class="row">
-                                    <div class="col-lg-6">
-                                       <div class="form-group">
-                                          <label>Zip code</label>
-                                          <input type="text" placeholder="Zip code" name="postcode" class="form-control"
-                                             value="452001">
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                       <div class="form-group">
-                                          <label>City</label>
-                                          <input type="text" placeholder="City" name="city" class="form-control"
-                                             value="Indore">
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="form-group">
-                                    <label>Country</label>
-                                    <input type="text" placeholder="Country" name="country" class="form-control"
-                                       value="India">
-                                 </div>
-                                 <div class="form-group">
-                                    <label>Store ID</label>
-                                    <input type="text" readonly placeholder="Store pin" name="store_pin"
-                                       class="form-control" value="669200">
-                                 </div>
-                                 <div class="form-group">
-                                    <label>External ID</label>
-                                    <input type="text" readonly placeholder="External Id" name="external_id"
-                                       class="form-control" value="">
-                                 </div>
-
-                              </div>
-                           </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label>Zip code</label>
+                            <input type="text" placeholder="Zip code" name="postcode" class="form-control"
+                              value="452001">
+                          </div>
                         </div>
-                        <div class="col-lg-4 d-flex big-col-4">
-                           <div class="card card-2 w-100">
-                              <div class="card-body">
-                                 <a id="demos" name="demos"></a>
-                                 <div class="demo-wrap upload-demo">
-                                    <div class="upload-msg">
-
-                                       <img class="img-fluid"
-                                          src="https://prerelease-dillerimg.s3.amazonaws.com/store_image/20201219132221.png">
-
-                                    </div>
-                                    <div class="upload-demo-wrap">
-                                       <div id="upload-demo"></div>
-                                    </div>
-                                 </div>
-                                 <hr>
-
-                                 <a href="#" class="d-block text-center">
-                                    <div class="file-btn btn btn-green border btn-radius-0 mb-4">
-                                       Select <input type="file" id="upload" name="imageUpload" value="Choose a file"
-                                          accept="image/*" />
-                                    </div>
-                                 </a>
-
-                                 <div id="file_error"></div>
-                                 <textarea id="crop_image_text" name="crop_image_text"
-                                    style="display: none;"></textarea>
-
-
-
-                              </div>
-                           </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="City" name="city" class="form-control" value="Indore">
+                          </div>
                         </div>
-                     </div>
-
-
-                     <div class="row">
-                        <div class="col-lg-10 big-col">
-                           <div class="card card-2">
-                              <div class="card-body">
-                                 <a href="#"><button
-                                       class="btn btn-green border btn-radius-0 float-right">Publish</button></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </form>
-
-
-
-
-         </section>
-
-         <!-- SMS TEMPLATE -->
-         <div class="sms-template-wrapper position-absolute d-none" id="sms-template-wrapper">
-            <div class="sms-template">
-               <h5 class="text-center">SMS templates</h5>
-               <p class="text-center mt-3">Choosing an existing SMS template or create a new one.</p>
-               <div class="row">
-                  <div class="col-md-6">
-                     <ul>
-                        <li>SMS template 1</li>
-                        <li>SMS template 2</li>
-                        <li>SMS template 3</li>
-                        <li>SMS template 4</li>
-                        <li>SMS template 5</li>
-                        <li>SMS template 6</li>
-                        <li>SMS template 8</li>
-                        <li>SMS template 9</li>
-                        <li>SMS template 10</li>
-                        <li>SMS template 11</li>
-                        <li>SMS template 12</li>
-                        <li>SMS template 13</li>
-                        <li>SMS template 14</li>
-                     </ul>
-                  </div>
-                  <div class="col-md-6">
-                     <p>
-                        hi firstname Thanks for shopping.
-                        As a thankyou we would like to give you 10% discount add coupon on your next purchase.
-                     </p>
-                  </div>
-               </div>
-
-               <div class="sms-template-btns text-center mt-5">
-                  <button class="create-new">Create new</button>
-                  <button class="choose-template"> Choose template</button>
-               </div>
-            </div>
-         </div>
-
-
-         <section class="navbar">
-            <nav class=" d-flex w-100 justify-content-between">
-               <div class="title">Gold message</div>
-
-               <div class="wrapper-nav-items">
-
-                  <label for="start">Start</label>
-                  <input type="date" name="" id="">
-
-                  <label for="end">End</label>
-                  <input type="date" class="">
-                  <span class="border-right pr-3"></span>
-
-                  <button class="active" id="activeBtn">
-                     <span class="line" id="activeBtnLine">
-                        <span class="circle" id="activeBtnCircle"></span>
-                     </span>
-                     <span class="text" id="activeBtnText">Active</span>
-                  </button>
-
-
-                  <span class="border-right pr-3"></span>
-
-                  <button class="btn-create-me">Save</button>
-
-               </div>
-
-
-
-            </nav>
-         </section>
-
-
-         <section class="automation-section center">
-
-
-            <!-- EMPTY BLOGS TO SHOW WHEN THERE IS NOTHING TO SHOW -->
-            <div class="empty-blog d-none">
-               <img src="./assets/images/No nearby stores - outlined.png" alt="" class="img-fluid">
-               <article class="mt-5 text-center">
-                  <b>Ready to create a new automation?</b>
-                  <p>Let Diller do the work for you so that <br>
-                     you can do other things instead 🥇</p>
-
-                  <button type="submit" id="create-new" class="btn-create-me mt-3">Create new</button>
-               </article>
-            </div>
-
-
-            <!-- Components to show -->
-            <div class="component" id="grab-component">
-
-
-
-               <!-- CONDITION Big -->
-               <div class="condition condition-1">
-                  <div class="condition--heading">
-                     <img src="./assets/images/auomation-black.svg" alt="">
-                     <span class="title-component ml-3">Condition</span>
-                  </div>
-
-                  <hr class="mt-2">
-
-                  <form class="condition--form">
-                     <div class="btns">
-
-                        <button class="sucess add-criteria" id="delete-all" >Add Criteria</button>
-
-                        <button class="danger delete-all" id="delete-all" >Delete all</button>
-                        
-                     </div>
-
-                     <div class="input-wrapper-condition">
-
-
-                        <div class="input-group">
-                           <input type="text" name="" class="nested-input" value="Registration">
-
-                           <!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
-                           <ul class="input-ul d-none" id="input-ul">
-                              <li>
-                                 <div class="inner-content-li">
-                                    <span>Contact information</span> <span> &#10095; </span>
-                                 </div>
-                                    <ul>
-                                       <li>firstname</li>
-                                       <li>last name</li>
-                                       <li>Address</li>
-                                       <li>City</li>
-                                       <li>Country</li>
-                                       <li>Age</li>
-                                       <li>Gender</li>
-                                       <li>Email</li>
-                                       <li>Mobile Phone</li>
-                                       <li>GDPR consent</li>
-                                    </ul>
-                              </li>
-
-                              <li>
-                                 <div class="inner-content-li">
-                                    <span>Product</span>
-                                    <span> &#10095; </span>
-                                 </div>
-                              </li>
-                              <li>
-                                 <div class="inner-content-li">
-                                    <span>Purchase</span>
-                                    <span> &#10095; </span>
-                                 </div>
-                              </li>
-                              <li>
-                                 <div class="inner-content-li">
-                                    <span>Member Level</span>
-                                    <span> &#10095; </span>
-                                 </div>
-                              </li>
-                              <li>
-                                 <div class="inner-content-li">
-                                    <span>Segments</span>
-                                    <span> &#10095; </span>
-                                 </div>
-                              </li>
-
-                           </ul>
-
-
-
-                           <select name="" id="">
-                              <option value="Is">Is</option>
-                           </select>
-                           <input type="text" name="" id="" value="POS, webshop">
-                           <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-                        </div>
-
-
-                       
-
-                     </div>
-                  </form>
-
-               </div>
-
-
-               <!-- CONDITION SMALL 1 -->
-               <div class="condition condition-2">
-                  <div class="condition--heading">
-                     <img src="./assets/images/auomation-black.svg" alt="">
-                     <span class="title-component ml-3">Condition</span>
-                  </div>
-
-                  <hr class="mt-2">
-                  <div class="condition--form">
-
-                     <div class="input-group">
-
-                        <input type="text" name="" id="" value="Is coupon used">
-
-                        <select name="" id="">
-                           <option value="Add">7 days</option>
-                        </select>
-
-                        <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-                     </div>
-
-
-                  </div>
-               </div>
-
-
-               <div class="condition condition-left-3">
-                  <div class="condition--heading">
-                     <img src="./assets/images/auomation-black.svg" alt="">
-                     <span class="title-component ml-3">Condition</span>
-                  </div>
-
-                  <hr class="mt-2">
-                  <div class="condition--form">
-
-                     <div class="input-group">
-
-                        <input type="text" name="" id="" value="Is coupon used">
-
-                        <select name="" id="">
-                           <option value="Add">7 days</option>
-                        </select>
-
-                        <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-                     </div>
-
-
-                  </div>
-               </div>
-
-
-
-               <!-- YES  -->
-               <span class="yes yes-1">Yes</span>
-               <span class="yes yes-2">Yes</span>
-               <span class="yes yes-3">Yes</span>
-
-               <!-- NO -->
-               <span class="no no-1">No</span>
-               <span class="no no-3">No</span>
-               <span class="no no-4">No</span>
-
-               <!-- HORIZONTAL LINE -->
-               <span class="horizontal horizontal-1"></span>
-               <span class="horizontal horizontal-1--yes"></span>
-               <span class="horizontal horizontal-action-big-condition-2"></span>
-               <span class="horizontal horizontal-condition-small-no"></span>
-               <span class="horizontal horizontal-condition-small-yes"></span>
-               <span class="horizontal horizontal-no-condition-left"></span>
-               <span class="horizontal horizontal-condition-left-no"></span>
-               <span class="horizontal horizontal-no-left-yes-left"></span>
-
-               <!-- VERTICAL LINE -->
-               <span class="vertical vertical-1"></span>
-               <span class="vertical vertical-no-action-1"></span>
-               <span class="vertical vertical-yes-action-big-1"></span>
-               <span class="vertical vertical-action-big-condition-2"></span>
-               <span class="vertical vertical-action-big-condition-3"></span>
-               <span class="vertical vertical-condition-small-no"></span>
-               <span class="vertical vertical-no-action-2"></span>
-               <span class="vertical vertical-yes-action-2"></span>
-               <span class="vertical vertical-no-condition-left"></span>
-               <span class="vertical vertical-action-condition-left"></span>
-               <span class="vertical vertical-condition-left-no"></span>
-               <span class="vertical vertical-no-left-action-left"></span>
-               <span class="vertical vertical-yes-left-action-left"></span>
-
-
-
-
-               <!-- ACTION  -->
-               <div class="action action-1 d-flex justify-content-between">
-                  <div class="heading">
-                     <img src="./assets/images/action.svg" alt="">
-
-                     <span class="title-component ml-3">Action</span>
-                  </div>
-
-                  <select name="action" id="action">
-                     <option value="No action">No Action</option>
-                  </select>
-               </div>
-
-
-               <div class="action action-2 d-flex justify-content-between">
-                  <div class="heading">
-                     <img src="./assets/images/action.svg" alt="">
-
-                     <span class="title-component ml-3">Action</span>
-                  </div>
-
-                  <select name="action" id="action">
-                     <option value="No action">No Action</option>
-                  </select>
-               </div>
-
-               <div class="action action-3 d-flex justify-content-between">
-                  <div class="heading">
-                     <img src="./assets/images/action.svg" alt="">
-
-                     <span class="title-component ml-3">Action</span>
-                  </div>
-
-                  <select name="action" id="action">
-                     <option value="No action">No Action</option>
-                  </select>
-               </div>
-
-
-
-
-
-               <!-- --------------------------
-                  ACTIONS BIG
-                ------------------------------------>
-               <div class="action action-big action-bg-1 ">
-
-                  <header class="d-flex justify-content-between">
-
-                     <div class="heading  ">
-                        <img src="./assets/images/action.svg" alt="">
-                        <span class="title-component ml-3">Action</span>
-                     </div>
-
-                     <select name="action" id="action">
-                        <option value="No action">No Action</option>
-                     </select>
-                  </header>
-
-                  <hr class="mt-2">
-
-
-
-                  <div class="action-big--form">
-
-                     <div class="btns">
-                        <button class="sucess add-criteria">Add Criteria</button>
-                        <button class="danger delete-all">Delete all</button>
-                     </div>
-
-                  
-
-                     <div class="input-group-wrapper">
-                        <div class="input-group">
-
-                           <select name="" id="">
-                              <option value="Is">Wait</option>
-                           </select>
-   
-                           <input type="text" name="" id="" value="1 hour">
-   
-                           <button class="delete-its-parent">
-                              <img src="./assets/images/cross.svg" alt="">
-                           </button>
-                        </div>
-   
-   
-                        <div class="input-group">
-   
-                           <select name="" id="">
-                              <option value="Add">Add</option>
-                           </select>
-   
-                           <input type="text" name="" id="" value="Buy More">
-   
-                           <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-                        </div>
-                     </div>
-
-
-                     <div class="sms">
-                        <label for="sms">SMS</label>
-                        <textarea name="" id="sms" cols="30" rows="3">
-
-                        </textarea>
-
-
-                        <button class="save">Save as new</button>
-
-                        <label for="" class="mt-1">SMS</label>
-                        <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
-
-                     </div>
-
-
-                  </div>
-               </div>
-
-
-               <div class="action action-big action-bg-2 ">
-
-                  <header class="d-flex justify-content-between">
-
-                     <div class="heading  ">
-                        <img src="./assets/images/action.svg" alt="">
-                        <span class="title-component ml-3">Action</span>
-                     </div>
-
-                     <select name="action" id="action">
-                        <option value="No action">No Action</option>
-                     </select>
-                  </header>
-
-                  <hr class="mt-2">
-
-
-
-                  <div class="action-big--form">
-                     <div class="btns">
-                        <button class="sucess add-criteria">Add Criteria</button>
-                        <button class="danger delete-all">Delete all</button>
-                     </div>
-
-                    <div class="input-group-wrapper">
-                     <div class="input-group">
-
-                        <select name="" id="">
-                           <option value="Is">Wait</option>
-                        </select>
-
-                        <input type="text" name="" id="" value="1 hour">
-
-                        <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-                     </div>
-
-
-                     <div class="input-group">
-
-                        <select name="" id="">
-                           <option value="Add">Add</option>
-                        </select>
-
-                        <input type="text" name="" id="" value="Buy More">
-
-                        <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-                     </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" placeholder="Country" name="country" class="form-control" value="India">
+                      </div>
+                      <div class="form-group">
+                        <label>Store ID</label>
+                        <input type="text" readonly placeholder="Store pin" name="store_pin" class="form-control"
+                          value="669200">
+                      </div>
+                      <div class="form-group">
+                        <label>External ID</label>
+                        <input type="text" readonly placeholder="External Id" name="external_id" class="form-control"
+                          value="">
+                      </div>
 
                     </div>
-
-                     <div class="sms">
-                        <label for="sms">SMS</label>
-                        <textarea name="" id="sms" cols="30" rows="3">
-
-                        </textarea>
-
-
-                        <button class="save">Save as new</button>
-
-                        <label for="" class="mt-1">SMS</label>
-                        <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
-
-                     </div>
-
-
                   </div>
-               </div>
+                </div>
+                <div class="col-lg-4 d-flex big-col-4">
+                  <div class="card card-2 w-100">
+                    <div class="card-body">
+                      <a id="demos" name="demos"></a>
+                      <div class="demo-wrap upload-demo">
+                        <div class="upload-msg">
+
+                          <img class="img-fluid"
+                            src="https://prerelease-dillerimg.s3.amazonaws.com/store_image/20201219132221.png">
+
+                        </div>
+                        <div class="upload-demo-wrap">
+                          <div id="upload-demo"></div>
+                        </div>
+                      </div>
+                      <hr>
+
+                      <a href="#" class="d-block text-center">
+                        <div class="file-btn btn btn-green border btn-radius-0 mb-4">
+                          Select <input type="file" id="upload" name="imageUpload" value="Choose a file"
+                            accept="image/*" />
+                        </div>
+                      </a>
+
+                      <div id="file_error"></div>
+                      <textarea id="crop_image_text" name="crop_image_text" style="display: none;"></textarea>
 
 
-               <div class="action action-big action-bg-3 ">
 
-                  <header class="d-flex justify-content-between">
-
-                     <div class="heading  ">
-                        <img src="./assets/images/action.svg" alt="">
-                        <span class="title-component ml-3">Action</span>
-                     </div>
-
-                     <select name="action" id="action">
-                        <option value="No action">No Action</option>
-                     </select>
-                  </header>
-
-                  <hr class="mt-2">
-
-
-
-                  <div class="action-big--form">
-                     <div class="btns">
-                        <button class="sucess add-criteria">Add Criteria</button>
-                        <button class="danger delete-all">Delete all</button>
-                     </div>
-
-                    <div class="input-group-wrapper">
-                     <div class="input-group">
-
-                        <select name="" id="">
-                           <option value="Is">Wait</option>
-                        </select>
-
-                        <input type="text" name="" id="" value="1 hour">
-
-                        <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-                     </div>
-
-
-                     <div class="input-group">
-
-                        <select name="" id="">
-                           <option value="Add">Add</option>
-                        </select>
-
-                        <input type="text" name="" id="" value="Buy More">
-
-                        <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
-                     </div>
                     </div>
-
-
-                     <div class="sms">
-                        <label for="sms">SMS</label>
-                        <textarea name="" id="sms" cols="30" rows="3">
-
-                        </textarea>
-
-
-                        <button class="save">Save as new</button>
-
-                        <label for="" class="mt-1">SMS</label>
-                        <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
-
-                     </div>
-
-
                   </div>
+                </div>
+              </div>
 
-               </div>
 
-
-
-               <!-- CONDITIONS -->
-               <div? class="condition condition-3 d-none ">
-                  <div class="heading">
-                     <img src="./assets/images/auomation-black.svg" alt="">
-
-                     <span class="title-component ml-3">Condition</span>
+              <div class="row">
+                <div class="col-lg-10 big-col">
+                  <div class="card card-2">
+                    <div class="card-body">
+                      <a href="#"><button class="btn btn-green border btn-radius-0 float-right">Publish</button></a>
+                    </div>
                   </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </form>
 
-      </div>
+
 
 
       </section>
-   </div>
-   </div>
+
+      <!-- SMS TEMPLATE -->
+      <div class="sms-template-wrapper position-absolute d-none" id="sms-template-wrapper">
+        <div class="sms-template">
+          <h5 class="text-center">SMS templates</h5>
+          <p class="text-center mt-3">Choosing an existing SMS template or create a new one.</p>
+          <div class="row">
+            <div class="col-md-6">
+              <ul>
+                <li>SMS template 1</li>
+                <li>SMS template 2</li>
+                <li>SMS template 3</li>
+                <li>SMS template 4</li>
+                <li>SMS template 5</li>
+                <li>SMS template 6</li>
+                <li>SMS template 8</li>
+                <li>SMS template 9</li>
+                <li>SMS template 10</li>
+                <li>SMS template 11</li>
+                <li>SMS template 12</li>
+                <li>SMS template 13</li>
+                <li>SMS template 14</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <p>
+                hi firstname Thanks for shopping.
+                As a thankyou we would like to give you 10% discount add coupon on your next purchase.
+              </p>
+            </div>
+          </div>
+
+          <div class="sms-template-btns text-center mt-5">
+            <button class="create-new">Create new</button>
+            <button class="choose-template"> Choose template</button>
+          </div>
+        </div>
+      </div>
 
 
- 
+      <section class="navbar">
+        <nav class=" d-flex w-100 justify-content-between">
+          <div class="title">Gold message</div>
+
+          <div class="wrapper-nav-items">
+
+            <label for="start">Start</label>
+            <input type="date" name="" id="">
+
+            <label for="end">End</label>
+            <input type="date" class="">
+            <span class="border-right pr-3"></span>
+
+            <button class="active" id="activeBtn">
+              <span class="line" id="activeBtnLine">
+                <span class="circle" id="activeBtnCircle"></span>
+              </span>
+              <span class="text" id="activeBtnText">Active</span>
+            </button>
+
+
+            <span class="border-right pr-3"></span>
+
+            <button class="btn-create-me">Save</button>
+
+          </div>
+
+
+
+        </nav>
+      </section>
+
+
+      <section class="automation-section center">
+
+
+        <!-- EMPTY BLOGS TO SHOW WHEN THERE IS NOTHING TO SHOW -->
+        <div class="empty-blog d-none">
+          <img src="./assets/images/No nearby stores - outlined.png" alt="" class="img-fluid">
+          <article class="mt-5 text-center">
+            <b>Ready to create a new automation?</b>
+            <p>Let Diller do the work for you so that <br>
+              you can do other things instead 🥇</p>
+
+            <button type="submit" id="create-new" class="btn-create-me mt-3">Create new</button>
+          </article>
+        </div>
+
+
+        <!-- Components to show -->
+        <div class="component" id="grab-component">
+
+
+
+          <!-- CONDITION Big -->
+          <div class="condition condition-1">
+            <div class="condition--heading">
+              <img src="./assets/images/auomation-black.svg" alt="">
+              <span class="title-component ml-3">Condition</span>
+            </div>
+
+            <hr class="mt-2">
+
+            <form class="condition--form">
+              <div class="btns">
+
+                <button class="sucess add-criteria" id="delete-all">Add Criteria</button>
+
+                <button class="danger delete-all" id="delete-all">Delete all</button>
+
+              </div>
+
+              <div class="input-wrapper-condition">
+
+
+                <div class="input-group">
+                  <input type="text" name="" class="nested-input" value="Registration">
+
+                  <!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
+                  <ul class="input-ul d-none" id="input-ul">
+                    <li>
+                      <div class="inner-content-li">
+                        <span>Contact information</span> <span> &#10095; </span>
+                      </div>
+                      <ul>
+                        <li>firstname</li>
+                        <li>last name</li>
+                        <li>Address</li>
+                        <li>City</li>
+                        <li>Country</li>
+                        <li>Age</li>
+                        <li>Gender</li>
+                        <li>Email</li>
+                        <li>Mobile Phone</li>
+                        <li>GDPR consent</li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <div class="inner-content-li">
+                        <span>Product</span>
+                        <span> &#10095; </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner-content-li">
+                        <span>Purchase</span>
+                        <span> &#10095; </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner-content-li">
+                        <span>Member Level</span>
+                        <span> &#10095; </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner-content-li">
+                        <span>Segments</span>
+                        <span> &#10095; </span>
+                      </div>
+                    </li>
+
+                  </ul>
+
+
+
+                  <select name="" id="">
+                    <option value="Is">Is</option>
+                  </select>
+                  <input type="text" name="" id="" value="POS, webshop">
+                  <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+                </div>
+
+
+
+              </div>
+            </form>
+
+          </div>
+
+
+
+
+
+          <!-- CONDITION SMALL 1 -->
+          <div class="condition condition-2">
+            <div class="condition--heading">
+              <img src="./assets/images/auomation-black.svg" alt="">
+              <span class="title-component ml-3">Condition</span>
+            </div>
+
+            <hr class="mt-2">
+            <div class="condition--form">
+
+              <div class="input-group">
+
+                <input type="text" name="" id="" value="Is coupon used">
+
+                <select name="" id="">
+                  <option value="Add">7 days</option>
+                </select>
+
+                <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="condition condition-left-3">
+            <div class="condition--heading">
+              <img src="./assets/images/auomation-black.svg" alt="">
+              <span class="title-component ml-3">Condition</span>
+            </div>
+
+            <hr class="mt-2">
+            <div class="condition--form">
+
+              <div class="input-group">
+
+                <input type="text" name="" id="" value="Is coupon used">
+
+                <select name="" id="">
+                  <option value="Add">7 days</option>
+                </select>
+
+                <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+              </div>
+
+
+            </div>
+          </div>
+
+
+
+          <!-- YES  -->
+          <span class="yes yes-1">Yes</span>
+          <span class="yes yes-2">Yes</span>
+          <span class="yes yes-3">Yes</span>
+
+          <!-- NO -->
+          <span class="no no-1">No</span>
+          <span class="no no-3">No</span>
+          <span class="no no-4">No</span>
+
+          <!-- HORIZONTAL LINE -->
+          <span class="horizontal horizontal-1"></span>
+          <span class="horizontal horizontal-1--yes"></span>
+          <span class="horizontal horizontal-action-big-condition-2"></span>
+          <span class="horizontal horizontal-condition-small-no"></span>
+          <span class="horizontal horizontal-condition-small-yes"></span>
+          <span class="horizontal horizontal-no-condition-left"></span>
+          <span class="horizontal horizontal-condition-left-no"></span>
+          <span class="horizontal horizontal-no-left-yes-left"></span>
+
+          <!-- VERTICAL LINE -->
+          <span class="vertical vertical-1"></span>
+          <span class="vertical vertical-no-action-1"></span>
+          <span class="vertical vertical-yes-action-big-1"></span>
+          <span class="vertical vertical-action-big-condition-2"></span>
+          <span class="vertical vertical-action-big-condition-3"></span>
+          <span class="vertical vertical-condition-small-no"></span>
+          <span class="vertical vertical-no-action-2"></span>
+          <span class="vertical vertical-yes-action-2"></span>
+          <span class="vertical vertical-no-condition-left"></span>
+          <span class="vertical vertical-action-condition-left"></span>
+          <span class="vertical vertical-condition-left-no"></span>
+          <span class="vertical vertical-no-left-action-left"></span>
+          <span class="vertical vertical-yes-left-action-left"></span>
+
+
+
+
+          <!-- ACTION  -->
+          <div class="action action-1 d-flex justify-content-between">
+            <div class="heading">
+              <img src="./assets/images/action.svg" alt="">
+
+              <span class="title-component ml-3">Action</span>
+            </div>
+
+            <select name="action" id="action">
+              <option value="No action">No Action</option>
+            </select>
+          </div>
+
+
+          <div class="action action-2 d-flex justify-content-between">
+            <div class="heading">
+              <img src="./assets/images/action.svg" alt="">
+
+              <span class="title-component ml-3">Action</span>
+            </div>
+
+            <select name="action" id="action">
+              <option value="No action">No Action</option>
+            </select>
+          </div>
+
+          <div class="action action-3 d-flex justify-content-between">
+            <div class="heading">
+              <img src="./assets/images/action.svg" alt="">
+
+              <span class="title-component ml-3">Action</span>
+            </div>
+
+            <select name="action" id="action">
+              <option value="No action">No Action</option>
+            </select>
+          </div>
+
+
+
+
+
+          <!-- --------------------------
+                  ACTIONS BIG
+          ------------------------------------>
+
+          <div class="action action-big action-bg-1 ">
+
+            <header class="d-flex justify-content-between">
+
+              <div class="heading  ">
+                <img src="./assets/images/action.svg" alt="">
+                <span class="title-component ml-3">Action</span>
+              </div>
+
+              <select name="action" id="action">
+                <option value="No action">No Action</option>
+              </select>
+            </header>
+
+            <hr class="mt-2">
+
+
+
+            <div class="action-big--form">
+
+              <div class="btns">
+                <button class="sucess add-criteria">Add Criteria</button>
+                <button class="danger delete-all">Delete all</button>
+              </div>
+
+
+
+              <div class="input-group-wrapper">
+                <div class="input-group">
+
+                  <select name="" id="">
+                    <option value="Is">Wait</option>
+                  </select>
+
+                  <input type="text" name="" id="" value="1 hour">
+
+                  <button class="delete-its-parent">
+                    <img src="./assets/images/cross.svg" alt="">
+                  </button>
+                </div>
+
+
+                <div class="input-group">
+
+                  <select name="" id="">
+                    <option value="Add">Add</option>
+                  </select>
+
+                  <input type="text" name="" id="" value="Buy More">
+
+                  <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+                </div>
+              </div>
+
+
+              <div class="sms">
+                <label for="sms">SMS</label>
+                <textarea name="" id="sms" cols="30" rows="3">
+
+                </textarea>
+
+
+                <button class="save">Save as new</button>
+
+                <label for="" class="mt-1">SMS</label>
+                <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
+
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="action action-big action-bg-2 ">
+
+            <header class="d-flex justify-content-between">
+
+              <div class="heading  ">
+                <img src="./assets/images/action.svg" alt="">
+                <span class="title-component ml-3">Action</span>
+              </div>
+
+              <select name="action" id="action">
+                <option value="No action">No Action</option>
+              </select>
+            </header>
+
+            <hr class="mt-2">
+
+
+
+            <div class="action-big--form">
+              <div class="btns">
+                <button class="sucess add-criteria">Add Criteria</button>
+                <button class="danger delete-all">Delete all</button>
+              </div>
+
+              <div class="input-group-wrapper">
+                <div class="input-group">
+
+                  <select name="" id="">
+                    <option value="Is">Wait</option>
+                  </select>
+
+                  <input type="text" name="" id="" value="1 hour">
+
+                  <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+                </div>
+
+
+                <div class="input-group">
+
+                  <select name="" id="">
+                    <option value="Add">Add</option>
+                  </select>
+
+                  <input type="text" name="" id="" value="Buy More">
+
+                  <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+                </div>
+
+              </div>
+
+              <div class="sms">
+                <label for="sms">SMS</label>
+                <textarea name="" id="sms" cols="30" rows="3">
+
+                </textarea>
+
+
+                <button class="save">Save as new</button>
+
+                <label for="" class="mt-1">SMS</label>
+                <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
+
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="action action-big action-bg-3 ">
+
+            <header class="d-flex justify-content-between">
+
+              <div class="heading  ">
+                <img src="./assets/images/action.svg" alt="">
+                <span class="title-component ml-3">Action</span>
+              </div>
+
+              <select name="action" id="action">
+                <option value="No action">No Action</option>
+              </select>
+            </header>
+
+            <hr class="mt-2">
+
+
+
+            <div class="action-big--form">
+              <div class="btns">
+                <button class="sucess add-criteria">Add Criteria</button>
+                <button class="danger delete-all">Delete all</button>
+              </div>
+
+              <div class="input-group-wrapper">
+                <div class="input-group">
+
+                  <select name="" id="">
+                    <option value="Is">Wait</option>
+                  </select>
+
+                  <input type="text" name="" id="" value="1 hour">
+
+                  <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+                </div>
+
+
+                <div class="input-group">
+
+                  <select name="" id="">
+                    <option value="Add">Add</option>
+                  </select>
+
+                  <input type="text" name="" id="" value="Buy More">
+
+                  <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+                </div>
+              </div>
+
+
+              <div class="sms">
+                <label for="sms">SMS</label>
+                <textarea name="" id="sms" cols="30" rows="3">
+
+                </textarea>
+
+
+                <button class="save">Save as new</button>
+
+                <label for="" class="mt-1">SMS</label>
+                <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <!-- TEMPLATE TO BE RENDERED BY USER -->
+
+          <template id="create-new-li">
+            <li class="created-li-element" data-id='${searchedValue}'>
+              <div class="automation-text">
+                <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
+              <span>${searchedValue}</span>
+            </div>	
+            <button  class="trash border-0 " id="trashBtn">
+                <img src="./assets/images/trash.svg" alt="trash" class="trash">
+            </button>
+          </li>
+          </template>
+
+          <!-- action template  -->
+          <template id="action-template">
+            <div class="input-group">
+
+              <select name="" id="">
+                <option value="Is">Wait</option>
+              </select>
+
+              <input type="text" name="" id="" value="1 hour">
+
+              <button class="delete-its-parent">
+                <img src="./assets/images/cross.svg" alt="">
+              </button>
+            </div>
+          </template>
+
+
+          <!-- condition template  -->
+          <template id="condition-template">
+            <div class="input-group">
+              <input type="text" name="" class="nested-input" value="Registration">
+
+              <!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
+              <ul class="input-ul d-none" id="input-ul">
+                <li>
+                  <div class="inner-content-li">
+                    <span>Contact information</span> <span> &#10095; </span>
+                  </div>
+                  <ul>
+                    <li>firstname</li>
+                    <li>last name</li>
+                    <li>Address</li>
+                    <li>City</li>
+                    <li>Country</li>
+                    <li>Age</li>
+                    <li>Gender</li>
+                    <li>Email</li>
+                    <li>Mobile Phone</li>
+                    <li>GDPR consent</li>
+                  </ul>
+                </li>
+
+                <li>
+                  <div class="inner-content-li">
+                    <span>Product</span>
+                    <span> &#10095; </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="inner-content-li">
+                    <span>Purchase</span>
+                    <span> &#10095; </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="inner-content-li">
+                    <span>Member Level</span>
+                    <span> &#10095; </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="inner-content-li">
+                    <span>Segments</span>
+                    <span> &#10095; </span>
+                  </div>
+                </li>
+
+              </ul>
+
+
+
+              <select name="" id="">
+                <option value="Is">Is</option>
+              </select>
+              <input type="text" name="" id="" value="POS, webshop">
+              <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+            </div>
+          </template>
+
+          <!-- TEMPLATE TO BE RENDERED BY USER -->
+
+                    
+
+          <!-- CONDITIONS -->
+          <div class="condition condition-3 d-none ">
+            <div class="heading">
+              <img src="./assets/images/auomation-black.svg" alt="">
+              <span class="title-component ml-3">Condition</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+
+  
+<!-- CUSTOM JS -->
+<script src="./assets/js/automation.js"></script>
+
 </body>
 
 
-<!-- JQUERY CDN  -->
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+<!-- JQUERY CDN 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
 
 
-<!-- CUSTOM JS -->
-<script src="./assets/js/automation.js"></script>
 
 
 <script type="text/javascript" src="https://prerelease.dillerapp.no/assets/js/jquery.min.js"></script>
@@ -921,7 +1009,7 @@
 <!-- jquery validation -->
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <script type="text/javascript"
-   src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
 
 <!-- end jquery validation -->
 
@@ -947,7 +1035,7 @@
 <!-- run time jquery validation -->
 
 <script type="text/javascript"
-   src="https://prerelease.dillerapp.no/assets/js/form-validation/formValidation.js"></script>
+  src="https://prerelease.dillerapp.no/assets/js/form-validation/formValidation.js"></script>
 
 <script type="text/javascript" src="https://prerelease.dillerapp.no/assets/js/form-validation/bootstrap.js"></script>
 <!-- end run time jquery validation -->

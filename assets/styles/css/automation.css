@@ -208,16 +208,9 @@ COMPONENT
   height: 800px;
   overflow: hidden;
   width: 100%;
-  cursor: -webkit-grab;
-  cursor: grab;
   /*------------------
 				CONDITION
 		-------------------*/
-}
-
-.automation-section .component:focus {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
 }
 
 .automation-section .component .action {
@@ -250,6 +243,10 @@ COMPONENT
   -ms-grid-row: 14;
   -ms-grid-row-span: 2;
   grid-row: 14/16;
+}
+
+.automation-section .component .action-big {
+  overflow: auto;
 }
 
 .automation-section .component .action-big header .heading {
@@ -400,6 +397,7 @@ COMPONENT
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 10px 1rem;
   font-weight: 600;
+  overflow: auto;
 }
 
 .automation-section .component .condition--heading {
