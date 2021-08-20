@@ -508,66 +508,65 @@ COMPONENT
 					}					
 
 				
+					// li elements after focusing on input
+						.input-ul{
+							z-index: 10;
+							position: absolute;
+							top: 40px;
+							left: 12px;
+							background: white;						
+							border: 1px solid $light-border;
+							border-radius: 5px;
+							font-size: .9rem;
+							font-weight: 400;
+							cursor: pointer;
 
-// li elements after focusing on input
+								li{
+									position: relative;
 
-					.input-ul{
-						z-index: 10;
-						position: absolute;
-						top: 40px;
-						left: 12px;
-						background: white;						
-						border: 1px solid $light-border;
-						border-radius: 5px;
-						font-size: .9rem;
-						font-weight: 400;
-						cursor: pointer;
+									.inner-content-li{
+										display: flex;
+										justify-content: space-between;
+										width: 220px;
+										padding: 10px ;
+										color: #5b5b5b;
 
-							li{
-								position: relative;
+										&:hover, &:focus{
+											background-color: $light-blue;
+										}
+									}
 
-								.inner-content-li{
-									display: flex;
-									justify-content: space-between;
-									width: 220px;
-									padding: 10px ;
-									color: #5b5b5b;
+									&:hover ul  ,&:focus ul{
+										display: block;
+									}
 
-									&:hover, &:focus{
-										background-color: $light-blue;
+
+									ul{
+										display: none;
+										background-color: white;
+										position: absolute;
+										top: 0;
+										left: 100%;
+										border-radius: 5px;
+										border: 1px solid $light-border;
+
+										li{
+											@extend .inner-content-li;
+										}
 									}
 								}
-
-								&:hover ul  ,&:focus ul{
-									display: block;
-								}
-
-
-								ul{
-									display: none;
-									background-color: white;
-									position: absolute;
-									top: 0;
-									left: 100%;
-									border-radius: 5px;
-									border: 1px solid $light-border;
-
-									li{
-										@extend .inner-content-li;
-									}
-								}
-							}
-					}
-
-
+						}
 
 
 				}
+
+
 			}
 
 		}
 
-
+		
+			
 
 
 		.condtion-3{
@@ -1004,6 +1003,55 @@ COMPONENT
 
 
 
+	// ---------------------------------------------------------
+	// li elements after focusing on input
+	.input-ul{
+		z-index: 10;
+		position: absolute;
+		// top: 40px;
+		// left: 12px;
+		background: white;						
+		border: 1px solid $light-border;
+		border-radius: 5px;
+		font-size: .9rem;
+		font-weight: 400;
+		cursor: pointer;
+
+			li{
+				position: relative;
+
+				.inner-content-li{
+					display: flex;
+					justify-content: space-between;
+					width: 220px;
+					padding: 10px ;
+					color: #5b5b5b;
+
+					&:hover, &:focus{
+						background-color: $light-blue;
+					}
+				}
+
+				&:hover ul  ,&:focus ul{
+					display: block;
+				}
+
+
+				ul{
+					display: none;
+					background-color: white;
+					position: absolute;
+					top: 0;
+					left: 100%;
+					border-radius: 5px;
+					border: 1px solid $light-border;
+
+					li{
+						@extend .inner-content-li;
+					}
+				}
+			}
+}
 
 
 

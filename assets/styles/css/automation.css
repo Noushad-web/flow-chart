@@ -984,3 +984,48 @@ COMPONENT
   border-radius: 0;
   margin-left: .8rem;
 }
+
+.input-ul {
+  z-index: 10;
+  position: absolute;
+  background: white;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  font-size: .9rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.input-ul li {
+  position: relative;
+}
+
+.input-ul li .inner-content-li, .automation-section .component .condition--form .input-group .input-ul li ul li, .input-ul li ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 220px;
+  padding: 10px;
+  color: #5b5b5b;
+}
+
+.input-ul li .inner-content-li:hover, .automation-section .component .condition--form .input-group .input-ul li ul li:hover, .input-ul li ul li:hover, .input-ul li .inner-content-li:focus, .automation-section .component .condition--form .input-group .input-ul li ul li:focus, .input-ul li ul li:focus {
+  background-color: #D9E6FE;
+}
+
+.input-ul li:hover ul, .input-ul li:focus ul {
+  display: block;
+}
+
+.input-ul li ul {
+  display: none;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+}

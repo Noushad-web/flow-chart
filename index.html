@@ -460,60 +460,15 @@
                 <div class="input-group">
                   <input type="text" name="" class="nested-input" value="Registration">
 
-                  <!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
-                  <ul class="input-ul d-none" id="input-ul">
-                    <li>
-                      <div class="inner-content-li">
-                        <span>Contact information</span> <span> &#10095; </span>
-                      </div>
-                      <ul>
-                        <li>firstname</li>
-                        <li>last name</li>
-                        <li>Address</li>
-                        <li>City</li>
-                        <li>Country</li>
-                        <li>Age</li>
-                        <li>Gender</li>
-                        <li>Email</li>
-                        <li>Mobile Phone</li>
-                        <li>GDPR consent</li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <div class="inner-content-li">
-                        <span>Product</span>
-                        <span> &#10095; </span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="inner-content-li">
-                        <span>Purchase</span>
-                        <span> &#10095; </span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="inner-content-li">
-                        <span>Member Level</span>
-                        <span> &#10095; </span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="inner-content-li">
-                        <span>Segments</span>
-                        <span> &#10095; </span>
-                      </div>
-                    </li>
-
-                  </ul>
-
-
-
                   <select name="" id="">
                     <option value="Is">Is</option>
                   </select>
+
                   <input type="text" name="" id="" value="POS, webshop">
+
                   <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+
+
                 </div>
 
 
@@ -875,20 +830,13 @@
 
           </div>
 
-          <!-- TEMPLATE TO BE RENDERED BY USER -->
 
-          <template id="create-new-li">
-            <li class="created-li-element" data-id='${searchedValue}'>
-              <div class="automation-text">
-                <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
-              <span>${searchedValue}</span>
-            </div>	
-            <button  class="trash border-0 " id="trashBtn">
-                <img src="./assets/images/trash.svg" alt="trash" class="trash">
-            </button>
-          </li>
-          </template>
 
+
+          <!-- --------------------------
+               TEMPLATE TO BE RENDERED BY USER
+          ------------------------------------>
+          
           <!-- action template  -->
           <template id="action-template">
             <div class="input-group">
@@ -911,55 +859,7 @@
             <div class="input-group">
               <input type="text" name="" class="nested-input" value="Registration">
 
-              <!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
-              <ul class="input-ul d-none" id="input-ul">
-                <li>
-                  <div class="inner-content-li">
-                    <span>Contact information</span> <span> &#10095; </span>
-                  </div>
-                  <ul>
-                    <li>firstname</li>
-                    <li>last name</li>
-                    <li>Address</li>
-                    <li>City</li>
-                    <li>Country</li>
-                    <li>Age</li>
-                    <li>Gender</li>
-                    <li>Email</li>
-                    <li>Mobile Phone</li>
-                    <li>GDPR consent</li>
-                  </ul>
-                </li>
-
-                <li>
-                  <div class="inner-content-li">
-                    <span>Product</span>
-                    <span> &#10095; </span>
-                  </div>
-                </li>
-                <li>
-                  <div class="inner-content-li">
-                    <span>Purchase</span>
-                    <span> &#10095; </span>
-                  </div>
-                </li>
-                <li>
-                  <div class="inner-content-li">
-                    <span>Member Level</span>
-                    <span> &#10095; </span>
-                  </div>
-                </li>
-                <li>
-                  <div class="inner-content-li">
-                    <span>Segments</span>
-                    <span> &#10095; </span>
-                  </div>
-                </li>
-
-              </ul>
-
-
-
+            
               <select name="" id="">
                 <option value="Is">Is</option>
               </select>
@@ -970,7 +870,9 @@
 
           <!-- TEMPLATE TO BE RENDERED BY USER -->
 
-                    
+
+          
+
 
           <!-- CONDITIONS -->
           <div class="condition condition-3 d-none ">
@@ -982,9 +884,56 @@
         </div>
 
       </section>
+
     </div>
   </div>
 
+  <!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
+  <ul class="input-ul d-none" id="input-ul">
+    <li>
+      <div class="inner-content-li">
+        <span>Contact information</span> <span> &#10095; </span>
+      </div>
+      <ul>
+        <li>firstname</li>
+        <li>last name</li>
+        <li>Address</li>
+        <li>City</li>
+        <li>Country</li>
+        <li>Age</li>
+        <li>Gender</li>
+        <li>Email</li>
+        <li>Mobile Phone</li>
+        <li>GDPR consent</li>
+      </ul>
+    </li>
+
+    <li>
+      <div class="inner-content-li">
+        <span>Product</span>
+        <span> &#10095; </span>
+      </div>
+    </li>
+    <li>
+      <div class="inner-content-li">
+        <span>Purchase</span>
+        <span> &#10095; </span>
+      </div>
+    </li>
+    <li>
+      <div class="inner-content-li">
+        <span>Member Level</span>
+        <span> &#10095; </span>
+      </div>
+    </li>
+    <li>
+      <div class="inner-content-li">
+        <span>Segments</span>
+        <span> &#10095; </span>
+      </div>
+    </li>
+
+  </ul>
 
   
 <!-- CUSTOM JS -->

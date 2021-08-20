@@ -17,7 +17,6 @@ const form_ul_automation = document.getElementById('wrapper-automation-form-ul')
 
 
 // TEMPLATES START HERE
-const createNewTemplate = document.getElementById('create-new-li');
 const actionTemplates = document.getElementById('action-template');
 const conditionTemplates = document.getElementById('condition-template');
 // TEMPLATES START HERE
@@ -32,12 +31,33 @@ AUTOMATION FORMS ALL CONDITIONS
 const formCondition = () => {
 	
 	// input variable and input group variables
-	const nestedInput = document.querySelectorAll('.nested-input');
-	const inputUl = document.querySelectorAll('.input-ul');
+	const nestedInputs = document.querySelectorAll('.nested-input');
+	const inputUl = document.getElementById('input-ul');
 	const delParentBtns = document.querySelectorAll('.delete-its-parent');
 	
 	
 	// functions to be used again and again
+
+	const inputFocusBlur = (nestedInputs) => {
+		nestedInputs.forEach(nestedInput => {
+		
+			// elements to show when user focus on input 
+			nestedInput.onfocus = e => {		
+				inputUl.classList.remove('d-none');
+				inputUl.style.top = e.target.getClientRects()[0].top + 'px';
+				inputUl.style.left = e.target.getClientRects()[0].left + 'px';
+			}
+	
+			// elements to hidden when user get focus on somewhere else
+			nestedInput.onblur = () => {
+					
+				inputUl.classList.add('d-none');
+	
+			}
+		})
+	}
+
+	inputFocusBlur(nestedInputs);
 
 
 	// cross icon to delete only its parent element 
@@ -61,11 +81,14 @@ const addCriteria = (wrapperElement, template) => {
 
 		})
 	})
+
+	const nestedInputs = document.querySelectorAll('.nested-input');
+	inputFocusBlur(nestedInputs);
+
 }
 
 // deleteAll
-const deleteAll = (wrapperElement) => {
-	console.log('delete all');
+const deleteAll = (wrapperElement) => {	
 	wrapperElement.innerHTML = "";
 }
 
@@ -134,20 +157,7 @@ delParentBtns.forEach((delParentBtn) => {
 
 })
 
-
-
-// form condition
-const formCondition = document.getElementById('form-condition');
-
-// elements to show when user focus on input 
-nestedInput.onfocus = () => {
-	inputUl.classList.remove('d-none');
-}
-// elements to hidden when user get focus on somewhere else
-nestedInput.onblur = () => {
-	inputUl.classList.add('d-none');
-}
-
+	
 }
 
 formCondition();
@@ -349,20 +359,6 @@ const asideAutomationFun = () => {
 
 	}
 
-
-
-	// RENDERING LI ELEMENTS BY CLICKING ON CREATE NEW
-	const renderingElement = (searchedValue) => {
-
-		const li = createNewTemplate.content.cloneNode(true);
-		automationUlElement.appendChild(li)
-
-		// calling the attach event funciton
-		// attachingEvent();
-
-	}
-
-
 	// TRASH BTN FOR REMOVING ELEMENT
 	const deleteElement = () => {
 		const trashBtns = document.querySelectorAll('#trashBtn');
@@ -377,6 +373,33 @@ const asideAutomationFun = () => {
 		});
 
 	}
+
+
+	// RENDERING LI ELEMENTS BY CLICKING ON CREATE NEW
+	const renderingElement = (searchedValue) => {
+
+		const li =
+		`<li class="created-li-element" data-id='${searchedValue}'>
+              <div class="automation-text">
+                <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
+              <span>${searchedValue}</span>
+            </div>	
+            <button  class="trash border-0 " id="trashBtn">
+                <img src="./assets/images/trash.svg" alt="trash" class="trash">
+            </button>
+          </li>
+		`;
+		automationUlElement.innerHTML += li; 
+
+		deleteElement();
+
+		// calling the attach event funciton
+		// attachingEvent();
+
+	}
+
+
+	
 
 
 
