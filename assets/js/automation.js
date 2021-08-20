@@ -27,10 +27,10 @@ const delParentBtns = document.querySelectorAll('.delete-its-parent');
 // functions to be used again and again
 
 // add criteria function 
-const addCriteria = (wrapperElement, innerHTMLToAdded) => {
+const addCriteria = (wrapperElement, outerHTMLToAdded) => {
 
 	// console.log('addCriteria');
-	wrapperElement.innerHTML += innerHTMLToAdded;
+	wrapperElement.innerHTML += outerHTMLToAdded;
 	
 }
 
@@ -51,15 +51,100 @@ document.querySelectorAll('.add-criteria').forEach(addBtn => {
 
 	addBtn.addEventListener('click', (e) => {
 
+		const domDrilling = e.target.parentElement.nextElementSibling.className;
+		const targetElement = e.target.parentElement.nextElementSibling;
+
 		e.preventDefault();
-		if (e.target.parentElement.nextElementSibling.className.search('input-group-wrapper') !== -1) {
+		if (domDrilling.search('input-group-wrapper') !== -1) {
 
-			const targetElement = e.target.parentElement.nextElementSibling;
-			const innerHTMLToAdded = targetElement.firstElementChild.outerHTML;
 
-			addCriteria(targetElement, innerHTMLToAdded);
+			const outerHTML =
+			`
+			<div class="input-group">
 
-		} else{
+			<select name="" id="">
+				 <option value="Is">Wait</option>
+			</select>
+
+			<input type="text" name="" id="" value="1 hour">
+
+			<button class="delete-its-parent">
+				 <img src="./assets/images/cross.svg" alt="">
+			</button>
+	 </div>
+			`;
+
+			addCriteria(targetElement, outerHTML);
+
+		} else if (domDrilling.search('input-wrapper-condition') !== -1 ) {
+			
+
+			const outerHTML =
+			`
+			<div class="input-group">
+			<input type="text" name="" class="nested-input" value="Registration">
+
+			<!-- ELEMENTS TO SHOW WHEN USER FOCUS ON INPUT -->
+			<ul class="input-ul d-none" id="input-ul">
+				 <li>
+						<div class="inner-content-li">
+							 <span>Contact information</span> <span> &#10095; </span>
+						</div>
+							 <ul>
+									<li>firstname</li>
+									<li>last name</li>
+									<li>Address</li>
+									<li>City</li>
+									<li>Country</li>
+									<li>Age</li>
+									<li>Gender</li>
+									<li>Email</li>
+									<li>Mobile Phone</li>
+									<li>GDPR consent</li>
+							 </ul>
+				 </li>
+
+				 <li>
+						<div class="inner-content-li">
+							 <span>Product</span>
+							 <span> &#10095; </span>
+						</div>
+				 </li>
+				 <li>
+						<div class="inner-content-li">
+							 <span>Purchase</span>
+							 <span> &#10095; </span>
+						</div>
+				 </li>
+				 <li>
+						<div class="inner-content-li">
+							 <span>Member Level</span>
+							 <span> &#10095; </span>
+						</div>
+				 </li>
+				 <li>
+						<div class="inner-content-li">
+							 <span>Segments</span>
+							 <span> &#10095; </span>
+						</div>
+				 </li>
+
+			</ul>
+
+
+
+			<select name="" id="">
+				 <option value="Is">Is</option>
+			</select>
+			<input type="text" name="" id="" value="POS, webshop">
+			<button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
+	 </div>
+			`
+			addCriteria(targetElement, outerHTML);
+
+		}
+		
+		else {
 			console.error('please let the input-group-wrapper div only after the btns div to make it work right.');
 		}
 
@@ -69,18 +154,29 @@ document.querySelectorAll('.add-criteria').forEach(addBtn => {
 
 
 
+
+
+
+
+
 // delete all button 
 document.querySelectorAll('.delete-all').forEach(deleteBtn => {
 	deleteBtn.addEventListener('click', (e) => {
-
 		e.preventDefault();
-		if (e.target.parentElement.nextElementSibling.className.search('input-group-wrapper') !== -1) {
+		
+		const domDrilling = e.target.parentElement.nextElementSibling.className;
+		const targetElement = e.target.parentElement.nextElementSibling;
+		if (domDrilling.search('input-group-wrapper') !== -1) {
 			
-			const targetElement = e.target.parentElement.nextElementSibling;
 			
 			deleteAll(targetElement);
 
-		}else{
+		}else if (domDrilling.search('input-wrapper-condition') !== -1 ) {
+	
+			deleteAll(targetElement);
+		}
+		
+		else {
 			console.error('please let the input-group-wrapper div only after the btns div to make it work right.');
 		}		
 
