@@ -1,10 +1,7 @@
-// VARIABLE
+// VARIABLES
 const automation = document.getElementById('automation');
 const editStoreFormId = document.getElementById('EditStoreFormId');
-
 const ourDetails = document.getElementById('ourDetails');
-
-
 const myAutomation = document.getElementById('myAutomation');
 const sideBarWrapper = document.getElementById('sidebar-wrapper');
 const settingTabs = document.getElementsByClassName('setting-tabs');
@@ -13,21 +10,15 @@ const createNewBtn = document.getElementById('create-new');
 const automationUlElement = document.getElementById('created-ul');
 const closeBtnAutomation__aside = document.querySelector('.close-automation-aside');
 const form_ul_automation = document.getElementById('wrapper-automation-form-ul');
-
-
-
-// TEMPLATES START HERE
 const actionTemplates = document.getElementById('action-template');
 const conditionTemplates = document.getElementById('condition-template');
-// TEMPLATES START HERE
 
 
 
 
 
-/*-----------------------------------------
-AUTOMATION FORMS ALL CONDITIONS
---------------------------------------------*/
+
+/*------------- AUTOMATION FORMS ALL CONDITIONS ----------------------------*/
 const formCondition = () => {
 	
 	// input variable and input group variables
@@ -162,15 +153,8 @@ delParentBtns.forEach((delParentBtn) => {
 
 formCondition();
 
-/*-----------------------------------------
- AUTOMATION FORMS ALL CONDITIONS ENDS HERE
---------------------------------------------*/
 
-
-
-/* ----------------------------------------------------------------
-SMS TEMPLATE POPUP CODES START HERE
--------------------------------------------------------------------*/
+/* -------------- SMS TEMPLATE POPUP ----------------------*/
 const smsFun = () => {
 	const smsChangeBtns = document.querySelectorAll('.sms-change-btn');
 	const smsTemplateWrapper = document.getElementById('sms-template-wrapper');
@@ -207,18 +191,10 @@ const smsFun = () => {
 
 smsFun();
 
-/* ----------------------------------------------------------------
-SMS TEMPLATE POPUP CODES ENDS HERE
--------------------------------------------------------------------*/
 
 
 
-
-
-
-/*---------------------------
-DRAGGABLE STARTS HERE
-------------------------------*/
+/*------------------ DRAGGABLE STARTS HERE ------------------------------*/
 
 const dragFun = () => {
 	// div which have to be grabbed and drag 
@@ -299,16 +275,11 @@ const dragFun = () => {
 }
 
 dragFun();
-/*---------------------------
-DRAGGABLE ENDS HERE
-------------------------------*/
 
 
 
 
-/*---------------------------
-TOGGLING SWITCH STARTS HERE
-------------------------------*/
+/*------------------ TOGGLING SWITCH STARTS HERE ------------------------------*/
 
 const toggleFun = () => {
 
@@ -328,17 +299,12 @@ const toggleFun = () => {
 }
 
 toggleFun();
-/*---------------------------
-TOGGLING SWITCH ENDS HERE
-------------------------------*/
 
 
 
 
+/* ----------------- ASIDE BAR OF AUTOMATION SECTION --------------------------- */
 
-/* --------------------------------------------
-	ASIDE BAR OF AUTOMATION SECTION STARTS HERE
--------------------------------------------------*/
 
 const asideAutomationFun = () => {
 
@@ -447,59 +413,49 @@ const asideAutomationFun = () => {
 
 asideAutomationFun();
 
-/* --------------------------------------------
-	ASIDE BAR OF AUTOMATION SECTION STARTS HERE
--------------------------------------------------*/
 
 
 
 
 
+/* ---------------- FLOW CHART SHOW AND HIDE STARTS HERE ------------------------------------*/
 
-/* --------------------------------------------
-	FLOW CHART SHOW AND HIDE STARTS HERE
--------------------------------------------------*/
-
-const allLeftElem = document.querySelectorAll('.left-grid');
-const allRightElem = document.querySelectorAll('.right-grid');
-const noActionLeft = document.getElementById('no-action-left');
-const sendSmsLeft = document.getElementById('sms-left');
-const noActionRight = document.getElementById('no-action-right');
-const sendSmsRight = document.getElementById('sms-right');
-
-
-sendSmsLeft.addEventListener('click', () => {
+const flowFun = () => {
+	const allLeftElem = document.querySelectorAll('.left-grid');
+	const allRightElem = document.querySelectorAll('.right-grid');
+	const noActionLeft = document.getElementById('no-action-left');
+	const sendSmsLeft = document.getElementById('sms-left');
+	const noActionRight = document.getElementById('no-action-right');
+	const sendSmsRight = document.getElementById('sms-right');
 	
-	allLeftElem.forEach((element) => {
-		element.style.visibility = 'visible';
+	
+	sendSmsLeft.addEventListener('click', () => {
+		
+		allLeftElem.forEach((element) => {
+			element.style.visibility = 'visible';
+		})
+	
 	})
-
-})
-
-noActionLeft.addEventListener('click', () => {
-	allLeftElem.forEach((element) => {
-		element.style.visibility = 'hidden';
+	
+	noActionLeft.addEventListener('click', () => {
+		allLeftElem.forEach((element) => {
+			element.style.visibility = 'hidden';
+		})
 	})
-})
-
-
-sendSmsRight.addEventListener('click', () => {
-	allRightElem.forEach((element) => {
-		element.style.visibility = 'visible';
+	
+	
+	sendSmsRight.addEventListener('click', () => {
+		allRightElem.forEach((element) => {
+			element.style.visibility = 'visible';
+		})
+	});
+	
+	noActionRight.addEventListener('click', () => {
+		allRightElem.forEach((element) => {
+			element.style.visibility = 'hidden';
+		})
 	})
-});
+	
+}
 
-noActionRight.addEventListener('click', () => {
-	allRightElem.forEach((element) => {
-		element.style.visibility = 'hidden';
-	})
-})
-
-
-
-
-
-
-/* --------------------------------------------
-	FLOW CHART SHOW AND HIDE ENDS HERE
--------------------------------------------------*/
+flowFun();

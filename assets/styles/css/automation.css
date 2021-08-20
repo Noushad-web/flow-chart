@@ -191,9 +191,7 @@
   width: auto;
 }
 
-/*------------------------------
-COMPONENT 
-------------------------------*/
+/*------COMPONENT ------------*/
 .automation-section {
   margin-left: 0;
 }
@@ -208,9 +206,7 @@ COMPONENT
   height: 800px;
   overflow: hidden;
   width: 100%;
-  /*------------------
-				CONDITION
-		-------------------*/
+  /*--------- CONDITION -----*/
 }
 
 .automation-section .component .action {

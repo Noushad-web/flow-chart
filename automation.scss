@@ -7,21 +7,11 @@ $danger-border : #707070;
 $light-border : #CCCCCC;
 
 
-
-
-// GLOBALS SASS TO USED MOST PLACES MADE TO AVOID REPETITION IN SASS
 .delete-its-parent{
 	img{
 		pointer-events: none;
 	}
 }
-
-
-
-
-
-
-
 
 
 .grey-bg{
@@ -244,10 +234,7 @@ $light-border : #CCCCCC;
 
 
 
-
-/*------------------------------
-COMPONENT 
-------------------------------*/
+/*------COMPONENT ------------*/
 
 .automation-section{
 	margin-left: 0;
@@ -293,7 +280,7 @@ COMPONENT
 
 		}
 
-		// ALL SMALL ACTIONS ARE HERE 
+// ALL SMALL ACTIONS ARE HERE 
 		.action-1{
 			grid-column: 13/19;
 			grid-row: 14/16;
@@ -301,7 +288,7 @@ COMPONENT
 
 
 
-		// ALL BIG ACTIONS ARE HERE
+// ALL BIG ACTIONS ARE HERE
 		.action-big{
 			overflow: auto;
 		
@@ -445,10 +432,7 @@ COMPONENT
 		}
 
 
-		/*------------------
-				CONDITION
-		-------------------*/
-
+/*--------- CONDITION -----*/
 		.condition{
 			background-color: white;
 			border: 1px solid $blue-border;
@@ -768,22 +752,7 @@ COMPONENT
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		// All NO btn are here 
+// All NO btn are here 
 		.no-1{
 			grid-column: 15/16;
 			grid-row: 12/13;
@@ -804,9 +773,6 @@ COMPONENT
 			grid-row: 23/24;
 		}
 		
-
-
-
 		// ALL YES BUTTONS ARE HERE 
 		.yes-1{
 			grid-column: 22/23;
@@ -822,8 +788,6 @@ COMPONENT
 			grid-column: 12/13; 
 			grid-row: 23/24;
 		}
-
-
 
 		// NO DANGER BUTTON
 		.no{
@@ -849,33 +813,10 @@ COMPONENT
 			border: 1px solid $danger-border;
 		}
 
-
-
-
-
-
-
-
-		
-
-
-
-
 	}
 
 	
-	}
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -923,9 +864,6 @@ COMPONENT
 		}
 	}
 
-
-
-// ---------------------------------------------------------------
 
 	// SMS TEMPLATE 	
 	.sms-template-wrapper{
@@ -1014,7 +952,7 @@ COMPONENT
 
 
 
-	// ---------------------------------------------------------
+
 	// li elements after focusing on input
 	.input-ul{
 		z-index: 10;
@@ -1063,18 +1001,6 @@ COMPONENT
 				}
 			}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .left-grid, .right-grid{
 	visibility: hidden;
