@@ -1,3 +1,9 @@
+.center {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
 .delete-its-parent img {
   pointer-events: none;
 }
@@ -90,7 +96,7 @@
   font-weight: 500;
 }
 
-.main-sidebar .aside-automation ul li {
+.main-sidebar .aside-automation ul .created-li-element {
   border-top: 1px solid #EBEBEB;
   padding: 12px 12px;
   display: -webkit-box;
@@ -103,7 +109,11 @@
   white-space: nowrap;
 }
 
-.main-sidebar .aside-automation ul li .automation-text .draft {
+.main-sidebar .aside-automation ul .created-li-element:hover, .main-sidebar .aside-automation ul .created-li-element:focus {
+  background-color: #D9E6FE;
+}
+
+.main-sidebar .aside-automation ul .created-li-element .automation-text .draft {
   background-color: #4681F8;
   color: white;
   border-radius: 23px;
@@ -111,18 +121,19 @@
   font-size: 12px;
 }
 
-.main-sidebar .aside-automation ul li .automation-text span {
+.main-sidebar .aside-automation ul .created-li-element .automation-text span {
   margin-left: .3rem;
   color: #152744;
   white-space: nowrap;
   font-size: 16px;
+  pointer-events: none;
 }
 
-.main-sidebar .aside-automation ul li .trash {
+.main-sidebar .aside-automation ul .created-li-element .trash {
   background-color: transparent;
 }
 
-.main-sidebar .aside-automation ul li .trash img {
+.main-sidebar .aside-automation ul .created-li-element .trash img {
   pointer-events: none;
 }
 
@@ -133,12 +144,6 @@
   opacity: 0;
   -webkit-transition: width .2s  linear , opacity .1s linear;
   transition: width .2s  linear , opacity .1s linear;
-}
-
-.center {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
 }
 
 .btn-create-me {
@@ -155,15 +160,16 @@
 }
 
 .main-content {
-  background-image: url("/assets/images/worn-dots.png");
+  background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");
 }
 
 .main-content .section .setting-tabs {
   z-index: 99999;
 }
 
-.main-content .automation-section {
+.main-content .automation-section-height {
   min-height: calc(100% - 136px);
+  margin-left: auto;
 }
 
 .main-content .navbar {
@@ -175,6 +181,10 @@
   font-size: 20px;
   color: #152744;
   padding-left: 1rem;
+  text-transform: capitalize;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .main-content .navbar nav .border-left {
@@ -189,6 +199,10 @@
 
 .w-auto {
   width: auto;
+}
+
+.grab-div-padding {
+  padding-left: 380px;
 }
 
 /*------COMPONENT ------------*/
@@ -206,6 +220,8 @@
   height: 800px;
   overflow: hidden;
   width: 100%;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
   /*--------- CONDITION -----*/
 }
 
@@ -346,8 +362,8 @@
   -ms-grid-column-span: 5;
   grid-column: 20/25;
   -ms-grid-row: 14;
-  -ms-grid-row-span: 13;
-  grid-row: 14/27;
+  -ms-grid-row-span: 14;
+  grid-row: 14/28;
 }
 
 .automation-section .component .action-bg-2 {
@@ -930,25 +946,27 @@
   background-color: white;
   border-radius: 20px;
   padding: 2rem;
+  -webkit-transform: translate(-35%, -13%);
+          transform: translate(-35%, -13%);
 }
 
 .sms-template-wrapper .sms-template .row {
   margin-top: 2rem;
 }
 
-.sms-template-wrapper .sms-template .row .col-md-6 {
-  width: 400px;
-  height: 200px;
-  overflow: auto;
+.sms-template-wrapper .sms-template .row .col-md-6 .sms-template-ul-wrapper {
+  border: 1px solid #CCCCCC;
 }
 
-.sms-template-wrapper .sms-template .row .col-md-6 ul {
-  border: 1px solid #CCCCCC;
+.sms-template-wrapper .sms-template .row .col-md-6 .sms-template-ul-wrapper ul {
+  margin: 0;
+  height: 200px;
+  overflow: auto;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.sms-template-wrapper .sms-template .row .col-md-6 ul li {
+.sms-template-wrapper .sms-template .row .col-md-6 .sms-template-ul-wrapper ul li {
   font-size: large;
   line-height: 3;
   font-weight: 500;

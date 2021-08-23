@@ -6,13 +6,17 @@ $danger : #FD282B;
 $danger-border : #707070;
 $light-border : #CCCCCC;
 
+// centering 
+.center{
+	display: grid;
+	place-items: center;
+}
 
 .delete-its-parent{
 	img{
 		pointer-events: none;
 	}
 }
-
 
 .grey-bg{
 	font-size: 16px;
@@ -88,7 +92,6 @@ $light-border : #CCCCCC;
 // UL ELEMENTS FOR MY AUTOMATIONS STARTS HERE 
 		
 		ul{
-
 			h5{
 				white-space:nowrap;
 				color: $primary-blue;
@@ -96,16 +99,18 @@ $light-border : #CCCCCC;
 				font-weight: 500;
 			}
 			
-			li{
+			.created-li-element{
 				border-top: 1px solid #EBEBEB;
 				padding: 12px 12px;
 				display: flex;
 				justify-content: space-between;
 				cursor: pointer;
 				white-space: nowrap;
+				&:hover, &:focus{
+					background-color: $light-blue;							
+				}
 
 				.automation-text{
-
 					.draft{
 						background-color: #4681F8;
 						color: white;
@@ -113,47 +118,35 @@ $light-border : #CCCCCC;
 						padding: 3px 16px;
 						font-size: 12px;
 					}
-
 					span{
 						margin-left: .3rem;
 						color: $primary-blue;
 						white-space: nowrap;
 						font-size: 16px;
+						pointer-events: none;
 					}
 				}
 
 				.trash{
 					background-color: transparent;	
-
 					img{
 						pointer-events: none;
 					}
 				}
 			}
 		}
-
-
 	}
-
 }
 
 
 .aside-hidden{
-
 	width: 0 !important;
 	overflow: hidden;
 	z-index: -2;
 	opacity: 0;
 	transition:width .2s  linear , opacity .1s linear;
-
 }
 
-
-// centering 
-.center{
-	display: grid;
-	place-items: center;
-}
 
 // btn 
 .btn-create-me{
@@ -169,33 +162,31 @@ $light-border : #CCCCCC;
 	}
 }
 
+
 .main-content{
-
-	background-image: url('/assets/images/worn-dots.png');
-
-
-	.section{
-
-		
+	background-image: url('https://www.transparenttextures.com/patterns/worn-dots.png');
+	.section{		
 		.setting-tabs{
 			z-index: 99999;
 		}
 	}
 
-
-	.automation-section{
+	.automation-section-height{
 		min-height: calc(100% - 136px);
+		// width: calc(100% - 380px);
+		margin-left: auto;
 	}
 
 	.navbar{
 		height: 75px;
 		background-color: #FFFFFF;
-
 		nav{
 			.title{
 				font-size: 20px;
 				color: $primary-blue;
 				padding-left: 1rem;
+				text-transform: capitalize;
+				align-self: center;
 			}
 
 			.border-left{
@@ -203,20 +194,15 @@ $light-border : #CCCCCC;
 			}
 
 			.wrapper-nav-items{
-
 				input{
 					border-radius: 5px;
 					border: 1px solid $light-border;
 					padding: 9px 11px;
 				}
-
 			}
 		}
-
 	}
-
 }
-
 
 
 // Width auto
@@ -224,37 +210,24 @@ $light-border : #CCCCCC;
 	width: auto;
 }
 
-
-
-
-
-
-
-
-
+// padding for grabbed div
+.grab-div-padding{
+	padding-left: 380px;
+}
 
 
 /*------COMPONENT ------------*/
-
 .automation-section{
 	margin-left: 0;
-
 	.component{
-
 		$shadow : 2px 2px 5px rgba(0,0,0,0.2);
-
 		display: grid;
 		grid-template-columns: repeat(30, 70px);
 		grid-template-rows : repeat(50, 30px);
 		height: 800px;
 		overflow: hidden;
-    width: 100%;
-
-
-
-	
-
-
+		width: 100%;    
+		transition: all .5s ease;
 
 		.action{
 			// grid-column: 1/6;
@@ -285,8 +258,6 @@ $light-border : #CCCCCC;
 			grid-column: 13/19;
 			grid-row: 14/16;
 		}
-
-
 
 // ALL BIG ACTIONS ARE HERE
 		.action-big{
@@ -405,10 +376,9 @@ $light-border : #CCCCCC;
 			}
 		}
 
-
 		.action-bg-1{
 			grid-column: 20/25;
-			grid-row: 14/27;
+			grid-row: 14/28;
 		}
 
 		.action-bg-2{
@@ -548,48 +518,35 @@ $light-border : #CCCCCC;
 
 		}
 
-		
 		.condition-1{
 			grid-column: 16/22;
 			grid-row: 2/10;
 		}
 			
-
-
 		.condtion-3{
 			grid-column: 4/8;
 			grid-row: 6/9;
 		}
 
-
-		
-
 		.condition-2{
 			grid-column: 18/23;
 			grid-row: 29/33; 
-
 			.input-group{
 				input, select{
 					width:44% ;
-					
 				}
 			}
-
 		}
 
 		.condition-left-3{
 			grid-column: 6/11;
 			grid-row: 18/22;
-
 			.input-group{
 				input, select{
 					width:44% ;
-					
 				}
 			}
 		}
-
-
 
 		// HORIZONTAL LINES 
 		.horizontal{
@@ -624,18 +581,15 @@ $light-border : #CCCCCC;
 			grid-row: 34/35;
 		}
 
-
 		.horizontal-condition-small-yes{
 			grid-column: 21/23;
 			grid-row: 34/35;
 		}
 
-
 		.horizontal-no-condition-left{
 			grid-column: 8/15;
 			grid-row: 16/18;
 		}
-
 
 		.horizontal-condition-left-no{
 			grid-column: 7/8;
@@ -646,8 +600,6 @@ $light-border : #CCCCCC;
 			grid-column: 8/12;
 			grid-row: 23/24;
 		}
-
-
 
 		// VERTICAL LINEs
 		.vertical{
@@ -662,7 +614,6 @@ $light-border : #CCCCCC;
 			grid-row: 11/12;
 		}
 
-		
 		.vertical-3{
 			grid-column: 6/7;
 			margin: 0;
@@ -688,7 +639,6 @@ $light-border : #CCCCCC;
 			grid-row: 13/14;
 		}
 
-
 		.vertical-action-big-condition-2{
 			grid-column: 22/23;
 			grid-row: 27/28;
@@ -700,7 +650,6 @@ $light-border : #CCCCCC;
 			grid-column: 20/21;
 			margin-right: 0;
 		}
-
 
 		.vertical-condition-small-no{
 			grid-column: 20/21;
@@ -732,25 +681,24 @@ $light-border : #CCCCCC;
 			margin-right: 0;
 		}
 
-	.vertical-condition-left-no{
-		grid-column: 8/9;
-		grid-row: 22/23;
-		margin-left: 0;
-		z-index: -1;
-		height: 153%;
-	}
+		.vertical-condition-left-no{
+			grid-column: 8/9;
+			grid-row: 22/23;
+			margin-left: 0;
+			z-index: -1;
+			height: 153%;
+		}
 
-	.vertical-no-left-action-left{
-		grid-column: 6/7;
-		grid-row: 24/25;
-	}
+		.vertical-no-left-action-left{
+			grid-column: 6/7;
+			grid-row: 24/25;
+		}
 
 
-	.vertical-yes-left-action-left{
-		grid-column: 12/13;
-		grid-row: 24/25;
-	}
-
+		.vertical-yes-left-action-left{
+			grid-column: 12/13;
+			grid-row: 24/25;
+		}
 
 // All NO btn are here 
 		.no-1{
@@ -812,17 +760,12 @@ $light-border : #CCCCCC;
 			text-transform: uppercase;
 			border: 1px solid $danger-border;
 		}
-
 	}
-
-	
 }
-
 
 
 // TOGGLE SWITCH
 .active{
-
 	background-color: transparent;
 	border: 0;
 	padding: 0 .5rem;
@@ -835,7 +778,6 @@ $light-border : #CCCCCC;
 		border-radius: 10px;
 		background-color: #4681F8;
 		transition: background-color .3s ease;
-
 		.circle{
 			position: absolute;
 			background-color: #BDD2FC;
@@ -848,65 +790,53 @@ $light-border : #CCCCCC;
 			transition: left .3s ease;
 		}
 	}
-
 	.text{
 		display: inline-block;
 		width: 7ch;
 	}
-
 }
-
-	.line2{
+.line2{
 		background-color: white !important;
-
 		.circle2{
 			left: -1px !important;
 		}
-	}
+}
 
+// SMS TEMPLATE 	
+.sms-template-wrapper{
+	background-color: rgba(0,0,0,0.5);
+	z-index: 999;
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	top: 0;
+	left: 0;
 
-	// SMS TEMPLATE 	
-	.sms-template-wrapper{
-		background-color: rgba(0,0,0,0.5);
-		z-index: 999;
-		width: 100vw;
-		height: 100vh;
-		display: grid;
-		place-items: center;
-		top: 0;
-		left: 0;
-
-		.sms-template{
-
+	.sms-template{
 			height: 450px;
 			width: 700px;
 			background-color: white;
 			border-radius: 20px;
 			padding: 2rem;
-
-
+			transform: translate(-35%, -13%);
 			.row{
 				margin-top: 2rem;
-
 				.col-md-6{
-
-
-					width: 400px;
-					height: 200px;
-					overflow: auto;
-
-					ul{
-
-						border: 1px solid $light-border;
-						
-						padding-left: 1rem;
-						padding-right: 1rem;
-
-						li{
-							font-size: large;
-							line-height: 3;
-							font-weight: 500;
-							color: $primary-blue;
+						.sms-template-ul-wrapper{
+							border: 1px solid $light-border;					
+						ul{		
+							margin: 0;
+							height: 200px;
+							overflow: auto;				
+							padding-left: 1rem;
+							padding-right: 1rem;
+							li{
+								font-size: large;
+								line-height: 3;
+								font-weight: 500;
+								color: $primary-blue;
+							}
 						}
 					}
 				}
@@ -925,7 +855,6 @@ $light-border : #CCCCCC;
 
 			&-btns{
 				button{
-					
 					min-height: 50px;
 					min-width: 160px;
 					border: 0;
@@ -933,9 +862,7 @@ $light-border : #CCCCCC;
 
 				.create-new{
 					background-color: $primary-blue;
-					color: white;
-
-				
+					color: white;				
 				}
 
 				.choose-template{
@@ -944,62 +871,57 @@ $light-border : #CCCCCC;
 					border-radius:0 ;
 					margin-left: .8rem;
 				}
-
 			}
-
-		}
 	}
+}
+
+// li elements after focusing on input
+.input-ul{
+	z-index: 10;
+	position: absolute;
+	// top: 40px;
+	// left: 12px;
+	background: white;						
+	border: 1px solid $light-border;
+	border-radius: 5px;
+	font-size: .9rem;
+	font-weight: 400;
+	cursor: pointer;	
+
+	li{
+		position: relative;
+
+		.inner-content-li{
+			display: flex;
+			justify-content: space-between;
+			width: 220px;
+			padding: 10px ;
+			color: #5b5b5b;
+
+			&:hover, &:focus{
+				background-color: $light-blue;
+			}
+		}
+
+		&:hover ul  ,&:focus ul{
+			display: block;
+		}
 
 
-
-
-	// li elements after focusing on input
-	.input-ul{
-		z-index: 10;
-		position: absolute;
-		// top: 40px;
-		// left: 12px;
-		background: white;						
-		border: 1px solid $light-border;
-		border-radius: 5px;
-		font-size: .9rem;
-		font-weight: 400;
-		cursor: pointer;
+		ul{
+			display: none;
+			background-color: white;
+			position: absolute;
+			top: 0;
+			left: 100%;
+			border-radius: 5px;
+			border: 1px solid $light-border;
 
 			li{
-				position: relative;
-
-				.inner-content-li{
-					display: flex;
-					justify-content: space-between;
-					width: 220px;
-					padding: 10px ;
-					color: #5b5b5b;
-
-					&:hover, &:focus{
-						background-color: $light-blue;
-					}
-				}
-
-				&:hover ul  ,&:focus ul{
-					display: block;
-				}
-
-
-				ul{
-					display: none;
-					background-color: white;
-					position: absolute;
-					top: 0;
-					left: 100%;
-					border-radius: 5px;
-					border: 1px solid $light-border;
-
-					li{
-						@extend .inner-content-li;
-					}
-				}
+				@extend .inner-content-li;
 			}
+		}
+	}	
 }
 
 .left-grid, .right-grid{
