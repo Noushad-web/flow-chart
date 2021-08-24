@@ -201,22 +201,14 @@
   width: auto;
 }
 
-.grab-div-padding {
-  padding-left: 380px;
-}
-
 /*------COMPONENT ------------*/
-.automation-section {
-  margin-left: 0;
-}
-
 .automation-section .component {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (70px)[30];
-      grid-template-columns: repeat(30, 70px);
-  -ms-grid-rows: (30px)[50];
-      grid-template-rows: repeat(50, 30px);
+  -ms-grid-columns: (70px)[35];
+      grid-template-columns: repeat(35, 70px);
+  -ms-grid-rows: (30px)[55];
+      grid-template-rows: repeat(55, 30px);
   height: 800px;
   overflow: hidden;
   width: 100%;
