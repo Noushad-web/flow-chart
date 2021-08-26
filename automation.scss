@@ -1,3 +1,6 @@
+// fonts 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
 $primary-blue : #152744;
 $primary-green : #35E5A8;
 $light-blue : #D9E6FE;
@@ -6,17 +9,41 @@ $danger : #FD282B;
 $danger-border : #707070;
 $light-border : #CCCCCC;
 
+@mixin selectDownArrow {
+	appearance: none;
+	padding: 9px 11px;
+	background-image:
+		linear-gradient(45deg, transparent 50%, gray 50%),
+		linear-gradient(135deg, gray 50%, transparent 50%);
+	background-position:
+		calc(100% - 20px) calc(1em + 2px),
+		calc(100% - 15px) calc(1em + 2px),
+		calc(100% - 2.5em) 0.5em;
+	background-size:
+		5px 5px,
+		5px 5px,
+		1px 1.5em;
+	background-repeat: no-repeat;			
+}
+
 // centering 
 .center{
 	display: grid;
 	place-items: center;
-	// margin-left: -26rem;
-	// width: calc(100% - 26rem);
+}
+
+input,select{
+	&:focus{
+		border: none;
+		outline: none;
+	}
 }
 
 .delete-its-parent{
 	img{
 		pointer-events: none;
+		width: 15px;
+		height: auto ;
 	}
 }
 
@@ -63,7 +90,7 @@ $light-border : #CCCCCC;
 			.input-wrapper{
 				display: inline-block;
 				border-radius: 6px;
-				padding: .3rem 16px;
+				padding: 0.3rem 16px 0.3rem 12px;
 				border: 1px solid #EBEBEB;
 				height: inherit;
 
@@ -97,17 +124,21 @@ $light-border : #CCCCCC;
 			h5{
 				white-space:nowrap;
 				color: $primary-blue;
-				font-size: 1rem;
-				font-weight: 500;
+				font-size: 16px;
+				font-weight: 400;
+				margin-top: 25px;
+				// margin-bottom: 12px;
 			}
 			
 			.created-li-element{
 				border-top: 1px solid #EBEBEB;
-				padding: 12px 12px;
+				padding: 12px 31.2px;
 				display: flex;
 				justify-content: space-between;
 				cursor: pointer;
 				white-space: nowrap;
+				margin-left: -1.2rem;
+				margin-right: -1.2rem;
 				&:hover, &:focus{
 					background-color: $light-blue;							
 				}
@@ -119,14 +150,17 @@ $light-border : #CCCCCC;
 						border-radius: 23px;
 						padding: 3px 16px;
 						font-size: 12px;
+						margin-left: .5rem;
 					}
-					span{
+					.message{
 						margin-left: .3rem;
 						color: $primary-blue;
 						white-space: nowrap;
 						font-size: 16px;
-						pointer-events: none;
+						pointer-events: none;						
+						opacity: 0.9;
 					}
+					
 				}
 
 				.trash{
@@ -155,10 +189,10 @@ $light-border : #CCCCCC;
 	background-color: $primary-green;
 	border-radius: 23px;
 	border: 0;
-	padding:0.65rem 1rem;
-	margin-left: .5rem;
+	padding:12px 22px;
+	margin-left: 16px;
 
-	&:hover,&:focus{
+	&:hover{
 		background-color: $primary-blue;
 		color: white;
 	}
@@ -182,6 +216,7 @@ $light-border : #CCCCCC;
 	.navbar{
 		height: 75px;
 		background-color: #FFFFFF;
+		border-bottom: 1px solid #ccc;
 		nav{
 			.title{
 				font-size: 20px;
@@ -212,25 +247,26 @@ $light-border : #CCCCCC;
 	width: auto;
 }
 
-// padding for grabbed div
-// .grab-div-padding{
-// 	padding-left: 380px;
-// }
-
-
 /*------COMPONENT ------------*/
 .automation-section{
-	// margin-left: 0;
+	position: relative;
+	overflow: hidden;
+	.component-wrapper{
+		position: absolute;
+		left: -612px;
+		top: 12px;
+		transition: transform .5s ease;
+	}
 	.component{
+		position: absolute;	
 		$shadow : 2px 2px 5px rgba(0,0,0,0.2);
 		display: grid;
-		grid-template-columns: repeat(35, 70px);
-		grid-template-rows : repeat(55, 30px);
-		height: 800px;
+		grid-template-columns: repeat(26, 90px);
+		grid-template-rows : repeat(49, 40px);
+		height: max-content;
 		overflow: hidden;
-		width: 100%;    
-		transition: all .5s ease;		
-
+		width: auto;    
+		
 		.action{
 			// grid-column: 1/6;
 			// grid-row: 12/14;
@@ -240,31 +276,44 @@ $light-border : #CCCCCC;
 			font-weight: 600;
 			box-shadow: $shadow;
 
-
 			.heading{
 				align-self: center;
 			}
 
 			select{
-				background-color: white;
+				
+				font-weight: 500;				
+				appearance: 'none';
+				-webkit-appearance: none;
+				-moz-appearance:none;				
+				width: 153px;
+				padding: 9px 11px;				
+				line-height: 1;
 				border: 1px solid #CCCCCC;
 				border-radius: 5px;
-				font-weight: 500;
-				padding: 0px 6px;
+				height: 40px;
+				color: #3E3E3E;
+				font-weight: 600;
+				@include selectDownArrow;
 			}
 
+		}
+
+		.action-small{
+			height: 65px;
 		}
 
 // ALL SMALL ACTIONS ARE HERE 
 		.action-1{
 			grid-column: 13/19;
 			grid-row: 14/16;
+			height: 65px;
 		}
 
 // ALL BIG ACTIONS ARE HERE
 		.action-big{
 			overflow: auto;
-		
+			height: auto;
 
 			header{
 				
@@ -277,7 +326,7 @@ $light-border : #CCCCCC;
 					border: 1px solid #CCCCCC;
 					border-radius: 5px;
 					font-weight: 500;
-					padding: 10px 6px;
+					@include selectDownArrow();
 				}
 			}
 
@@ -312,17 +361,17 @@ $light-border : #CCCCCC;
 						border:1px solid $light-border;
 						border-radius: 5px;
 						background-color: white;
-						padding: 5px;
 						font-size: 15px;
 						font-weight: 500;
+						padding: 9px 11px;
 					}
 
 					input{
 						width: 50%;
 
 					}
-					select{
-						width: 35%;
+					select{						
+						@include selectDownArrow();
 					}
 
 					button{
@@ -357,6 +406,8 @@ $light-border : #CCCCCC;
 						border-radius: 5px;
 						border: 1px solid $light-border;
 						padding: 10px;
+						width: 363px;
+						resize: none;
 					}
 
 					.save{
@@ -364,12 +415,18 @@ $light-border : #CCCCCC;
 						background-color: transparent;
 						color: #4580F7;
 						text-decoration: underline;
+						font-family: 'Open Sans', sans-serif;
+						font-size: 15px;
 					}
 
 					button{
 						background-color: transparent;
 						border: 0;
 						color: #4580F7;
+					}
+
+					p{
+						font-weight: 400;
 					}
 
 				}
@@ -380,17 +437,17 @@ $light-border : #CCCCCC;
 
 		.action-bg-1{
 			grid-column: 20/25;
-			grid-row: 14/28;
+			grid-row: 14/25;			
 		}
-
+		
 		.action-bg-2{
 			grid-column:22/27;
-			grid-row: 36/50;
+			grid-row: 34/45;			
 		}
 
 		.action-2{
 			grid-column: 16/21;
-			grid-row: 36/38;
+			grid-row: 34/36;
 		}
 
 		.action-3{
@@ -400,7 +457,7 @@ $light-border : #CCCCCC;
 
 		.action-bg-3{
 			grid-column: 10/15;
-			grid-row: 25/40;
+			grid-row: 25/36;
 		}
 
 
@@ -412,7 +469,7 @@ $light-border : #CCCCCC;
 			padding: 10px 1rem;
 			font-weight: 600;
 			overflow: auto;
-
+			color: #3E3E3E;
 			&--heading{
 				
 				font-size: 1rem;
@@ -453,76 +510,76 @@ $light-border : #CCCCCC;
 						border-radius: 5px;
 						background-color: transparent;
 						width: 30%;
-						padding: 5px;
+						padding: 9px 11px;
 						font-size: 15px;
 						font-weight: 500;
+					}
+					select{
+						@include selectDownArrow();
 					}
 					button{
 						border:0;
 						background-color: transparent;
 					}					
 
-				
 					// li elements after focusing on input
-						.input-ul{
-							z-index: 10;
-							position: absolute;
-							top: 40px;
-							left: 12px;
-							background: white;						
-							border: 1px solid $light-border;
-							border-radius: 5px;
-							font-size: .9rem;
-							font-weight: 400;
-							cursor: pointer;
+					.input-ul{
+						z-index: 10;
+						position: absolute;
+						top: 40px;
+						left: 12px;
+						background: white;						
+						border: 1px solid $light-border;
+						border-radius: 5px;
+						font-size: .9rem;
+						font-weight: 400;
+						cursor: pointer;
+
+						li{
+							position: relative;
+							.inner-content-li{
+								display: flex;
+								justify-content: space-between;
+								width: 220px;
+								padding: 10px ;
+								color: #5b5b5b;
+
+								&:hover, &:focus{
+									background-color: $light-blue;
+								}
+							}
+
+							&:hover ul  ,&:focus ul{
+								display: block;
+							}
+
+							ul{
+								display: none;
+								background-color: white;
+								position: absolute;
+								top: 0;
+								left: 100%;
+								border-radius: 5px;
+								border: 1px solid $light-border;
 
 								li{
-									position: relative;
-
-									.inner-content-li{
-										display: flex;
-										justify-content: space-between;
-										width: 220px;
-										padding: 10px ;
-										color: #5b5b5b;
-
-										&:hover, &:focus{
-											background-color: $light-blue;
-										}
-									}
-
-									&:hover ul  ,&:focus ul{
-										display: block;
-									}
-
-
-									ul{
-										display: none;
-										background-color: white;
-										position: absolute;
-										top: 0;
-										left: 100%;
-										border-radius: 5px;
-										border: 1px solid $light-border;
-
-										li{
-											@extend .inner-content-li;
-										}
-									}
+									@extend .inner-content-li;
 								}
-						}
-
-
+							}
+						}								
+					}	
 				}
-
-
 			}
+		}
 
+		.condition-small{
+			height: 143px;
 		}
 
 		.condition-1{
 			grid-column: 16/22;
-			grid-row: 2/10;
+			grid-row: 1/10;
+			height: auto;
 		}
 			
 		.condtion-3{
@@ -532,7 +589,7 @@ $light-border : #CCCCCC;
 
 		.condition-2{
 			grid-column: 18/23;
-			grid-row: 29/33; 
+			grid-row: 27/31; 
 			.input-group{
 				input, select{
 					width:44% ;
@@ -552,7 +609,7 @@ $light-border : #CCCCCC;
 
 		// HORIZONTAL LINES 
 		.horizontal{
-			height: 1px;
+			height: 2px;
 			width: 100%;
 			background-color: $blue-border;
 			margin: auto;
@@ -575,17 +632,17 @@ $light-border : #CCCCCC;
 
 		.horizontal-action-big-condition-2{
 			grid-column: 21/23;
-			grid-row: 27/29;
+			grid-row: 25/27;
 		}
 
 		.horizontal-condition-small-no{
 			grid-column: 19/21;
-			grid-row: 34/35;
+			grid-row: 30/35;
 		}
 
 		.horizontal-condition-small-yes{
 			grid-column: 21/23;
-			grid-row: 34/35;
+			grid-row: 30/35;
 		}
 
 		.horizontal-no-condition-left{
@@ -605,7 +662,7 @@ $light-border : #CCCCCC;
 
 		// VERTICAL LINEs
 		.vertical{
-			width: 1px;
+			width: 2px;
 			background-color: $blue-border;
 			height: 100%;
 			margin: auto;
@@ -627,7 +684,7 @@ $light-border : #CCCCCC;
 			grid-column: 18/19;
 			grid-row: 10/13;
 			margin-right: 0;
-			margin-top: -15px;
+			margin-top: -20px;
 			z-index: -1;
 		}
 
@@ -643,37 +700,37 @@ $light-border : #CCCCCC;
 
 		.vertical-action-big-condition-2{
 			grid-column: 22/23;
-			grid-row: 27/28;
+			grid-row: 24/26;
 			margin-right: 0;
 		}
 
 		.vertical-action-big-condition-3{
-			grid-row: 28/29;
+			grid-row: 26/27;
 			grid-column: 20/21;
 			margin-right: 0;
 		}
 
 		.vertical-condition-small-no{
 			grid-column: 20/21;
-			grid-row: 33/34;
+			grid-row: 30/32;
 			margin-right: 0;
 			z-index: -1;
-			height: 150%;
+			height: 100px;
 		}
 
 		.vertical-no-action-2{
 			grid-column: 18/19;
-			grid-row: 35/36;
+			grid-row: 33/34;
 		}
 
 		.vertical-yes-action-2{
 			grid-column: 23/24;
-			grid-row: 35/36;
+			grid-row: 33/34;
 		}
 
 		.vertical-no-condition-left{
 			grid-column: 15/16;
-			grid-row: 16/17;
+			grid-row: 15/17;
 			margin-left: 0;
 		}
 
@@ -685,10 +742,10 @@ $light-border : #CCCCCC;
 
 		.vertical-condition-left-no{
 			grid-column: 8/9;
-			grid-row: 22/23;
+			grid-row: 21/23;
 			margin-left: 0;
 			z-index: -1;
-			height: 153%;
+			height: 100px;
 		}
 
 		.vertical-no-left-action-left{
@@ -715,7 +772,7 @@ $light-border : #CCCCCC;
 
 		.no-3{
 			grid-column: 18/19;
-			grid-row: 34/35;
+			grid-row: 32/33;
 		}
 
 		.no-4{
@@ -731,7 +788,7 @@ $light-border : #CCCCCC;
 
 		.yes-2{
 			grid-column: 23/24;
-			grid-row: 34/35;
+			grid-row: 32/33;
 		}
 
 		.yes-3{
@@ -747,8 +804,8 @@ $light-border : #CCCCCC;
 			display: grid;
 			place-items: center;
 			font-size: 1rem;
-			text-transform: uppercase;
-			border: 1px solid $danger-border;
+			text-transform: uppercase;	
+			font-weight: 500;		
 		}
 
 		// YES SUCCESS BUTTON
@@ -759,9 +816,37 @@ $light-border : #CCCCCC;
 			display: grid;
 			place-items: center;
 			font-size: 1rem;
-			text-transform: uppercase;
-			border: 1px solid $danger-border;
+			text-transform: uppercase;		
+			font-weight: 500;	
 		}
+	}
+
+	// zoom btn 
+	.zoom-btn-wrapper{
+		background-color: white;
+		width: 75px;		
+		position: absolute;
+		left: 2rem;
+		bottom: 5rem;
+		
+		button{
+			border: 0;
+			background-color: inherit;
+			padding: 15px 21px;
+			&:hover, &:focus{
+				background-color: whitesmoke;
+			}
+			img{
+				pointer-events: none;
+			}
+		}		
+		.hr-line{
+			width: 40px;
+			margin: auto;
+			background-color: #CCCCCC;
+			height: 2px;
+		}
+
 	}
 }
 
@@ -928,4 +1013,28 @@ $light-border : #CCCCCC;
 
 .left-grid, .right-grid{
 	visibility: hidden;
+}
+
+
+
+// for safari and mac 
+/* width */
+.condition-1::-webkit-scrollbar, .action-big::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.condition-1::-webkit-scrollbar-track, .action-big::-webkit-scrollbar-track{
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.condition-1::-webkit-scrollbar-thumb, .action-big::-webkit-scrollbar-thumb {
+  background: #9e9e9e; 
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+.condition-1::-webkit-scrollbar-thumb:hover, .action-big::-webkit-scrollbar-thumb:hover {
+  background: #7e7e7e; 
 }

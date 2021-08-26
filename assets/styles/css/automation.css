@@ -1,11 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 .center {
   display: -ms-grid;
   display: grid;
   place-items: center;
 }
 
+input:focus, select:focus {
+  border: none;
+  outline: none;
+}
+
 .delete-its-parent img {
   pointer-events: none;
+  width: 15px;
+  height: auto;
 }
 
 .grey-bg {
@@ -50,7 +58,7 @@
 .main-sidebar .aside-automation form .input-wrapper {
   display: inline-block;
   border-radius: 6px;
-  padding: .3rem 16px;
+  padding: 0.3rem 16px 0.3rem 12px;
   border: 1px solid #EBEBEB;
   height: inherit;
 }
@@ -92,13 +100,14 @@
 .main-sidebar .aside-automation ul h5 {
   white-space: nowrap;
   color: #152744;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 25px;
 }
 
 .main-sidebar .aside-automation ul .created-li-element {
   border-top: 1px solid #EBEBEB;
-  padding: 12px 12px;
+  padding: 12px 31.2px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,6 +116,8 @@
           justify-content: space-between;
   cursor: pointer;
   white-space: nowrap;
+  margin-left: -1.2rem;
+  margin-right: -1.2rem;
 }
 
 .main-sidebar .aside-automation ul .created-li-element:hover, .main-sidebar .aside-automation ul .created-li-element:focus {
@@ -119,14 +130,16 @@
   border-radius: 23px;
   padding: 3px 16px;
   font-size: 12px;
+  margin-left: .5rem;
 }
 
-.main-sidebar .aside-automation ul .created-li-element .automation-text span {
+.main-sidebar .aside-automation ul .created-li-element .automation-text .message {
   margin-left: .3rem;
   color: #152744;
   white-space: nowrap;
   font-size: 16px;
   pointer-events: none;
+  opacity: 0.9;
 }
 
 .main-sidebar .aside-automation ul .created-li-element .trash {
@@ -150,11 +163,11 @@
   background-color: #35E5A8;
   border-radius: 23px;
   border: 0;
-  padding: 0.65rem 1rem;
-  margin-left: .5rem;
+  padding: 12px 22px;
+  margin-left: 16px;
 }
 
-.btn-create-me:hover, .btn-create-me:focus {
+.btn-create-me:hover {
   background-color: #152744;
   color: white;
 }
@@ -175,6 +188,7 @@
 .main-content .navbar {
   height: 75px;
   background-color: #FFFFFF;
+  border-bottom: 1px solid #ccc;
 }
 
 .main-content .navbar nav .title {
@@ -202,18 +216,34 @@
 }
 
 /*------COMPONENT ------------*/
+.automation-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.automation-section .component-wrapper {
+  position: absolute;
+  left: -612px;
+  top: 12px;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
 .automation-section .component {
+  position: absolute;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (70px)[35];
-      grid-template-columns: repeat(35, 70px);
-  -ms-grid-rows: (30px)[55];
-      grid-template-rows: repeat(55, 30px);
-  height: 800px;
+  -ms-grid-columns: (90px)[26];
+      grid-template-columns: repeat(26, 90px);
+  -ms-grid-rows: (40px)[49];
+      grid-template-rows: repeat(49, 40px);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   overflow: hidden;
-  width: 100%;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  width: auto;
   /*--------- CONDITION -----*/
 }
 
@@ -233,11 +263,28 @@
 }
 
 .automation-section .component .action select {
-  background-color: white;
+  font-weight: 500;
+  appearance: 'none';
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 153px;
+  padding: 9px 11px;
+  line-height: 1;
   border: 1px solid #CCCCCC;
   border-radius: 5px;
-  font-weight: 500;
-  padding: 0px 6px;
+  height: 40px;
+  color: #3E3E3E;
+  font-weight: 600;
+  appearance: none;
+  padding: 9px 11px;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.automation-section .component .action-small {
+  height: 65px;
 }
 
 .automation-section .component .action-1 {
@@ -247,10 +294,12 @@
   -ms-grid-row: 14;
   -ms-grid-row-span: 2;
   grid-row: 14/16;
+  height: 65px;
 }
 
 .automation-section .component .action-big {
   overflow: auto;
+  height: auto;
 }
 
 .automation-section .component .action-big header .heading {
@@ -264,7 +313,14 @@
   border: 1px solid #CCCCCC;
   border-radius: 5px;
   font-weight: 500;
-  padding: 10px 6px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 9px 11px;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
 }
 
 .automation-section .component .action-big--form .btns button {
@@ -298,9 +354,9 @@
   border: 1px solid #CCCCCC;
   border-radius: 5px;
   background-color: white;
-  padding: 5px;
   font-size: 15px;
   font-weight: 500;
+  padding: 9px 11px;
 }
 
 .automation-section .component .action-big--form .input-group input {
@@ -308,7 +364,14 @@
 }
 
 .automation-section .component .action-big--form .input-group select {
-  width: 35%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 9px 11px;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
 }
 
 .automation-section .component .action-big--form .input-group button {
@@ -334,6 +397,8 @@
   border-radius: 5px;
   border: 1px solid #CCCCCC;
   padding: 10px;
+  width: 363px;
+  resize: none;
 }
 
 .automation-section .component .action-big--form .sms .save {
@@ -341,6 +406,8 @@
   background-color: transparent;
   color: #4580F7;
   text-decoration: underline;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
 }
 
 .automation-section .component .action-big--form .sms button {
@@ -349,31 +416,35 @@
   color: #4580F7;
 }
 
+.automation-section .component .action-big--form .sms p {
+  font-weight: 400;
+}
+
 .automation-section .component .action-bg-1 {
   -ms-grid-column: 20;
   -ms-grid-column-span: 5;
   grid-column: 20/25;
   -ms-grid-row: 14;
-  -ms-grid-row-span: 14;
-  grid-row: 14/28;
+  -ms-grid-row-span: 11;
+  grid-row: 14/25;
 }
 
 .automation-section .component .action-bg-2 {
   -ms-grid-column: 22;
   -ms-grid-column-span: 5;
   grid-column: 22/27;
-  -ms-grid-row: 36;
-  -ms-grid-row-span: 14;
-  grid-row: 36/50;
+  -ms-grid-row: 34;
+  -ms-grid-row-span: 11;
+  grid-row: 34/45;
 }
 
 .automation-section .component .action-2 {
   -ms-grid-column: 16;
   -ms-grid-column-span: 5;
   grid-column: 16/21;
-  -ms-grid-row: 36;
+  -ms-grid-row: 34;
   -ms-grid-row-span: 2;
-  grid-row: 36/38;
+  grid-row: 34/36;
 }
 
 .automation-section .component .action-3 {
@@ -390,8 +461,8 @@
   -ms-grid-column-span: 5;
   grid-column: 10/15;
   -ms-grid-row: 25;
-  -ms-grid-row-span: 15;
-  grid-row: 25/40;
+  -ms-grid-row-span: 11;
+  grid-row: 25/36;
 }
 
 .automation-section .component .condition {
@@ -402,6 +473,7 @@
   padding: 10px 1rem;
   font-weight: 600;
   overflow: auto;
+  color: #3E3E3E;
 }
 
 .automation-section .component .condition--heading {
@@ -444,9 +516,20 @@
   border-radius: 5px;
   background-color: transparent;
   width: 30%;
-  padding: 5px;
+  padding: 9px 11px;
   font-size: 15px;
   font-weight: 500;
+}
+
+.automation-section .component .condition--form .input-group select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 9px 11px;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
 }
 
 .automation-section .component .condition--form .input-group button {
@@ -501,13 +584,18 @@
   border: 1px solid #CCCCCC;
 }
 
+.automation-section .component .condition-small {
+  height: 143px;
+}
+
 .automation-section .component .condition-1 {
   -ms-grid-column: 16;
   -ms-grid-column-span: 6;
   grid-column: 16/22;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 8;
-  grid-row: 2/10;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 9;
+  grid-row: 1/10;
+  height: auto;
 }
 
 .automation-section .component .condtion-3 {
@@ -523,9 +611,9 @@
   -ms-grid-column: 18;
   -ms-grid-column-span: 5;
   grid-column: 18/23;
-  -ms-grid-row: 29;
+  -ms-grid-row: 27;
   -ms-grid-row-span: 4;
-  grid-row: 29/33;
+  grid-row: 27/31;
 }
 
 .automation-section .component .condition-2 .input-group input, .automation-section .component .condition-2 .input-group select {
@@ -546,7 +634,7 @@
 }
 
 .automation-section .component .horizontal {
-  height: 1px;
+  height: 2px;
   width: 100%;
   background-color: #4580F7;
   margin: auto;
@@ -583,27 +671,27 @@
   -ms-grid-column: 21;
   -ms-grid-column-span: 2;
   grid-column: 21/23;
-  -ms-grid-row: 27;
+  -ms-grid-row: 25;
   -ms-grid-row-span: 2;
-  grid-row: 27/29;
+  grid-row: 25/27;
 }
 
 .automation-section .component .horizontal-condition-small-no {
   -ms-grid-column: 19;
   -ms-grid-column-span: 2;
   grid-column: 19/21;
-  -ms-grid-row: 34;
-  -ms-grid-row-span: 1;
-  grid-row: 34/35;
+  -ms-grid-row: 30;
+  -ms-grid-row-span: 5;
+  grid-row: 30/35;
 }
 
 .automation-section .component .horizontal-condition-small-yes {
   -ms-grid-column: 21;
   -ms-grid-column-span: 2;
   grid-column: 21/23;
-  -ms-grid-row: 34;
-  -ms-grid-row-span: 1;
-  grid-row: 34/35;
+  -ms-grid-row: 30;
+  -ms-grid-row-span: 5;
+  grid-row: 30/35;
 }
 
 .automation-section .component .horizontal-no-condition-left {
@@ -634,7 +722,7 @@
 }
 
 .automation-section .component .vertical {
-  width: 1px;
+  width: 2px;
   background-color: #4580F7;
   height: 100%;
   margin: auto;
@@ -668,7 +756,7 @@
   -ms-grid-row-span: 3;
   grid-row: 10/13;
   margin-right: 0;
-  margin-top: -15px;
+  margin-top: -20px;
   z-index: -1;
 }
 
@@ -694,16 +782,16 @@
   -ms-grid-column: 22;
   -ms-grid-column-span: 1;
   grid-column: 22/23;
-  -ms-grid-row: 27;
-  -ms-grid-row-span: 1;
-  grid-row: 27/28;
+  -ms-grid-row: 24;
+  -ms-grid-row-span: 2;
+  grid-row: 24/26;
   margin-right: 0;
 }
 
 .automation-section .component .vertical-action-big-condition-3 {
-  -ms-grid-row: 28;
+  -ms-grid-row: 26;
   -ms-grid-row-span: 1;
-  grid-row: 28/29;
+  grid-row: 26/27;
   -ms-grid-column: 20;
   -ms-grid-column-span: 1;
   grid-column: 20/21;
@@ -714,39 +802,39 @@
   -ms-grid-column: 20;
   -ms-grid-column-span: 1;
   grid-column: 20/21;
-  -ms-grid-row: 33;
-  -ms-grid-row-span: 1;
-  grid-row: 33/34;
+  -ms-grid-row: 30;
+  -ms-grid-row-span: 2;
+  grid-row: 30/32;
   margin-right: 0;
   z-index: -1;
-  height: 150%;
+  height: 100px;
 }
 
 .automation-section .component .vertical-no-action-2 {
   -ms-grid-column: 18;
   -ms-grid-column-span: 1;
   grid-column: 18/19;
-  -ms-grid-row: 35;
+  -ms-grid-row: 33;
   -ms-grid-row-span: 1;
-  grid-row: 35/36;
+  grid-row: 33/34;
 }
 
 .automation-section .component .vertical-yes-action-2 {
   -ms-grid-column: 23;
   -ms-grid-column-span: 1;
   grid-column: 23/24;
-  -ms-grid-row: 35;
+  -ms-grid-row: 33;
   -ms-grid-row-span: 1;
-  grid-row: 35/36;
+  grid-row: 33/34;
 }
 
 .automation-section .component .vertical-no-condition-left {
   -ms-grid-column: 15;
   -ms-grid-column-span: 1;
   grid-column: 15/16;
-  -ms-grid-row: 16;
-  -ms-grid-row-span: 1;
-  grid-row: 16/17;
+  -ms-grid-row: 15;
+  -ms-grid-row-span: 2;
+  grid-row: 15/17;
   margin-left: 0;
 }
 
@@ -764,12 +852,12 @@
   -ms-grid-column: 8;
   -ms-grid-column-span: 1;
   grid-column: 8/9;
-  -ms-grid-row: 22;
-  -ms-grid-row-span: 1;
-  grid-row: 22/23;
+  -ms-grid-row: 21;
+  -ms-grid-row-span: 2;
+  grid-row: 21/23;
   margin-left: 0;
   z-index: -1;
-  height: 153%;
+  height: 100px;
 }
 
 .automation-section .component .vertical-no-left-action-left {
@@ -812,9 +900,9 @@
   -ms-grid-column: 18;
   -ms-grid-column-span: 1;
   grid-column: 18/19;
-  -ms-grid-row: 34;
+  -ms-grid-row: 32;
   -ms-grid-row-span: 1;
-  grid-row: 34/35;
+  grid-row: 32/33;
 }
 
 .automation-section .component .no-4 {
@@ -839,9 +927,9 @@
   -ms-grid-column: 23;
   -ms-grid-column-span: 1;
   grid-column: 23/24;
-  -ms-grid-row: 34;
+  -ms-grid-row: 32;
   -ms-grid-row-span: 1;
-  grid-row: 34/35;
+  grid-row: 32/33;
 }
 
 .automation-section .component .yes-3 {
@@ -862,7 +950,7 @@
   place-items: center;
   font-size: 1rem;
   text-transform: uppercase;
-  border: 1px solid #707070;
+  font-weight: 500;
 }
 
 .automation-section .component .yes {
@@ -874,7 +962,36 @@
   place-items: center;
   font-size: 1rem;
   text-transform: uppercase;
-  border: 1px solid #707070;
+  font-weight: 500;
+}
+
+.automation-section .zoom-btn-wrapper {
+  background-color: white;
+  width: 75px;
+  position: absolute;
+  left: 2rem;
+  bottom: 5rem;
+}
+
+.automation-section .zoom-btn-wrapper button {
+  border: 0;
+  background-color: inherit;
+  padding: 15px 21px;
+}
+
+.automation-section .zoom-btn-wrapper button:hover, .automation-section .zoom-btn-wrapper button:focus {
+  background-color: whitesmoke;
+}
+
+.automation-section .zoom-btn-wrapper button img {
+  pointer-events: none;
+}
+
+.automation-section .zoom-btn-wrapper .hr-line {
+  width: 40px;
+  margin: auto;
+  background-color: #CCCCCC;
+  height: 2px;
 }
 
 .active {
@@ -1038,4 +1155,25 @@
 
 .left-grid, .right-grid {
   visibility: hidden;
+}
+
+/* width */
+.condition-1::-webkit-scrollbar, .action-big::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.condition-1::-webkit-scrollbar-track, .action-big::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.condition-1::-webkit-scrollbar-thumb, .action-big::-webkit-scrollbar-thumb {
+  background: #9e9e9e;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.condition-1::-webkit-scrollbar-thumb:hover, .action-big::-webkit-scrollbar-thumb:hover {
+  background: #7e7e7e;
 }

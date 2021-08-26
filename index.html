@@ -137,11 +137,11 @@
           </form>
 
           <ul id="created-ul">
-            <h5 class="mt-5">My Automation</h5>
+            <h5 >My Automation</h5>
             <li class="created-li-element" >
               <div class="automation-text" data-id=''>
               <img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
-              <span>Gold Message</span><span class="draft">draft</span>
+              <span class="message">Gold Message</span><span class="draft">Draft</span>
               </div>	             
               </li>
           </ul>
@@ -170,7 +170,6 @@
         </div>
         <form class="" action="https://prerelease.dillerapp.no/retailer/StoreDetails/updateDetails" id="EditStoreFormId"
           method="post" enctype="multipart/form-data">
-
           <div class="tab-content setting-tabs-content">
             <div class="tab-pane fade show active" id="our_details">
               <div class="row">
@@ -362,7 +361,8 @@
         </div>
 
         <!-- Components to show -->
-        <div class="component d-none " id="grab-component">
+       <div class="component-wrapper" id="component-wrapper">
+        <div class="component d-none draggable" id="grab-component">
           <!-- CONDITION Big -->
             <div class="condition condition-1">
               <div class="condition--heading">
@@ -383,6 +383,8 @@
                     <input type="text" name="" class="nested-input" value="Registration">
                     <select name="" id="Is">
                       <option value="Is">Is</option>
+                      <div class="apperance">&#8227;
+                      </div>
                     </select>
                     <input type="text" name="" id="webshop" value="POS, webshop">
                     <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
@@ -392,30 +394,25 @@
             </div>
 
           <!-- CONDITION SMALL 1 -->
-          <div class="condition condition-2 right-grid">
+          <div class="condition condition-small condition-2 right-grid">
             <div class="condition--heading">
               <img src="./assets/images/auomation-black.svg" alt="">
               <span class="title-component ml-3">Condition</span>
             </div>
 
             <hr class="mt-2">
+
             <div class="condition--form">
-
               <div class="input-group">
-
                 <input type="text" name=""   value="Is coupon used">
-
                 <select name=""  >
                   <option value="Add">7 days</option>
                 </select>
-
                 <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
               </div>
-
-
             </div>
           </div>
-          <div class="condition condition-left-3 left-grid">
+          <div class="condition condition-small condition-left-3 left-grid">
             <div class="condition--heading">
               <img src="./assets/images/auomation-black.svg" alt="">
               <span class="title-component ml-3">Condition</span>
@@ -423,19 +420,13 @@
 
             <hr class="mt-2">
             <div class="condition--form">
-
               <div class="input-group">
-
                 <input type="text" name=""   value="Is coupon used">
-
                 <select name=""  >
                   <option value="Add">7 days</option>
                 </select>
-
                 <button class="delete-its-parent"><img src="./assets/images/cross.svg" alt=""></button>
               </div>
-
-
             </div>
           </div>
 
@@ -475,17 +466,18 @@
           <span class="vertical vertical-yes-left-action-left left-grid" ></span>
           
           <!-- ACTION  -->
-          <div class="action action-1 d-flex justify-content-between">
+          <div class="action action-small action-1 d-flex justify-content-between">
             <div class="heading">
               <img src="./assets/images/action.svg" alt="">
               <span class="title-component ml-3">Action</span>
             </div>
             <select name="action" id="action">
               <option value="send-sms" id="sms-left">Send SMS</option>
-              <option value="no-action" id="no-action-left" selected>No Action</option>
+              <option value="no-action" id="no-action-left" selected>No action</option>
+              <div class="apperance">&#8227;</div>
             </select>
           </div>
-          <div class="action action-2 d-flex justify-content-between right-grid">
+          <div class="action action-small action-2 d-flex justify-content-between right-grid">
             <div class="heading">
               <img src="./assets/images/action.svg" alt="">
 
@@ -493,10 +485,10 @@
             </div>
 
             <select name="action" id="action">
-              <option value="No action">No Action</option>
+              <option value="No action">No action</option>
             </select>
           </div>          
-          <div class="left-grid action action-3 d-flex justify-content-between">
+          <div class="left-grid action-small action action-3 d-flex justify-content-between">
             <div class="heading">
               <img src="./assets/images/action.svg" alt="">
 
@@ -504,7 +496,7 @@
             </div>
 
             <select name="action" id="action">
-              <option value="No action">No Action</option>
+              <option value="No action">No action</option>
             </select>
           </div>
 
@@ -517,7 +509,7 @@
               </div>
               <select name="action" id="action-right">
                 <option value="send-sms" id='sms-right'>Send SMS</option>
-                <option value="no-action" id="no-action-right" selected>No Action</option>
+                <option value="no-action" id="no-action-right" selected>No action</option>
               </select>
             </header>
 
@@ -552,7 +544,7 @@
               <div class="sms">
                 <label for="sms">SMS</label>
                 <textarea name="" id="sms" cols="30" rows="3"></textarea>
-                <button class="save">Save as new</button>
+                <button class="save">Save as new template</button>
                 <label for="" class="mt-1">SMS</label>
                 <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
               </div>
@@ -598,7 +590,7 @@
               <div class="sms">
                 <label for="sms">SMS</label>
                 <textarea name="" id="sms" cols="30" rows="3"></textarea>
-                <button class="save">Save as new</button>
+                <button class="save">Save as new template</button>
                 <label for="" class="mt-1">SMS</label>
                 <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
               </div>
@@ -663,7 +655,7 @@
                 </textarea>
 
 
-                <button class="save">Save as new</button>
+                <button class="save">Save as new template</button>
 
                 <label for="" class="mt-1">SMS</label>
                 <p>Would you also like to buy some more?<button class="sms-change-btn">(change)</button></p>
@@ -711,6 +703,19 @@
             </div>
           </div>
         </div>
+       </div>
+
+        <!-- zoom in zoom out button -->
+        <div class="zoom-btn-wrapper d-none">
+          <button class="zoom-in">
+            <img src="./assets/images/zoomIn.svg"  class="img-fluid" alt="zoom in">
+          </button>          
+          <div class="hr-line"></div>
+          <button class="zoom-out">
+            <img src="./assets/images/zoomOut.svg" class="img-fluid" alt="zoom out">
+          </button>
+        </div>
+
       </section>
     </div>
   </div>
@@ -765,8 +770,17 @@
 
   </ul>
 
-  <!-- CUSTOM JS -->
-  <script src="./assets/js/automation.js"></script>
+  
+<!-- Or From A CDN -->
+<script src="https://unpkg.com/draggabilly/dist/draggabilly.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/draggabilly/draggabilly.min.js"></script>
+<script>
+ var draggable = new Draggabilly('.draggable');
+</script>
+
+<!-- CUSTOM JS -->
+<script src="./assets/js/automation.js"></script>
+
 </body>
 
 <script type="text/javascript" src="https://prerelease.dillerapp.no/assets/js/jquery.min.js"></script>

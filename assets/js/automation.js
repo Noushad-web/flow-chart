@@ -23,9 +23,12 @@ const asideAutomationFun = () => {
 	const automationHorizontalNavbar = document.getElementById('automation-horizontal-navbar');
 
 	const togglingComponents = () => {
+		const zoomWrapper = document.querySelector('.zoom-btn-wrapper');
+		zoomWrapper.classList.remove('d-none');
 		emptyBlog.classList.add('d-none');
 		grabbedDiv.classList.remove('d-none');
 		automationHorizontalNavbar.classList.remove('d-none');
+
 	}
 
 	// ADDING THE EVENT LISTENERS TO ALL CREATED LI ELEMENTS IN AUTOMATION ASIDE BAR
@@ -55,11 +58,11 @@ const asideAutomationFun = () => {
 	const renderingElement = (searchedValue) => {
 		counterArray.push(counterArray.length);
 		const li =
-			`
+		`
 		<li class="created-li-element" >
 		<div class="automation-text" data-id='${counterArray[counterArray.length - 1]}'>
 		<img src="./assets/images/auomation-black.svg" class="img-fluid search-icon" alt="">
-		<span>Gold Message</span>
+		<span class="message">Gold Message</span>
 		</div>	
 		<button class="trash border-0" id="trashBtn">
 		<img src="./assets/images/trash.svg" alt="trash" class="trash">
@@ -321,76 +324,102 @@ const flowFun = () => {
 flowFun();
 
 
-/* _______________ DRAG THE DIV BY GRABBING ________________*/
-const dragDivFun = () => {
-	
-	let pos = { top: 0, left: 0, x: 0, y: 0 };
-	// div which have to be grabbed and drag 
-	grabbedDiv.scrollTop = 0;
-	grabbedDiv.scrollLeft = 0;
+/* ------------- Zoom IN/OUT -------------*/
+const zoomFun = () => {
+	const zoomIn = document.querySelector('.zoom-in');
+	const zoomOut = document.querySelector('.zoom-out');
+	const componentWrapper = document.getElementById('component-wrapper');
+	let scale = [1];
 
-	const checkEvents = (key, mouse) => {
-		let eventKey = key;
-		let eventMouse = mouse;
-		if (eventKey && eventMouse) {
-			console.log(eventKey, eventMouse);
-			grabbedDiv.addEventListener('mousemove', mousemove); // Phase 3 mousemove
-		} else {
-			grabbedDiv.removeEventListener('mousemove', mousemove);
+	const zoomInHandler = (e) => {
+		if (scale.length-1 < 2) {
+			scale.push((scale[scale.length-1]) * 1.5);
+			componentWrapper.style.transform = `scale(${scale[scale.length-1]})`;
 		}
 	}
-
-	const mouseup = (e) => {
-		checkEvents(true, false);
-		grabbedDiv.style.cursor = 'auto';
-		grabbedDiv.style.removeProperty('user-select');
-	}
-
-	const mousemove = (e)=> {
-		console.log('mousemoving');
-		grabbedDiv.style.cursor = 'grabbing';
-		// How far the mouse has been moved
-		const dx = e.clientX - pos.x;
-		const dy = e.clientY - pos.y;
-		// Scroll the element
-		grabbedDiv.scrollTop = pos.top - dy;
-		grabbedDiv.scrollLeft = pos.left - dx;
-	}
-
-	const mousedown = (e) => {
-		pos = {
-			// The current scroll 
-			left: grabbedDiv.scrollLeft,
-			top: grabbedDiv.scrollTop,
-			// Get the current mouse position
-			x: e.clientX,
-			y: e.clientY,
-		};
-		checkEvents(true, true);
-		grabbedDiv.addEventListener('mouseup', mouseup); // Phase 4 mouseup
-	};
-
-	document.addEventListener("keyup", (e) => { // phase 5 keyup
-		if (e.code === 'Space') {
-			console.log("keyup");
-			grabbedDiv.removeEventListener('mousedown', mousedown);
-			grabbedDiv.removeEventListener('mousemove', mousemove);
-			grabbedDiv.style.cursor = 'auto';
-			grabbedDiv.style.removeProperty('user-select');
+	const zoomOutHandler = (e) => {
+		if ( scale.length-1 > 0 ) {
+			scale.pop(scale.length - 1);
+			componentWrapper.style.transform = `scale(${scale})`;
 		}		
-	});
+	}
 
-	const keydown = (e)=> {
-		if (e.code === 'Space') {
-			// Change the cursor and prevent user from selecting the text
-			grabbedDiv.style.cursor = 'grab';
-			grabbedDiv.style.userSelect = 'none';
-			grabbedDiv.addEventListener('mousedown', mousedown);  // Phase 2 mousedown			
-		}
-	};
-
-	document.addEventListener("keydown", keydown); // Phase 1 keydown
-
+	zoomIn.addEventListener('click', zoomInHandler);
+	zoomOut.addEventListener('click', zoomOutHandler);
 }
-dragDivFun();
+zoomFun();
+
+
+
+/* _______________ DRAG THE DIV BY GRABBING ________________*/
+// const dragDivFun = () => {
+	
+// 	let pos = { top: 0, left: 0, x: 0, y: 0 };
+// 	// div which have to be grabbed and drag 
+// 	grabbedDiv.scrollTop = 0;
+// 	grabbedDiv.scrollLeft = 0;
+
+// 	const checkEvents = (key, mouse) => {
+// 		let eventKey = key;
+// 		let eventMouse = mouse;
+// 		if (eventKey && eventMouse) {
+// 			console.log(eventKey, eventMouse);
+// 			grabbedDiv.addEventListener('mousemove', mousemove); // Phase 3 mousemove
+// 		} else {
+// 			grabbedDiv.removeEventListener('mousemove', mousemove);
+// 		}
+// 	}
+
+// 	const mouseup = (e) => {
+// 		checkEvents(true, false);
+// 		grabbedDiv.style.cursor = 'auto';
+// 		grabbedDiv.style.removeProperty('user-select');
+// 	}
+
+// 	const mousemove = (e)=> {
+// 		grabbedDiv.style.cursor = 'grabbing';
+// 		// How far the mouse has been moved
+// 		const dx = e.clientX - pos.x;
+// 		const dy = e.clientY - pos.y;
+// 		// Scroll the element
+// 		grabbedDiv.scrollTop = pos.top - dy;
+// 		grabbedDiv.scrollLeft = pos.left - dx;
+// 	}
+
+// 	const mousedown = (e) => {
+// 		pos = {
+// 			// The current scroll 
+// 			left: grabbedDiv.scrollLeft,
+// 			top: grabbedDiv.scrollTop,
+// 			// Get the current mouse position
+// 			x: e.clientX,
+// 			y: e.clientY,
+// 		};
+// 		checkEvents(true, true);
+// 		grabbedDiv.addEventListener('mouseup', mouseup); // Phase 4 mouseup
+// 	};
+
+// 	document.addEventListener("keyup", (e) => { // phase 5 keyup
+// 		if (e.code === 'ShiftRight' || e.code === 'ShiftLeft') {
+// 			grabbedDiv.removeEventListener('mousedown', mousedown);
+// 			grabbedDiv.removeEventListener('mousemove', mousemove);
+// 			grabbedDiv.style.cursor = 'auto';
+// 			grabbedDiv.style.removeProperty('user-select');
+// 		}		
+// 	});
+
+// 	const keydown = (e) => {
+// 		if (e.code === 'ShiftRight' || e.code === 'ShiftLeft') {
+// 			// Change the cursor and prevent user from selecting the text
+// 			grabbedDiv.style.cursor = 'grab';
+// 			grabbedDiv.style.userSelect = 'none';
+// 			grabbedDiv.addEventListener('mousedown', mousedown);  // Phase 2 mousedown			
+// 		}
+// 	};
+
+// 	document.addEventListener("keydown", keydown); // Phase 1 keydown
+
+// }
+// dragDivFun();
+
 
