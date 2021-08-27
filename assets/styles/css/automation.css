@@ -235,10 +235,10 @@ input:focus, select:focus {
   position: absolute;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (90px)[26];
-      grid-template-columns: repeat(26, 90px);
-  -ms-grid-rows: (40px)[49];
-      grid-template-rows: repeat(49, 40px);
+  -ms-grid-columns: (90px)[35];
+      grid-template-columns: repeat(35, 90px);
+  -ms-grid-rows: (40px)[53];
+      grid-template-rows: repeat(53, 40px);
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -254,6 +254,7 @@ input:focus, select:focus {
   font-weight: 600;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 440px;
 }
 
 .automation-section .component .action .heading {
@@ -284,22 +285,12 @@ input:focus, select:focus {
 }
 
 .automation-section .component .action-small {
-  height: 65px;
-}
-
-.automation-section .component .action-1 {
-  -ms-grid-column: 13;
-  -ms-grid-column-span: 6;
-  grid-column: 13/19;
-  -ms-grid-row: 14;
-  -ms-grid-row-span: 2;
-  grid-row: 14/16;
-  height: 65px;
+  height: 63px;
 }
 
 .automation-section .component .action-big {
   overflow: auto;
-  height: auto;
+  height: 460px;
 }
 
 .automation-section .component .action-big header .heading {
@@ -397,7 +388,8 @@ input:focus, select:focus {
   border-radius: 5px;
   border: 1px solid #CCCCCC;
   padding: 10px;
-  width: 363px;
+  width: 367px;
+  height: 112px;
   resize: none;
 }
 
@@ -430,39 +422,48 @@ input:focus, select:focus {
 }
 
 .automation-section .component .action-bg-2 {
-  -ms-grid-column: 22;
-  -ms-grid-column-span: 5;
-  grid-column: 22/27;
-  -ms-grid-row: 34;
+  -ms-grid-column: 27;
+  -ms-grid-column-span: 4;
+  grid-column: 27/31;
+  -ms-grid-row: 36;
+  -ms-grid-row-span: 6;
+  grid-row: 36/42;
+}
+
+.automation-section .component .action-bg-4 {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 3;
+  grid-column: 13/16;
+  -ms-grid-row: 14;
   -ms-grid-row-span: 11;
-  grid-row: 34/45;
+  grid-row: 14/25;
 }
 
 .automation-section .component .action-2 {
-  -ms-grid-column: 16;
-  -ms-grid-column-span: 5;
-  grid-column: 16/21;
-  -ms-grid-row: 34;
-  -ms-grid-row-span: 2;
-  grid-row: 34/36;
+  -ms-grid-column: 20;
+  -ms-grid-column-span: 4;
+  grid-column: 20/24;
+  -ms-grid-row: 36;
+  -ms-grid-row-span: 1;
+  grid-row: 36/37;
 }
 
 .automation-section .component .action-3 {
-  -ms-grid-column: 4;
+  -ms-grid-column: 6;
   -ms-grid-column-span: 5;
-  grid-column: 4/9;
-  -ms-grid-row: 25;
+  grid-column: 6/11;
+  -ms-grid-row: 36;
   -ms-grid-row-span: 2;
-  grid-row: 25/27;
+  grid-row: 36/38;
 }
 
 .automation-section .component .action-bg-3 {
-  -ms-grid-column: 10;
+  -ms-grid-column: 13;
   -ms-grid-column-span: 5;
-  grid-column: 10/15;
-  -ms-grid-row: 25;
+  grid-column: 13/18;
+  -ms-grid-row: 36;
   -ms-grid-row-span: 11;
-  grid-row: 25/36;
+  grid-row: 36/47;
 }
 
 .automation-section .component .condition {
@@ -586,6 +587,7 @@ input:focus, select:focus {
 
 .automation-section .component .condition-small {
   height: 143px;
+  width: 440px;
 }
 
 .automation-section .component .condition-1 {
@@ -608,12 +610,12 @@ input:focus, select:focus {
 }
 
 .automation-section .component .condition-2 {
-  -ms-grid-column: 18;
+  -ms-grid-column: 20;
   -ms-grid-column-span: 5;
-  grid-column: 18/23;
+  grid-column: 20/25;
   -ms-grid-row: 27;
-  -ms-grid-row-span: 4;
-  grid-row: 27/31;
+  -ms-grid-row-span: 3;
+  grid-row: 27/30;
 }
 
 .automation-section .component .condition-2 .input-group input, .automation-section .component .condition-2 .input-group select {
@@ -621,12 +623,12 @@ input:focus, select:focus {
 }
 
 .automation-section .component .condition-left-3 {
-  -ms-grid-column: 6;
+  -ms-grid-column: 13;
   -ms-grid-column-span: 5;
-  grid-column: 6/11;
-  -ms-grid-row: 18;
-  -ms-grid-row-span: 4;
-  grid-row: 18/22;
+  grid-column: 13/18;
+  -ms-grid-row: 27;
+  -ms-grid-row-span: 3;
+  grid-row: 27/30;
 }
 
 .automation-section .component .condition-left-3 .input-group input, .automation-section .component .condition-left-3 .input-group select {
@@ -677,30 +679,34 @@ input:focus, select:focus {
 }
 
 .automation-section .component .horizontal-condition-small-no {
-  -ms-grid-column: 19;
-  -ms-grid-column-span: 2;
-  grid-column: 19/21;
-  -ms-grid-row: 30;
-  -ms-grid-row-span: 5;
-  grid-row: 30/35;
+  -ms-grid-column: 22;
+  -ms-grid-column-span: 4;
+  grid-column: 22/26;
+  -ms-grid-row: 32;
+  -ms-grid-row-span: 1;
+  grid-row: 32/33;
+  width: 316px;
+  margin-left: 44px;
 }
 
 .automation-section .component .horizontal-condition-small-yes {
-  -ms-grid-column: 21;
-  -ms-grid-column-span: 2;
-  grid-column: 21/23;
-  -ms-grid-row: 30;
-  -ms-grid-row-span: 5;
-  grid-row: 30/35;
+  -ms-grid-column: 23;
+  -ms-grid-column-span: 6;
+  grid-column: 23/29;
+  -ms-grid-row: 34;
+  -ms-grid-row-span: 1;
+  grid-row: 34/35;
 }
 
 .automation-section .component .horizontal-no-condition-left {
-  -ms-grid-column: 8;
-  -ms-grid-column-span: 7;
-  grid-column: 8/15;
-  -ms-grid-row: 16;
-  -ms-grid-row-span: 2;
-  grid-row: 16/18;
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 3;
+  grid-column: 12/15;
+  -ms-grid-row: 32;
+  -ms-grid-row-span: 1;
+  grid-row: 32/33;
+  width: 117%;
+  z-index: -1;
 }
 
 .automation-section .component .horizontal-condition-left-no {
@@ -713,12 +719,12 @@ input:focus, select:focus {
 }
 
 .automation-section .component .horizontal-no-left-yes-left {
-  -ms-grid-column: 8;
-  -ms-grid-column-span: 4;
-  grid-column: 8/12;
-  -ms-grid-row: 23;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 6;
+  grid-column: 9/15;
+  -ms-grid-row: 34;
   -ms-grid-row-span: 1;
-  grid-row: 23/24;
+  grid-row: 34/35;
 }
 
 .automation-section .component .vertical {
@@ -780,52 +786,49 @@ input:focus, select:focus {
 
 .automation-section .component .vertical-action-big-condition-2 {
   -ms-grid-column: 22;
-  -ms-grid-column-span: 1;
-  grid-column: 22/23;
+  grid-column: 22/22;
   -ms-grid-row: 24;
-  -ms-grid-row-span: 2;
-  grid-row: 24/26;
-  margin-right: 0;
+  -ms-grid-row-span: 3;
+  grid-row: 24/27;
 }
 
 .automation-section .component .vertical-action-big-condition-3 {
-  -ms-grid-row: 26;
+  -ms-grid-row: 35;
   -ms-grid-row-span: 1;
-  grid-row: 26/27;
-  -ms-grid-column: 20;
+  grid-row: 35/36;
+  -ms-grid-column: 29;
   -ms-grid-column-span: 1;
-  grid-column: 20/21;
-  margin-right: 0;
+  grid-column: 29/30;
 }
 
 .automation-section .component .vertical-condition-small-no {
-  -ms-grid-column: 20;
+  -ms-grid-column: 22;
   -ms-grid-column-span: 1;
-  grid-column: 20/21;
+  grid-column: 22/23;
   -ms-grid-row: 30;
   -ms-grid-row-span: 2;
   grid-row: 30/32;
-  margin-right: 0;
   z-index: -1;
   height: 100px;
 }
 
 .automation-section .component .vertical-no-action-2 {
-  -ms-grid-column: 18;
+  -ms-grid-column: 22;
   -ms-grid-column-span: 1;
-  grid-column: 18/19;
-  -ms-grid-row: 33;
+  grid-column: 22/23;
+  -ms-grid-row: 35;
   -ms-grid-row-span: 1;
-  grid-row: 33/34;
+  grid-row: 35/36;
 }
 
 .automation-section .component .vertical-yes-action-2 {
-  -ms-grid-column: 23;
-  -ms-grid-column-span: 1;
-  grid-column: 23/24;
+  -ms-grid-column: 25;
+  -ms-grid-column-span: 2;
+  grid-column: 25/27;
   -ms-grid-row: 33;
-  -ms-grid-row-span: 1;
-  grid-row: 33/34;
+  -ms-grid-row-span: 2;
+  grid-row: 33/35;
+  margin-top: -19px;
 }
 
 .automation-section .component .vertical-no-condition-left {
@@ -839,43 +842,61 @@ input:focus, select:focus {
 }
 
 .automation-section .component .vertical-action-condition-left {
-  -ms-grid-column: 7;
+  -ms-grid-column: 15;
   -ms-grid-column-span: 1;
-  grid-column: 7/8;
-  -ms-grid-row: 17;
-  -ms-grid-row-span: 1;
-  grid-row: 17/18;
-  margin-right: 0;
+  grid-column: 15/16;
+  -ms-grid-row: 25;
+  -ms-grid-row-span: 2;
+  grid-row: 25/27;
 }
 
 .automation-section .component .vertical-condition-left-no {
-  -ms-grid-column: 8;
+  -ms-grid-column: 15;
   -ms-grid-column-span: 1;
-  grid-column: 8/9;
-  -ms-grid-row: 21;
+  grid-column: 15/16;
+  -ms-grid-row: 30;
   -ms-grid-row-span: 2;
-  grid-row: 21/23;
-  margin-left: 0;
+  grid-row: 30/32;
   z-index: -1;
   height: 100px;
 }
 
 .automation-section .component .vertical-no-left-action-left {
-  -ms-grid-column: 6;
+  -ms-grid-column: 8;
   -ms-grid-column-span: 1;
-  grid-column: 6/7;
-  -ms-grid-row: 24;
+  grid-column: 8/9;
+  -ms-grid-row: 35;
   -ms-grid-row-span: 1;
-  grid-row: 24/25;
+  grid-row: 35/36;
 }
 
 .automation-section .component .vertical-yes-left-action-left {
+  -ms-grid-column: 15;
+  -ms-grid-column-span: 1;
+  grid-column: 15/16;
+  -ms-grid-row: 35;
+  -ms-grid-row-span: 1;
+  grid-row: 35/36;
+}
+
+.automation-section .component .vertical-yes-left-action-left-2 {
   -ms-grid-column: 12;
   -ms-grid-column-span: 1;
   grid-column: 12/13;
-  -ms-grid-row: 24;
-  -ms-grid-row-span: 1;
-  grid-row: 24/25;
+  -ms-grid-row: 33;
+  -ms-grid-row-span: 2;
+  grid-row: 33/35;
+  margin-top: -19px;
+  margin-left: 0;
+}
+
+.automation-section .component .vertical-yes-left-action-left-3 {
+  -ms-grid-column: 15;
+  -ms-grid-column-span: 1;
+  grid-column: 15/16;
+  -ms-grid-row: 35;
+  -ms-grid-row-span: 2;
+  grid-row: 35/37;
 }
 
 .automation-section .component .no-1 {
@@ -897,21 +918,21 @@ input:focus, select:focus {
 }
 
 .automation-section .component .no-3 {
-  -ms-grid-column: 18;
+  -ms-grid-column: 22;
   -ms-grid-column-span: 1;
-  grid-column: 18/19;
-  -ms-grid-row: 32;
+  grid-column: 22/23;
+  -ms-grid-row: 34;
   -ms-grid-row-span: 1;
-  grid-row: 32/33;
+  grid-row: 34/35;
 }
 
 .automation-section .component .no-4 {
-  -ms-grid-column: 6;
+  -ms-grid-column: 8;
   -ms-grid-column-span: 1;
-  grid-column: 6/7;
-  -ms-grid-row: 23;
+  grid-column: 8/9;
+  -ms-grid-row: 34;
   -ms-grid-row-span: 1;
-  grid-row: 23/24;
+  grid-row: 34/35;
 }
 
 .automation-section .component .yes-1 {
@@ -924,21 +945,21 @@ input:focus, select:focus {
 }
 
 .automation-section .component .yes-2 {
-  -ms-grid-column: 23;
+  -ms-grid-column: 29;
   -ms-grid-column-span: 1;
-  grid-column: 23/24;
-  -ms-grid-row: 32;
+  grid-column: 29/30;
+  -ms-grid-row: 34;
   -ms-grid-row-span: 1;
-  grid-row: 32/33;
+  grid-row: 34/35;
 }
 
 .automation-section .component .yes-3 {
-  -ms-grid-column: 12;
+  -ms-grid-column: 15;
   -ms-grid-column-span: 1;
-  grid-column: 12/13;
-  -ms-grid-row: 23;
+  grid-column: 15/16;
+  -ms-grid-row: 34;
   -ms-grid-row-span: 1;
-  grid-row: 23/24;
+  grid-row: 34/35;
 }
 
 .automation-section .component .no {
@@ -968,9 +989,9 @@ input:focus, select:focus {
 .automation-section .zoom-btn-wrapper {
   background-color: white;
   width: 75px;
-  position: absolute;
-  left: 2rem;
-  bottom: 5rem;
+  position: fixed;
+  left: 20rem;
+  bottom: 4rem;
 }
 
 .automation-section .zoom-btn-wrapper button {
