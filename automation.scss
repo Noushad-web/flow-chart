@@ -21,7 +21,7 @@ $light-border : #CCCCCC;
 		calc(100% - 2.5em) 0.5em;
 	background-size:
 		5px 5px,
-		5px 5px,
+		6px 5px,
 		1px 1.5em;
 	background-repeat: no-repeat;			
 }
@@ -73,11 +73,12 @@ input,select{
 			
 			.close-automation-aside{
 				position: absolute;
-				right: 5px;
+				right: 10px;
 				top: 50%;
-				height: 72px;
-				border: 1px solid #E3E3E3;
-				border-radius: 10px;
+				height: 70px;
+				border: 0;
+				border-radius: 15px;
+				background: #E3E3E3;
 			}
 		}
 
@@ -144,6 +145,7 @@ input,select{
 				}
 
 				.automation-text{
+					cursor: text;
 					.draft{
 						background-color: #4681F8;
 						color: white;
@@ -159,8 +161,18 @@ input,select{
 						font-size: 16px;
 						pointer-events: none;						
 						opacity: 0.9;
+						padding: 0.5rem 0.2rem;						
+						outline: 0;						
+
+						&:focus{
+							border-bottom: 1px solid #e3e3e3;
+						}
 					}
 					
+				}
+
+				&:hover .trash-path{
+					stroke: #3e3e3e;
 				}
 
 				.trash{
@@ -273,7 +285,7 @@ input,select{
 			padding: 10px 1rem;
 			font-weight: 600;
 			box-shadow: $shadow;
-			width: 440px;
+			width: 450px;
 
 			.heading{
 				align-self: center;
@@ -302,10 +314,10 @@ input,select{
 
 
 
-// ALL BIG ACTIONS ARE HERE
+	// ALL BIG ACTIONS ARE HERE
 		.action-big{
 			overflow: auto;
-			height: 460px;
+			height: 63px;
 
 			header{	
 				.heading{
@@ -367,29 +379,19 @@ input,select{
 						background-color: transparent;
 					}
 
-
 					ul{
 						position: absolute;
-
 					}
-
 
 				}
 
-
-
-
-
 				.sms{
-
 					margin-top: 1rem;
-
 					label{
 						display: block;
 						font-size: 1rem;
 						font-weight: 500;
 					}
-
 					textarea{
 						border-radius: 5px;
 						border: 1px solid $light-border;
@@ -398,7 +400,6 @@ input,select{
 						height: 112px;
 						resize: none;
 					}
-
 					.save{
 						border: 0;
 						background-color: transparent;
@@ -406,52 +407,50 @@ input,select{
 						text-decoration: underline;
 						font-family: 'Open Sans', sans-serif;
 						font-size: 15px;
+						padding: 0;
 					}
-
 					button{
 						background-color: transparent;
 						border: 0;
 						color: #4580F7;
 					}
-
 					p{
 						font-weight: 400;
 					}
-
 				}
-
-
 			}
 		}	
 
 		.action-bg-1{
 			grid-column: 20/25;
-			grid-row: 14/25;			
+			grid-row: 14/26;
 		}
 		
 		.action-bg-2{
 			grid-column:27/31;
-			grid-row: 36/42;			
+			grid-row: 35/47;
+			height: 460px;
 		}
 
 		.action-bg-4{
 			grid-column: 13/16;
-			grid-row: 14/25;
+			grid-row: 14/26;
 		}
 
 		.action-2{
 			grid-column: 20/24;
-			grid-row: 36/37;
+			grid-row: 35/36;
 		}
 
 		.action-3{
 			grid-column: 6/11;
-			grid-row: 36/38;
+			grid-row: 35/37;
 		}
 
 		.action-bg-3{
 			grid-column: 13/18;
-			grid-row: 36/47;
+			grid-row: 35/47;
+			height: 460px;
 		}
 
 
@@ -632,19 +631,19 @@ input,select{
 
 		.horizontal-condition-small-no{
 			grid-column: 22/26;
-			grid-row: 32/33;
-			width: 316px;
+			grid-row: 31/33;
+			width: 317px;
 			margin-left: 44px;
 		}
 
 		.horizontal-condition-small-yes{
 			grid-column: 23/29;
-			grid-row: 34/35;
+			grid-row: 33/34;
 		}
 
 		.horizontal-no-condition-left{
 			grid-column: 12/15;
-			grid-row: 32/33;
+			grid-row: 31/33;
 			width: 117%;
 			z-index: -1;
 		}
@@ -656,7 +655,7 @@ input,select{
 
 		.horizontal-no-left-yes-left{
 			grid-column: 9/15;
-			grid-row: 34/35;
+			grid-row: 33/34;
 		}
 
 		// VERTICAL LINEs
@@ -703,26 +702,27 @@ input,select{
 		}
 
 		.vertical-action-big-condition-3{
-			grid-row: 35/36;
 			grid-column: 29/30;
+			grid-row: 34/35;
 		}
 
 		.vertical-condition-small-no{
 			grid-column: 22/23;
 			grid-row: 30/32;
 			z-index: -1;
-			height: 100px;
+			height: 80px;
 		}
 
 		.vertical-no-action-2{
 			grid-column: 22/23;
-			grid-row: 35/36;
+			grid-row: 34/35;
 		}
 
 		.vertical-yes-action-2{
 			grid-column: 25/27;
-			grid-row: 33/35;
-			margin-top: -19px;
+			grid-row: 32/33;
+			margin-top: 0;
+			height: 60px;
 		}
 
 		.vertical-no-condition-left{
@@ -740,12 +740,12 @@ input,select{
 			grid-column: 15/16;
 			grid-row: 30/32;
 			z-index: -1;
-			height: 100px;
+			height: 80px;
 		}
 
 		.vertical-no-left-action-left{
 			grid-column: 8/9;
-			grid-row: 35/36;
+			grid-row: 34/35;
 		}
 
 
@@ -756,14 +756,14 @@ input,select{
 
 		.vertical-yes-left-action-left-2{
 			grid-column: 12/13;
-			grid-row: 33/35;
-			margin-top: -19px;
+			grid-row: 32/33;
+			height: 60px;
 			margin-left: 0;
 		}
 
 		.vertical-yes-left-action-left-3{
 			grid-column: 15/16;
-			grid-row: 35/37;
+			grid-row: 34/35;
 		}
 	
 
@@ -780,12 +780,12 @@ input,select{
 
 		.no-3{
 			grid-column: 22/23;
-			grid-row: 34/35;
+			grid-row: 33/34;
 		}
 
 		.no-4{
 			grid-column: 8/9;
-			grid-row: 34/35;
+			grid-row: 33/34;
 		}
 		
 		// ALL YES BUTTONS ARE HERE 
@@ -796,12 +796,12 @@ input,select{
 
 		.yes-2{
 			grid-column: 29/30;
-			grid-row: 34/35;
+			grid-row: 33/34;
 		}
 
 		.yes-3{
 			grid-column: 15/16; 
-			grid-row: 34/35;
+			grid-row: 33/34;
 		}
 
 		// NO DANGER BUTTON
@@ -841,7 +841,7 @@ input,select{
 			border: 0;
 			background-color: inherit;
 			padding: 15px 21px;
-			&:hover, &:focus{
+			&:hover{
 				background-color: whitesmoke;
 			}
 			img{
