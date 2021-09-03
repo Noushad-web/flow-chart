@@ -274,9 +274,10 @@ input:focus, select:focus {
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   width: 450px;
+  height: 63px;
 }
 
-.automation-section .component .action .heading {
+.automation-section .component .action header .heading {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -295,14 +296,6 @@ input:focus, select:focus {
   height: 40px;
   color: #3E3E3E;
   font-weight: 600;
-  appearance: none;
-  padding: 9px 11px;
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
-  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px,
- 6px 5px,
- 1px 1.5em;
-  background-repeat: no-repeat;
 }
 
 .automation-section .component .action option {
@@ -321,55 +314,23 @@ input:focus, select:focus {
   background-color: white;
 }
 
-.automation-section .component .action-small {
-  height: 63px;
-}
-
-.automation-section .component .action-big {
-  overflow: auto;
-  height: 63px;
-}
-
-.automation-section .component .action-big header .heading {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.automation-section .component .action-big header select {
-  background-color: white;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px;
-  font-weight: 500;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  padding: 9px 11px;
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
-  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px,
- 6px 5px,
- 1px 1.5em;
-  background-repeat: no-repeat;
-}
-
-.automation-section .component .action-big--form .btns button {
+.automation-section .component .action .action-big--form .btns button {
   border: 0;
   background-color: transparent;
 }
 
-.automation-section .component .action-big--form .btns .sucess {
+.automation-section .component .action .action-big--form .btns .sucess {
   color: #0053A4;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   padding-right: 1rem;
 }
 
-.automation-section .component .action-big--form .btns .danger {
+.automation-section .component .action .action-big--form .btns .danger {
   color: #FF1F23;
   padding-left: .5rem;
 }
 
-.automation-section .component .action-big--form .input-group {
+.automation-section .component .action .action-big--form .input-group {
   margin-top: .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -380,7 +341,7 @@ input:focus, select:focus {
   position: relative;
 }
 
-.automation-section .component .action-big--form .input-group input, .automation-section .component .action-big--form .input-group select {
+.automation-section .component .action .action-big--form .input-group input, .automation-section .component .action .action-big--form .input-group select {
   border: 1px solid #CCCCCC;
   border-radius: 5px;
   background-color: white;
@@ -389,43 +350,41 @@ input:focus, select:focus {
   padding: 9px 11px;
 }
 
-.automation-section .component .action-big--form .input-group input {
+.automation-section .component .action .action-big--form .input-group input {
   width: 50%;
 }
 
-.automation-section .component .action-big--form .input-group select {
+.automation-section .component .action .action-big--form .input-group select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   padding: 9px 11px;
   background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px,
- 6px 5px,
- 1px 1.5em;
+  background-size: 5px 5px, 6px 5px, 1px 1.5em;
   background-repeat: no-repeat;
 }
 
-.automation-section .component .action-big--form .input-group button {
+.automation-section .component .action .action-big--form .input-group button {
   border: 0;
   background-color: transparent;
 }
 
-.automation-section .component .action-big--form .input-group ul {
+.automation-section .component .action .action-big--form .input-group ul {
   position: absolute;
 }
 
-.automation-section .component .action-big--form .sms {
+.automation-section .component .action .action-big--form .sms {
   margin-top: 1rem;
 }
 
-.automation-section .component .action-big--form .sms label {
+.automation-section .component .action .action-big--form .sms label {
   display: block;
   font-size: 1rem;
   font-weight: 500;
 }
 
-.automation-section .component .action-big--form .sms textarea {
+.automation-section .component .action .action-big--form .sms textarea {
   border-radius: 5px;
   border: 1px solid #CCCCCC;
   padding: 10px;
@@ -434,7 +393,7 @@ input:focus, select:focus {
   resize: none;
 }
 
-.automation-section .component .action-big--form .sms .save {
+.automation-section .component .action .action-big--form .sms .save {
   border: 0;
   background-color: transparent;
   color: #4580F7;
@@ -444,44 +403,17 @@ input:focus, select:focus {
   padding: 0;
 }
 
-.automation-section .component .action-big--form .sms button {
+.automation-section .component .action .action-big--form .sms button {
   background-color: transparent;
   border: 0;
   color: #4580F7;
 }
 
-.automation-section .component .action-big--form .sms p {
+.automation-section .component .action .action-big--form .sms p {
   font-weight: 400;
 }
 
-.automation-section .component .action-bg-1 {
-  -ms-grid-column: 20;
-  -ms-grid-column-span: 5;
-  grid-column: 20/25;
-  -ms-grid-row: 14;
-  -ms-grid-row-span: 12;
-  grid-row: 14/26;
-}
-
-.automation-section .component .action-bg-2 {
-  -ms-grid-column: 27;
-  -ms-grid-column-span: 4;
-  grid-column: 27/31;
-  -ms-grid-row: 35;
-  -ms-grid-row-span: 12;
-  grid-row: 35/47;
-}
-
-.automation-section .component .action-bg-4 {
-  -ms-grid-column: 13;
-  -ms-grid-column-span: 3;
-  grid-column: 13/16;
-  -ms-grid-row: 14;
-  -ms-grid-row-span: 12;
-  grid-row: 14/26;
-}
-
-.automation-section .component .action-2 {
+.automation-section .component .action:nth-of-type(4) {
   -ms-grid-column: 20;
   -ms-grid-column-span: 4;
   grid-column: 20/24;
@@ -490,7 +422,7 @@ input:focus, select:focus {
   grid-row: 35/36;
 }
 
-.automation-section .component .action-3 {
+.automation-section .component .action:nth-of-type(5) {
   -ms-grid-column: 6;
   -ms-grid-column-span: 5;
   grid-column: 6/11;
@@ -499,13 +431,40 @@ input:focus, select:focus {
   grid-row: 35/37;
 }
 
-.automation-section .component .action-bg-3 {
+.automation-section .component .action:nth-of-type(6) {
   -ms-grid-column: 13;
   -ms-grid-column-span: 5;
   grid-column: 13/18;
   -ms-grid-row: 35;
   -ms-grid-row-span: 12;
   grid-row: 35/47;
+}
+
+.automation-section .component .action:nth-of-type(7) {
+  -ms-grid-column: 20;
+  -ms-grid-column-span: 5;
+  grid-column: 20/25;
+  -ms-grid-row: 14;
+  -ms-grid-row-span: 12;
+  grid-row: 14/26;
+}
+
+.automation-section .component .action:nth-of-type(8) {
+  -ms-grid-column: 27;
+  -ms-grid-column-span: 4;
+  grid-column: 27/31;
+  -ms-grid-row: 35;
+  -ms-grid-row-span: 12;
+  grid-row: 35/47;
+}
+
+.automation-section .component .action:nth-of-type(9) {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 3;
+  grid-column: 13/16;
+  -ms-grid-row: 14;
+  -ms-grid-row-span: 12;
+  grid-row: 14/26;
 }
 
 .automation-section .component .condition {
@@ -544,7 +503,7 @@ input:focus, select:focus {
 }
 
 .automation-section .component .condition--form .input-group {
-  margin-top: .5rem;
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,16 +511,21 @@ input:focus, select:focus {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+  padding-left: 0.4rem;
 }
 
 .automation-section .component .condition--form .input-group input, .automation-section .component .condition--form .input-group select {
   border: 1px solid #CCCCCC;
   border-radius: 5px;
   background-color: transparent;
-  width: 30%;
+  width: 150px;
   padding: 9px 11px;
   font-size: 15px;
   font-weight: 500;
+}
+
+.automation-section .component .condition--form .input-group input:nth-of-type(2) {
+  width: 143px;
 }
 
 .automation-section .component .condition--form .input-group select {
@@ -571,9 +535,7 @@ input:focus, select:focus {
   padding: 9px 11px;
   background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px,
- 6px 5px,
- 1px 1.5em;
+  background-size: 5px 5px, 6px 5px, 1px 1.5em;
   background-repeat: no-repeat;
 }
 
@@ -632,6 +594,7 @@ input:focus, select:focus {
 .automation-section .component .condition-small {
   height: 143px;
   width: 440px;
+  overflow: initial;
 }
 
 .automation-section .component .condition-1 {
@@ -1242,5 +1205,83 @@ input:focus, select:focus {
 /* Handle on hover */
 .condition-1::-webkit-scrollbar-thumb:hover, .action-big::-webkit-scrollbar-thumb:hover {
   background: #7e7e7e;
+}
+
+.s-hidden {
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font: normal 11px/22px Arial, Sans-Serif;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.styledSelect {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  padding: 9px 11px;
+  font-weight: bold;
+  border-radius: 5px;
+  outline: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.styledSelect:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: #7E7E7E transparent transparent transparent;
+  position: absolute;
+  top: 17px;
+  right: 12.4px;
+}
+
+.styledSelect:active, .styledSelect.active {
+  background-color: #efefef;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0 0;
+  padding: 0 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.options li {
+  margin: 0 0;
+  padding: 9px 11px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #3E3E3E;
+}
+
+.options li:hover {
+  background-color: #efefef;
 }
 /*# sourceMappingURL=automation.css.map */

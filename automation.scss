@@ -79,6 +79,7 @@ input,select{
 				border: 0;
 				border-radius: 15px;
 				background: #E3E3E3;
+				width: 11px;
 			}
 		}
 
@@ -157,18 +158,20 @@ input,select{
 					.message{
 						margin-left: .3rem;
 						color: $primary-blue;
-						white-space: nowrap;
 						font-size: 16px;
 						pointer-events: none;						
 						opacity: 0.9;
-						padding: 0.5rem 0.2rem;						
+						padding:0.2rem;
 						outline: 0;						
 
-						&:focus{
-							border-bottom: 1px solid #e3e3e3;
+						&:focus, &:hover{
+							border: 1px solid #3e3e3e;
 						}
 					}
-					
+						
+					&:hover .message{
+						border: 1px solid #3e3e3e;
+					}
 				}
 
 				&:hover .trash-path{
@@ -279,6 +282,8 @@ input,select{
 		overflow: hidden;
 		width: auto;
 		
+
+		// actions 
 		.action{
 			background-color: $light-blue;
 			border: 1px solid $blue-border;
@@ -286,53 +291,47 @@ input,select{
 			font-weight: 600;
 			box-shadow: $shadow;
 			width: 450px;
+			height: 63px;
 
-			.heading{
-				align-self: center;
+			header{
+				.heading{
+					align-self: center;
+				}
 			}
 
-			select{
-				font-weight: 500;				
+			select {
+				font-weight: 500;
 				appearance: 'none';
 				-webkit-appearance: none;
-				-moz-appearance:none;				
+				-moz-appearance: none;
 				width: 153px;
-				padding: 9px 11px;				
+				padding: 9px 11px;
 				line-height: 1;
 				border: 1px solid #CCCCCC;
 				border-radius: 5px;
 				height: 40px;
 				color: #3E3E3E;
 				font-weight: 600;
-				@include selectDownArrow;
-			}
-		}
-
-		.action-small{
-			height: 63px;
-		}
-
-
-
-	// ALL BIG ACTIONS ARE HERE
-		.action-big{
-			overflow: auto;
-			height: 63px;
-
-			header{	
-				.heading{
-					align-self: center;
-				}
-				select{
-					background-color: white;
-					border: 1px solid #CCCCCC;
-					border-radius: 5px;
-					font-weight: 500;
-					@include selectDownArrow();
-				}
+				// @include selectDownArrow();
 			}
 
-			&--form{
+			option {
+				font-weight: 500;
+				appearance: 'none';
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				width: 153px;
+				padding: 9px 11px;
+				line-height: 1;
+				border: 1px solid #CCCCCC;
+				border-radius: 5px;
+				height: 40px;
+				color: #3E3E3E;
+				font-weight: 600;
+				background-color: white;
+			}
+
+			.action-big--form{
 				.btns{
 					button{
 						border: 0;
@@ -356,6 +355,7 @@ input,select{
 					display: flex;
 					justify-content: space-between;
 					position: relative;
+	
 
 					input, select{
 						border:1px solid $light-border;
@@ -421,36 +421,34 @@ input,select{
 			}
 		}	
 
-		.action-bg-1{
-			grid-column: 20/25;
-			grid-row: 14/26;
-		}
-		
-		.action-bg-2{
-			grid-column:27/31;
-			grid-row: 35/47;
-			height: 460px;
-		}
-
-		.action-bg-4{
-			grid-column: 13/16;
-			grid-row: 14/26;
-		}
-
-		.action-2{
+		.action:nth-of-type(4){
 			grid-column: 20/24;
 			grid-row: 35/36;
 		}
 
-		.action-3{
+		.action:nth-of-type(5){
 			grid-column: 6/11;
 			grid-row: 35/37;
 		}
 
-		.action-bg-3{
+		.action:nth-of-type(6){
 			grid-column: 13/18;
+			grid-row: 35/47;		
+		}
+
+		.action:nth-of-type(7){
+			grid-column: 20/25;
+			grid-row: 14/26;
+		}
+		
+		.action:nth-of-type(8){
+			grid-column:27/31;
 			grid-row: 35/47;
-			height: 460px;
+		}
+
+		.action:nth-of-type(9){
+			grid-column: 13/16;
+			grid-row: 14/26;
 		}
 
 
@@ -463,8 +461,8 @@ input,select{
 			font-weight: 600;
 			overflow: auto;
 			color: #3E3E3E;
+			
 			&--heading{
-				
 				font-size: 1rem;
 				span{
 					font-weight: 500;
@@ -477,7 +475,6 @@ input,select{
 					button{
 						border: 0;
 						background-color: transparent;
-
 					}
 
 					.sucess{
@@ -492,20 +489,24 @@ input,select{
 					}
 				}
 
-				.input-group{
-					margin-top: .5rem;
+				.input-group{					
+					margin-top: 10px;
 					display: flex;
 					justify-content: space-between;
 					position: relative;
+					padding-left: 0.4rem;
 
 					input, select{
 						border:1px solid $light-border;
 						border-radius: 5px;
 						background-color: transparent;
-						width: 30%;
+						width: 150px;
 						padding: 9px 11px;
 						font-size: 15px;
 						font-weight: 500;
+					}
+					input:nth-of-type(2){
+						width: 143px;
 					}
 					select{
 						@include selectDownArrow();
@@ -562,12 +563,14 @@ input,select{
 						}								
 					}	
 				}
+			
 			}
 		}
 
 		.condition-small{
 			height: 143px;
 			width: 440px;
+			overflow: initial;
 		}
 
 		.condition-1{
@@ -1045,4 +1048,73 @@ input,select{
 /* Handle on hover */
 .condition-1::-webkit-scrollbar-thumb:hover, .action-big::-webkit-scrollbar-thumb:hover {
   background: #7e7e7e; 
+}
+
+// custom select 
+.s-hidden {
+    visibility:hidden;
+    padding-right:10px;
+}
+.select {
+    cursor:pointer;
+    display:inline-block;
+    position:relative;
+    font:normal 11px/22px Arial, Sans-Serif;
+    color:black;
+    border:1px solid #ccc;
+		border-radius: 5px;
+		width: 150px;
+}
+.styledSelect {		
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color:white;
+    padding:9px 11px;
+    font-weight:bold;
+		border-radius: 5px;
+		outline: 0;
+		display: flex;
+		align-items: center;
+}
+.styledSelect:after {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-color: #7E7E7E transparent transparent transparent;
+	position: absolute;
+	top: 17px;
+	right: 12.4px;
+}
+.styledSelect:active, .styledSelect.active {
+    background-color:#efefef;
+}
+.options {
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    z-index:999;
+    margin:0 0;
+    padding:0 0;
+    list-style:none;
+    border:1px solid #ccc;
+    background-color:white;
+    -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.options li {    
+    margin:0 0;
+    padding:9px 11px;
+		font-size: 15px;
+		font-weight: bold;
+		color: #3E3E3E;
+}
+.options li:hover {
+    background-color:#efefef;
 }
